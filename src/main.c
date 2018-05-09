@@ -23,7 +23,7 @@ int main(void)
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-// weer een test
+// sam's tekst is weg
 
 	UB_VGA_FillScreen(VGA_COL_BLACK);
 	UB_VGA_SetPixel(10,10,127);

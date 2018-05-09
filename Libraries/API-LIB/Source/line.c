@@ -2,30 +2,62 @@
  * Line.c
  *
  *  Created on: May 3, 2018
- *      Author: sam
+ *      Author: Milan
  */
 
 #include "line.h"
+#include "stm32_ub_vga_screen.h"
 
-/*#include "stm32_ub_vga_screen.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int x0;
-int y0;
-int x1;
-int y1;
-int color;
-
-void draw_line (void)
+void draw_line(int x1, int y1, int x2, int y2, byte color)
 {
-  int dx =  abs (x1 - x0), sx = x0 < x1 ? 1 : -1;
-  int dy = -abs (y1 - y0), sy = y0 < y1 ? 1 : -1;
-  int err = dx + dy, e2;
 
-  for ( voorwaarde van de loop){
-	  UB_VGA_SetPixel(x0,y0, color);
-    if (x0 == x1 && y0 == y1) break;
-    e2 = 2 * err;
-    if (e2 >= dy) { err += dy; x0 += sx; }
-    if (e2 <= dx) { err += dx; y0 += sy; }
+  int i,dx,dy,sdx,sdy,dxabs,dyabs,x,y,px,py;
+
+  dx=x2-x1;      /* the horizontal distance of the line */
+  dy=y2-y1;      /* the vertical distance of the line */
+  dxabs=abs(dx);
+  dyabs=abs(dy);
+  sdx=sgn(dx);
+  sdy=sgn(dy);
+  x=dyabs>>1;
+  y=dxabs>>1;
+  px=x1;
+  py=y1;
+
+  //VGA[(py<<8)+(py<<6)+px]=color;
+
+  if (dxabs>=dyabs) /* the line is more horizontal than vertical */
+  {
+
+    for(i=0;i<dxabs;i++)
+    {
+      y+=dyabs;
+      if (y>=dxabs)
+      {
+        y-=dxabs;
+        py+=sdy;
+      }
+      px+=sdx;
+      UB_VGA_SetPixel(px,py,color);
+    }
   }
-}*/
+  else /* the line is more vertical than horizontal */
+  {
+    for(i=0;i<dyabs;i++)
+    {
+      x+=dxabs;
+      if (x>=dyabs)
+      {
+        x-=dyabs;
+        px+=sdx;
+      }
+      py+=sdy;
+      UB_VGA_SetPixel(px,py,color);
+    }
+  }
+
+}
+
