@@ -25,6 +25,10 @@
 	</natures>
 	<variableList>
 		<variable>
+			<name>draw_functions</name>
+			<value>file:/C:/Users/Milan%20Dammingh/Documents/1School/Electrotechiek/Jaar%203/Periode%20D/Sofware_Ontwikkeling/VGA_opdracht_v2/Libraries/API-LIB/Header</value>
+		</variable>
+		<variable>
 			<name>ub_lib</name>
 			<value>file:/C:/Users/Milan%20Dammingh/Documents/1School/Electrotechiek/Jaar%203/Periode%20D/Sofware_Ontwikkeling/VGA_opdracht_v1/Libraries/ub_lib</value>
 		</variable>

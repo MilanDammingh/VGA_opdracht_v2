@@ -14,6 +14,7 @@
 #include "main.h"
 #include "stm32_ub_vga_screen.h"
 #include <math.h>
+#include "line.h"
 
 int main(void)
 {
@@ -23,9 +24,10 @@ int main(void)
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-// sam's tekst is weg en dit is extra tekst
-
 	UB_VGA_FillScreen(VGA_COL_BLACK);
+	draw_line(10,10,50,50,127);
+
+	/*
 	UB_VGA_SetPixel(10,10,127);
 
 	int x1,x2,y1,y2;
@@ -44,7 +46,7 @@ int main(void)
 		UB_VGA_SetPixel(x1,k,50);
 	for(l=y1;l<=y2;l++)
 		UB_VGA_SetPixel(x2,l,255);
-
+	*/
   while(1)
   {
 
