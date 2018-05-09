@@ -23,7 +23,7 @@ int main(void)
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-// sam's tekst is wegjhvjhdvjyacjabc
+// sam's tekst is weg en dit is extra tekst
 
 	UB_VGA_FillScreen(VGA_COL_BLACK);
 	UB_VGA_SetPixel(10,10,127);
