@@ -15,6 +15,7 @@
 #include "stm32f4xx.h"
 
 void UART_init(void);
+void DELAY_init(void);
 
 //--------------------------------------------------------------
 #endif // __STM32F4_UB_MAIN_H

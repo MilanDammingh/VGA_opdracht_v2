@@ -32,7 +32,7 @@ void draw_line(int x1, int y1, int x2, int y2, uint8_t color)
   if (dxabs>=dyabs) /* the line is more horizontal than vertical */
   {
 
-	for(i=0;i<dxabs;i++)
+	for(i=0;i<=dxabs;i++)
 	{
 		UB_VGA_SetPixel(px,py,color);
 		y+=dyabs;
@@ -47,7 +47,7 @@ void draw_line(int x1, int y1, int x2, int y2, uint8_t color)
   }
   else /* the line is more vertical than horizontal */
   {
-    for(i=0;i<dyabs;i++)
+    for(i=0;i<=dyabs;i++)
     {
       UB_VGA_SetPixel(px,py,color);
       x+=dxabs;
