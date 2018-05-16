@@ -6,3 +6,5 @@
  */
 
 #include "rectangle.h"
+#include "line.h"
+

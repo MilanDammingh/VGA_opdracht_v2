@@ -12,24 +12,32 @@
 //--------------------------------------------------------------
 
 #include "main.h"
-#include "stm32_ub_vga_screen.h"
 #include <math.h>
+#include "stm32_ub_vga_screen.h"
+#include "includes.h"
+
 #include "line.h"
 
 int main(void)
 {
 	//  uint32_t n;
 
-	SystemInit(); // System speed to 168MHz
-
+ 	SystemInit(); // System speed to 168MHz
+ 	UART_init(); // Init UART
+ 	DELAY_init();
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-	UB_VGA_FillScreen(VGA_COL_BLACK);
-	draw_line(10,10,50,50,127);
+
+	UB_VGA_FillScreen(VGA_COL_GREEN);
+
+
+	UB_VGA_SetPixel(80,80,255);
+
+	draw_line(0,0,50,50,0);
+
+
 
 	/*
-	UB_VGA_SetPixel(10,10,127);
-
 	int x1,x2,y1,y2;
 	int i,j,k,l;
 
@@ -49,6 +57,7 @@ int main(void)
 	*/
   while(1)
   {
-
+	  //UART_puts("\nabc");
+	  //DELAY_ms(100);
   }
 }

@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void draw_line(int x1, int y1, int x2, int y2, byte color)
+void draw_line(int x1, int y1, int x2, int y2, uint8_t color)
 {
 
   int i,dx,dy,sdx,sdy,dxabs,dyabs,x,y,px,py;
@@ -32,22 +32,24 @@ void draw_line(int x1, int y1, int x2, int y2, byte color)
   if (dxabs>=dyabs) /* the line is more horizontal than vertical */
   {
 
-    for(i=0;i<dxabs;i++)
-    {
-      y+=dyabs;
-      if (y>=dxabs)
-      {
-        y-=dxabs;
-        py+=sdy;
-      }
-      px+=sdx;
-      UB_VGA_SetPixel(px,py,color);
+	for(i=0;i<dxabs;i++)
+	{
+		UB_VGA_SetPixel(px,py,color);
+		y+=dyabs;
+		if (y>=dxabs)
+		{
+			y-=dxabs;
+			py+=sdy;
+		}
+		px+=sdx;
+
     }
   }
   else /* the line is more vertical than horizontal */
   {
     for(i=0;i<dyabs;i++)
     {
+      UB_VGA_SetPixel(px,py,color);
       x+=dxabs;
       if (x>=dyabs)
       {
@@ -55,7 +57,7 @@ void draw_line(int x1, int y1, int x2, int y2, byte color)
         px+=sdx;
       }
       py+=sdy;
-      UB_VGA_SetPixel(px,py,color);
+
     }
   }
 

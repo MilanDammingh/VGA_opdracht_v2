@@ -9,5 +9,4 @@
 #define API_LIB_HEADER_RECTANGLE_H_
 
 
-
 #endif /* API_LIB_HEADER_RECTANGLE_H_ */
