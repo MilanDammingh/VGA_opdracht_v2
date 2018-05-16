@@ -23,23 +23,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   9 .ARM.attributes 00000030  00000000  00000000  000115ac  2**0
                   CONTENTS, READONLY
- 10 .debug_info   000062f9  00000000  00000000  000115dc  2**0
+ 10 .debug_info   000062c0  00000000  00000000  000115dc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_abbrev 00000fa8  00000000  00000000  000178d5  2**0
+ 11 .debug_abbrev 00000fa8  00000000  00000000  0001789c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_aranges 00000748  00000000  00000000  00018880  2**3
+ 12 .debug_aranges 00000748  00000000  00000000  00018848  2**3
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 000006a0  00000000  00000000  00018fc8  2**3
+ 13 .debug_ranges 000006a0  00000000  00000000  00018f90  2**3
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_line   00002a72  00000000  00000000  00019668  2**0
+ 14 .debug_line   000029c7  00000000  00000000  00019630  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_str    0000290d  00000000  00000000  0001c0da  2**0
+ 15 .debug_str    000028d4  00000000  00000000  0001bff7  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .comment      0000007c  00000000  00000000  0001e9e7  2**0
+ 16 .comment      0000007c  00000000  00000000  0001e8cb  2**0
                   CONTENTS, READONLY
- 17 .debug_frame  00001ed0  00000000  00000000  0001ea64  2**2
+ 17 .debug_frame  00001ed0  00000000  00000000  0001e948  2**2
                   CONTENTS, READONLY, DEBUGGING
- 18 .stabstr      0000003f  00000000  00000000  00020934  2**0
+ 18 .stabstr      0000003f  00000000  00000000  00020818  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -3297,8 +3297,8 @@ int main(void)
 	UB_VGA_FillScreen(VGA_COL_BLACK);
  8001316:	2000      	movs	r0, #0
  8001318:	f7ff fdfa 	bl	8000f10 <UB_VGA_FillScreen>
-	draw_line(10,10,50,50,127);
- 800131c:	237f      	movs	r3, #127	; 0x7f
+	draw_line(10,10,50,50,200);
+ 800131c:	23c8      	movs	r3, #200	; 0xc8
  800131e:	9300      	str	r3, [sp, #0]
  8001320:	2332      	movs	r3, #50	; 0x32
  8001322:	2232      	movs	r2, #50	; 0x32
