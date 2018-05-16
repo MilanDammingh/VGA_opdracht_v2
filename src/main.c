@@ -16,6 +16,7 @@
 #include <math.h>
 #include "line.h"
 #include "rectangle.h"
+#include "triangle.h"
 #include "includes.h"
 
 int main(void)
@@ -28,31 +29,13 @@ int main(void)
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
 	UB_VGA_FillScreen(VGA_COL_BLACK);
-	draw_rectangle(10,10,50,50,200);
 
-	/*
-	UB_VGA_SetPixel(10,10,127);
+	//draw_rectangle(10,10,50,50,200);
+	draw_triangle(10,100,100,100,50,50,VGA_COL_GREEN,0);
 
-	int x1,x2,y1,y2;
-	int i,j,k,l;
-
-	x1 = 50;
-	y1 = 50;
-	x2 = 100;
-	y2 = 100;
-
-	for(i=x1;i<=x2;i++)
-		UB_VGA_SetPixel(i,y1,127);
-	for(j=x1;j<=x2;j++)
-		UB_VGA_SetPixel(j,y2,200);
-	for(k=y1;k<=y2;k++)
-		UB_VGA_SetPixel(x1,k,50);
-	for(l=y1;l<=y2;l++)
-		UB_VGA_SetPixel(x2,l,255);
-	*/
   while(1)
   {
-	  UART_puts("\nabc");
-	  DELAY_ms(100);
+	  //UART_puts("\nabc");
+	  //DELAY_ms(100);
   }
 }
