@@ -28,10 +28,12 @@ int main(void)
 	DELAY_init();
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-	UB_VGA_FillScreen(VGA_COL_BLACK);
+	UB_VGA_FillScreen(VGA_COL_GREEN);
 
+
+	//draw_line(0,-10,50,50,VGA_COL_WHITE);
 	//draw_rectangle(10,10,50,50,200);
-	draw_triangle(10,100,100,100,50,50,VGA_COL_GREEN,0);
+	draw_triangle(-50,100,100,100,50,50,VGA_COL_BLACK,0);
 
   while(1)
   {
