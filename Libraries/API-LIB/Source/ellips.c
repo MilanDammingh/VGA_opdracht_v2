@@ -13,11 +13,11 @@
 int height;
 int width;
 int origin;
-int xp;
-int yp;
+int xp = x;
+int yp = y;
 int color;
 
-void draw_ellips (void) {
+void draw_ellips (int x, int y, color) {
 for(int y=-height; y<=height; y++) {
     for(int x=-width; x<=width; x++) {
         if(x*x*height*height+y*y*width*width <= height*height*width*width)
@@ -25,5 +25,4 @@ for(int y=-height; y<=height; y++) {
     	}
 	}
 }
-
 */

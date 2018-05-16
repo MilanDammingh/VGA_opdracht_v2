@@ -19,4 +19,3 @@ void draw_line(int x1, int y1, int x2, int y2, uint8_t color);
 
 #endif /* API_LIB_HEADER_LINE_H_ */
 
-//testje
