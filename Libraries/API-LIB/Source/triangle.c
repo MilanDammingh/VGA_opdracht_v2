@@ -13,17 +13,17 @@
 
 void draw_triangle(int x1,int y1,int x2,int y2,int xtop,int ytop, uint8_t color, uint8_t fill)
 {
-	int dx = x1+(abs(x2-x1)>>1);
-	int dy = y1-(x2-x1);
+	//int dx = x1+(abs(x2-x1)>>1);
+	//int dy = y1-(x2-x1);
 
 	draw_line(x1,y1,x2,y2,color);
-	draw_line(x1,y1,dx,dy,color);
-	draw_line(dx,dy,x2,y2,color);
+	draw_line(x1,y1,xtop,ytop,color);
+	draw_line(xtop,ytop,x2,y2,color);
 
 
 	if(fill == 1){
-		for(int i=x1;i<50;i++)
-			draw_line(i,y1,dx,dy,color);
+		for(int i=x1;i<=50;i++)
+			draw_line(i,y1,xtop,ytop,color);
 		fill=0;
 	}
 
