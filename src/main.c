@@ -12,13 +12,9 @@
 //--------------------------------------------------------------
 
 #include "main.h"
-#include "stm32_ub_vga_screen.h"
-#include <math.h>
-#include "line.h"
-#include "rectangle.h"
-#include "triangle.h"
+//#include <math.h>
 #include "includes.h"
-#include "ellips.h"
+
 
 int main(void)
 {
@@ -32,7 +28,7 @@ int main(void)
 	UB_VGA_FillScreen(VGA_COL_GREEN);
 
 	//draw_line(0,0,100,50,VGA_COL_WHITE, 4);
-	//draw_rectangle(10,10,50,50,200);
+	draw_rectangle(10,10,50,50,VGA_COL_RED);
 	//draw_triangle(10,200,50,100,50,50,VGA_COL_YELLOW,1);
 	draw_ellips(120,120,80,100, VGA_COL_WHITE);
 	UB_VGA_SetPixel(120,120,VGA_COL_BLACK);
