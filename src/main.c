@@ -25,7 +25,8 @@ int main(void)
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
 	UB_VGA_FillScreen(VGA_COL_BLACK);
-	draw_bitmap ();
+	draw_rectangle (0,0,50,50,125);
+	//draw_bitmap ();
 
 	/*
 	UB_VGA_SetPixel(10,10,127);
