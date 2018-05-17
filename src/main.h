@@ -8,14 +8,11 @@
 #ifndef __STM32F4_UB_MAIN_H
 #define __STM32F4_UB_MAIN_H
 
-
-//--------------------------------------------------------------
-// Includes
-//--------------------------------------------------------------
-#include "stm32f4xx.h"
+//char text[100];
+//char arguments[][];
 
 void UART_init(void);
 void DELAY_init(void);
-
+void get_data(void);
 //--------------------------------------------------------------
 #endif // __STM32F4_UB_MAIN_H

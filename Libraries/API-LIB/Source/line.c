@@ -27,6 +27,10 @@ void draw_line(int x1, int y1, int x2, int y2, uint8_t color, uint8_t tn)
 	px=x1;
 	py=y1;
 
+	if((tn % 2)== 0 ? 1 : 0)
+	{
+		//je moet de begin pixel y-1 en x+1 en dan in een forloop tekenen.
+	}
 
 
 	if (dxabs>=dyabs) /* the line is more horizontal than vertical */
@@ -35,21 +39,6 @@ void draw_line(int x1, int y1, int x2, int y2, uint8_t color, uint8_t tn)
 		{
 			if(px>=0 && py>=0)
 				UB_VGA_SetPixel(px,py,color);
-				/*
-				if(tn % 2 == 0)
-				{
-					tn_side = tn >> 1;
-					for(j=px-tn_side;j<=(px+tn_side);j++)
-						UB_VGA_SetPixel(px+j,py+j,color);
-				}
-				else
-				{
-					tn_side = tn >> 1;
-					for(j=(px-tn_side-1);j<=(px+tn_side);j++)
-						UB_VGA_SetPixel(px+j,py+j,color);
-				}
-				*/
-
 			y+=dyabs;
 			if (y>=dxabs)
 			{
@@ -57,6 +46,7 @@ void draw_line(int x1, int y1, int x2, int y2, uint8_t color, uint8_t tn)
 				py+=sdy;
 			}
 			px+=sdx;
+
 		}
 	}
 	else /* the line is more vertical than horizontal */
