@@ -12,7 +12,16 @@
 #include <stdlib.h>
 
 
-void draw_text (int x, int y, char letter) {
+void draw_text (int x, int y, char text[]) {
+
+	for(int i=0;i<strlen(text);i++)
+	{
+		letter_select(x,y,text[i]);
+		x = x + 5;
+	}
+}
+
+void letter_select(int x, int y, char letter){
 
 	//____________________________________ALFABET IN C ARRAY_________________________________________
 
@@ -325,6 +334,18 @@ void draw_text (int x, int y, char letter) {
 			  0x00, 0xff, 0x00, 0x00,  //.@..
 			  0xff, 0x00, 0x00, 0xff,  //@..@
 			  0xff, 0xff, 0xff, 0xff,  //@@@@
+			  0x00, 0x00, 0x00, 0x00,  //....
+			  0x00, 0x00, 0x00, 0x00,  //....
+	};
+	int spatie[10][4] = {
+			  0x00, 0x00, 0x00, 0x00,  //....
+			  0x00, 0x00, 0x00, 0x00,  //....
+			  0x00, 0x00, 0x00, 0x00,  //....
+			  0x00, 0x00, 0x00, 0x00,  //....
+			  0x00, 0x00, 0x00, 0x00,  //....
+			  0x00, 0x00, 0x00, 0x00,  //....
+			  0x00, 0x00, 0x00, 0x00,  //....
+			  0x00, 0x00, 0x00, 0x00,  //....
 			  0x00, 0x00, 0x00, 0x00,  //....
 			  0x00, 0x00, 0x00, 0x00,  //....
 	};
@@ -667,6 +688,19 @@ void draw_text (int x, int y, char letter) {
 			int y_pos = i + y;
 
 			UB_VGA_SetPixel(x_pos, y_pos, letter_Z[i][j]);
+		}
+	}
+	break;
+
+
+	case ' ':
+	for (int i=0; i<10; i++) {
+		for (int j=0; j<4; j++) {
+
+			int x_pos = j + x;
+			int y_pos = i + y;
+
+			UB_VGA_SetPixel(x_pos, y_pos, spatie[i][j]);
 		}
 	}
 	break;

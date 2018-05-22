@@ -27,8 +27,12 @@ int main(void)
 
 	UB_VGA_FillScreen(VGA_COL_BLACK);
 	//draw_rectangle (0,0,50,50,125);
-	//draw_bitmap (50, 50);
-	draw_text(50, 50, 'Y');
+	draw_bitmap (50, 50);
+
+
+	draw_text (70, 30, "MILAN JE BENT EEN KANKER NEGER");
+
+
 
 
   while(1)

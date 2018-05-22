@@ -1,1 +1,2 @@
-text.c:15:6:draw_text	4648	static
+text.c:15:6:draw_text	32	static
+text.c:24:6:letter_select	4824	static
