@@ -26,8 +26,10 @@ int main(void)
 
 	UB_VGA_FillScreen(VGA_COL_GREEN);
 
-	draw_triangle(80,40,50,100,150,200,VGA_COL_YELLOW);
 
+//	draw_triangle(80,40,50,100,150,200,VGA_COL_YELLOW);
+
+	/*
 	draw_line(50,0,50,240,VGA_COL_BLACK,1);
 	draw_line(100,0,100,240,VGA_COL_BLACK,1);
 	draw_line(150,0,150,240,VGA_COL_BLACK,1);
@@ -38,6 +40,16 @@ int main(void)
 	draw_line(0,100,320,100,VGA_COL_BLACK,1);
 	draw_line(0,150,320,150,VGA_COL_BLACK,1);
 	draw_line(0,200,320,200,VGA_COL_BLACK,1);
+	*/
+
+/*
+
+	draw_line(50,0,50,240,VGA_COL_RED,3); // vertical line
+	draw_line(0,50,320,50,VGA_COL_RED,5); // horizontal line
+	draw_line(50,50,100,55,VGA_COL_RED,6); // sort of horizontal line
+	draw_line(200,200,320,240,VGA_COL_RED,6); // sort of vertical line
+	draw_line(100,100,200,200,VGA_COL_RED,11); // diagonal line
+*/
 
 
 
@@ -60,29 +72,14 @@ int main(void)
 	}
 	*/
 
+	UART_puts(	"Welke van de volgende functies wil je gebruiken? "
+				"line/triangle/rectangle/ellips/text/bitmap/clr_screen\r");
+	char text[100];
 
-	/*
-	void get_data()
-	{
-		j=0;
-		UART_gets(text,TRUE);
-		if(text[i]!=SP)
-
-		for(int i=0; i<=strlen(text);i++)
-		{
-
-			if(text[i]==SP)
-			{
-				j++;
-			}
-		}
-		if(text)
-		UART_puts(text);
-		UART_puts("\n");
-	}
-	*/
 	while(1)
 	{
-		//get_data();
+		get_data();
+//		UART_gets(text,TRUE);
+//		UART_puts(text);
 	}
 }
