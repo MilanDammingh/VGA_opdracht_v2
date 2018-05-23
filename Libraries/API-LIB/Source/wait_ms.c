@@ -9,5 +9,5 @@
 
 void wait_ms(int time_ms)
 {
-	DELAY_ms(time_ms);
+	DELAY_ms(time_ms);	// Delay in ms
 }

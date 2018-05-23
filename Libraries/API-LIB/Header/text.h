@@ -8,8 +8,10 @@
 #ifndef API_LIB_HEADER_TEXT_H_
 #define API_LIB_HEADER_TEXT_H_
 
+// Includes
 #include "includes.h"
 
+// Prototype
 void draw_text (int x, int y, char text[]);
 void letter_select(int x, int y, char letter);
 
