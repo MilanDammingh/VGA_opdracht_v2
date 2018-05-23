@@ -11,7 +11,7 @@
 #include "stm32_ub_vga_screen.h"
 
 
-void draw_ellips (int x_center,int y_center, int x_rad, int y_rad, uint8_t color)
+void draw_ellips (int x_center,int y_center, int x_rad, int y_rad, int color)
 {
 	for(int y=-y_rad; y<=y_rad; y++) {
 	    for(int x=-x_rad; x<=x_rad; x++) {

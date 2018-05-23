@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void draw_line(int x1, int y1, int x2, int y2, uint8_t color, uint8_t tn)
+void draw_line(int x1, int y1, int x2, int y2, int tn, int color)
 {
 
 	int i,dx,dy,sdx,sdy,dxabs,dyabs,x,y,px,py;

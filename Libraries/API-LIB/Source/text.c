@@ -707,7 +707,7 @@ void letter_select(int x, int y, char letter){
 
 
 	default:
-		UB_VGA_FillScreen(VGA_COL_RED);
+		UB_VGA_FillScreen(rood);
 
 	}
 

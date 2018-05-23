@@ -92,6 +92,8 @@
 #include "rectangle.h"
 #include "ellips.h"
 #include "terminal_input.h"
+#include "text.h"
+#include "bitmap.h"
 
 /*
 #include "lcd.h"

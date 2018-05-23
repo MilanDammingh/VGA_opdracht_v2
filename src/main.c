@@ -13,10 +13,6 @@
 
 #include "main.h"
 #include "includes.h"
-#include "stm32_ub_vga_screen.h"
-#include <math.h>
-#include "line.h"
-#include "text.h"
 
 
 int main(void)
@@ -28,9 +24,11 @@ int main(void)
 	DELAY_init();
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-	UB_VGA_FillScreen(VGA_COL_BLACK);
-	//draw_rectangle (0,0,50,50,125);
-	draw_bitmap (50, 50);
+	UB_VGA_FillScreen(zwart);
+	draw_triangle (50,50,100,50,75,25,groen);
+	draw_line(1,1,100,100,3,blauw);
+	draw_rectangle(10,10,100,100,geel);
+//	draw_bitmap(50, 50);
 
 	/*
 	UB_VGA_SetPixel(10,10,127);
@@ -51,12 +49,7 @@ int main(void)
 	for(l=y1;l<=y2;l++)
 		UB_VGA_SetPixel(x2,l,255);
 	*/
-  while(1)
-  {
 
-	UART_puts(	"Welke van de volgende functies wil je gebruiken? "
-				"line/triangle/rectangle/ellips/text/bitmap/clr_screen\r");
-	char text[100];
 
 	while(1)
 	{

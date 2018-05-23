@@ -15,7 +15,7 @@
 
 //typedef unsigned char  byte;
 
-void draw_line(int x1, int y1, int x2, int y2, uint8_t color, uint8_t tn);
+void draw_line(int x1, int y1, int x2, int y2,  int tn, int color);
 
 #endif /* API_LIB_HEADER_LINE_H_ */
 
