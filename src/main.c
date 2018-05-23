@@ -26,11 +26,25 @@ int main(void)
 
 	int backcolor = lichtcyaan;	//achtergrondkleur definieren
 	int textcolor = geel;		//textkleur definieren
+	UB_VGA_FillScreen(zwart);
+	draw_triangle (50,50,100,50,75,25,groen);
+	draw_line(1,1,100,100,3,blauw);
+	draw_rectangle(10,10,100,100,geel);
+//	draw_bitmap(50, 50);
 
 
 
 
 	//_________________________FUNCTIES OPROEPEN___________________________________
+	for(i=x1;i<=x2;i++)
+		UB_VGA_SetPixel(i,y1,127);
+	for(j=x1;j<=x2;j++)
+		UB_VGA_SetPixel(j,y2,200);
+	for(k=y1;k<=y2;k++)
+		UB_VGA_SetPixel(x1,k,50);
+	for(l=y1;l<=y2;l++)
+		UB_VGA_SetPixel(x2,l,255);
+	*/
 
 	UB_VGA_FillScreen(backcolor);
 

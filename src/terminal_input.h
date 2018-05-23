@@ -11,14 +11,15 @@
 #include "includes.h"
 #include <string.h>
 
-char *line, *rectangle, *triangle, *ellips, *text, *bitmap, *str_check;
+char *str_check;
+
 
 char functions[20];
 char parameters[100];
 char draw[7];
-char test[100];
 
-//char arguments[][];
+int input_line[4];
+
 
 void get_data(void);
 
