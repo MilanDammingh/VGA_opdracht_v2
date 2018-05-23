@@ -38,7 +38,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 		  fill++;
 		  token = strtok (NULL, ",");
 		}
-//	    clearscreen(color(clearscrn_args.color));
+	    clr_screen(color(clearscrn_args.color));
 		UART_puts("color = "); UART_puts(clearscrn_args.color); UART_puts("\r");
 	}
 	else if(strcmp(functions, "lijn")==0)
@@ -280,7 +280,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 			fill++;
 			token = strtok (NULL, ",");
 		}
-//    	wait_ms(atoi(wait_args.time_ms));
+    	wait_ms(atoi(wait_args.time_ms));
 		UART_puts("time_ms = "); UART_puts(wait_args.time_ms); UART_puts("\r");
 	}
 

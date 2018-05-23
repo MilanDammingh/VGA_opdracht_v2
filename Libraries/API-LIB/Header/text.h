@@ -8,6 +8,10 @@
 #ifndef API_LIB_HEADER_TEXT_H_
 #define API_LIB_HEADER_TEXT_H_
 
+#include "includes.h"
+
 void draw_text (int x, int y, char text[]);
+void letter_select(int x, int y, char letter);
+
 
 #endif /* API_LIB_HEADER_TEXT_H_ */

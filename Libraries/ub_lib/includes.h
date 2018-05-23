@@ -40,11 +40,11 @@
 *********************************************************************************************************
 */
 
-#include  <stdarg.h>
-#include  <stdio.h>
-#include  <stdlib.h>
-#include  <math.h>
-
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
 /*
 *********************************************************************************************************
 *                                              LIBRARIES
@@ -94,6 +94,8 @@
 #include "terminal_input.h"
 #include "text.h"
 #include "bitmap.h"
+#include "wait_ms.h"
+#include "clr_screen.h"
 
 /*
 #include "lcd.h"
