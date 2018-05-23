@@ -74,7 +74,6 @@ int main(void)
 
 	UART_puts(	"Welke van de volgende functies wil je gebruiken? "
 				"line/triangle/rectangle/ellips/text/bitmap/clr_screen\r");
-	char text[100];
 
 	while(1)
 	{
