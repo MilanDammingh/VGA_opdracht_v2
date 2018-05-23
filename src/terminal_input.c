@@ -28,7 +28,7 @@ struct arguments ellips_args;
 struct arguments rectangle_args;
 
 
-void get_data()
+void get_data() //krijg je hier geen argumenten binnen?
 {
 	int fill=0;
 
