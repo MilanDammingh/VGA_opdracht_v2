@@ -44,7 +44,7 @@ int main(void)
 		UB_VGA_SetPixel(x1,k,50);
 	for(l=y1;l<=y2;l++)
 		UB_VGA_SetPixel(x2,l,255);
-	*/
+
 
 	UB_VGA_FillScreen(backcolor);
 
