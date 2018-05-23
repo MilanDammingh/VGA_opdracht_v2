@@ -26,6 +26,8 @@
 // Green (3bit) -> Bit4-Bit2
 // Blue  (2bit) -> Bit1-Bit0
 //--------------------------------------------------------------
+
+//Basis kleuren
 #define  zwart          0x00
 #define  blauw          0x03
 #define  groen          0x1C
@@ -36,7 +38,7 @@
 #define  magenta        0xE3
 #define  geel           0xFC
 
-//extra kleuren
+//Extra kleuren
 #define  lichtcyaan     0x7F
 #define  lichtblauw     0x73
 #define  lichtrood      0xE9
