@@ -65,9 +65,19 @@
 
 
 #include "misc.h"
+#include "stm32f4xx.h"
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_usart.h"
+
+/*
+*********************************************************************************************************
+*                                                 VGA
+*********************************************************************************************************
+*/
+
+#include "stm32_ub_vga_screen.h"
+
 
 /*
 *********************************************************************************************************
@@ -77,6 +87,11 @@
 
 #include "uart.h"
 #include "delay.h"
+#include "line.h"
+#include "triangle.h"
+#include "rectangle.h"
+#include "ellips.h"
+#include "terminal_input.h"
 
 /*
 #include "lcd.h"
