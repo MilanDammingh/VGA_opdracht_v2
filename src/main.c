@@ -26,14 +26,21 @@ int main(void)
 	//DELAY_init();
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-	UB_VGA_FillScreen(VGA_COL_BLACK);
-	//draw_rectangle (0,0,50,50,125);
-	draw_bitmap (50, 50, "happy");
+	int backcolor = lichtmagenta;
+	int textcolor = paars;
 
+	UB_VGA_FillScreen(backcolor);
+	//draw_rectangle (0,0,50,50,125);
+	draw_bitmap (65, 50, "happy", backcolor);
+	draw_bitmap (10, 50, "sad", backcolor);
+	draw_bitmap (150, 170, "up", backcolor);
+	draw_bitmap (190, 170, "down", backcolor);
+	draw_bitmap (230, 170, "right", backcolor);
+	draw_bitmap (280, 170, "left", backcolor);
 
 	//UB_VGA_SetPixel(10,10,127);
 
-	draw_text (70, 30, "DIT IS EEN TEST");
+	draw_text (70, 30, "studenten tien fuck yeah boyy", backcolor, textcolor);
 
 	/*x1 = 50;
 	y1 = 50;

@@ -8,6 +8,6 @@
 #ifndef API_LIB_HEADER_TEXT_H_
 #define API_LIB_HEADER_TEXT_H_
 
-void draw_text (int x, int y, char text[]);
+void draw_text (int x, int y, char text[], int backcolor, int textcolor);
 
 #endif /* API_LIB_HEADER_TEXT_H_ */

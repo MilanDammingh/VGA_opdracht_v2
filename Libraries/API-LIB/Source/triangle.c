@@ -20,7 +20,7 @@ void draw_triangle(int x1,int y1,int x2,int y2,int xtop,int ytop, uint8_t color)
 	dxabs=abs(dx);
 	dyabs=abs(dy);
 
-	draw_line(x1,y1,x2,y2,VGA_COL_RED,1);
+	draw_line(x1,y1,x2,y2,rood,1);
 
 	//xtop,ytop naar x1,y1 tot x2,y2,
 
