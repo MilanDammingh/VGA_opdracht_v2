@@ -4,7 +4,7 @@
 // Datum    : 30.03.2016
 // Version  : 1.0
 // Autor    : UB
-// mods by	: J.F. van der Bent
+// mods by	: Samuel Benhaiem and Milan Dammingh
 // CPU      : STM32F4
 // IDE      : CooCox CoIDE 1.7.x
 // Module   : CMSIS_BOOT, M4_CMSIS_CORE
@@ -15,8 +15,6 @@
 #include "includes.h"
 #include "stm32_ub_vga_screen.h"
 #include <math.h>
-#include "line.h"
-#include "text.h"
 
 
 int main(void)
@@ -24,20 +22,20 @@ int main(void)
 	//  uint32_t n;
 
 	SystemInit(); // System speed to 168MHz
-	UART_init();
-	DELAY_init();
+	//UART_init();
+	//DELAY_init();
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
 	UB_VGA_FillScreen(VGA_COL_BLACK);
 	//draw_rectangle (0,0,50,50,125);
-	draw_bitmap (50, 50);
+	draw_bitmap (50, 50, "happy");
 
-	/*
-	UB_VGA_SetPixel(10,10,127);
 
-	draw_text (70, 30, "MILAN JE BENT EEN KANKER NEGER");
+	//UB_VGA_SetPixel(10,10,127);
 
-	x1 = 50;
+	draw_text (70, 30, "DIT IS EEN TEST");
+
+	/*x1 = 50;
 	y1 = 50;
 	x2 = 100;
 	y2 = 100;
@@ -50,17 +48,17 @@ int main(void)
 		UB_VGA_SetPixel(x1,k,50);
 	for(l=y1;l<=y2;l++)
 		UB_VGA_SetPixel(x2,l,255);
-	*/
+
   while(1)
   {
 
 	UART_puts(	"Welke van de volgende functies wil je gebruiken? "
 				"line/triangle/rectangle/ellips/text/bitmap/clr_screen\r");
 	char text[100];
-
+*/
 	while(1)
 	{
-		get_data();
+//		get_data();
 //		UART_gets(text,TRUE);
 //		UART_puts(text);
 	}
