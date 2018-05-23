@@ -6,3 +6,8 @@
  */
 
 #include "clr_screen.h"
+
+void clr_screen(uint8_t color)
+{
+	UB_VGA_FillScreen(color);
+}

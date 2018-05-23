@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include "includes.h"
 
-void draw_triangle(int x1,int y1,int x2,int y2,int xtop,int ytop, uint8_t color)
+void draw_triangle(int x1,int y1,int x2,int y2,int xtop,int ytop, int color)
 {
 //	int i,dx,dy,sdx,sdy,dxabs,dyabs,x,y,px,py;
 //	int dx,dy,dxabs,dyabs;

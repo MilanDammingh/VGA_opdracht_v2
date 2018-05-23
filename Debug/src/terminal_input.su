@@ -1,2 +1,2 @@
-terminal_input.c:31:6:get_data	48	static
-terminal_input.c:147:9:color	16	static
+terminal_input.c:14:6:get_data	56	static
+terminal_input.c:289:5:color	16	static

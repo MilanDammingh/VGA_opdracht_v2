@@ -7,25 +7,8 @@
 
 #include "terminal_input.h"
 
-uint8_t color(char color_input);
+int color(char *color_input);
 
-struct arguments {
-	char x1[5];
-	char y1[5];
-	char x2[5];
-	char y2[5];
-	char xtop[5];
-	char ytop[5];
-	char x_center[5];
-	char y_center[5];
-	char x_rad[5];
-	char y_rad[5];
-	char thickness[5];
-	char color[20];
-};
-struct arguments line_args;
-struct arguments ellips_args;
-struct arguments rectangle_args;
 
 
 void get_data() //krijg je hier geen argumenten binnen?
@@ -33,118 +16,277 @@ void get_data() //krijg je hier geen argumenten binnen?
 	int fill=0;
 
 	UART_gets(parameters,TRUE);
-	str_check = strtok (parameters,",");
+	UART_puts("input = "); UART_puts(parameters); UART_puts("\r");
+	token = strtok (parameters,",");
+	strcpy(functions,token);
 
-	strcpy(functions,str_check);
-
-	if(strcmp(functions, "lijn")==0)
+	if(strcmp(functions, "clearscherm")==0)
+	{
+		fill=0;
+		UART_puts("clearscherm\r");
+		while(token != NULL)
+		{
+		  switch(fill)
+		  {
+			case 0:
+			  strcpy(functions,token);
+			  break;
+			case 1:
+			  strcpy(clearscrn_args.color,token);
+			  break;
+		  }
+		  fill++;
+		  token = strtok (NULL, ",");
+		}
+//	    clearscreen(color(clearscrn_args.color));
+		UART_puts("color = "); UART_puts(clearscrn_args.color); UART_puts("\r");
+	}
+	else if(strcmp(functions, "lijn")==0)
 	{
 		fill=0;
 		UART_puts("lijn\r");
-		while(str_check != NULL)
+		while(token!= NULL)
 		{
 			switch(fill)
 			{
 				case 0:
-					strcpy(functions,str_check);
+					strcpy(functions,token);
 					break;
 				case 1:
-					strcpy(line_args.x1,str_check);
+					strcpy(line_args.x1,token);
 					break;
 				case 2:
-					strcpy(line_args.y1,str_check);
+					strcpy(line_args.y1,token);
 					break;
 				case 3:
-					strcpy(line_args.x2,str_check);
+					strcpy(line_args.x2,token);
 					break;
 				case 4:
-					strcpy(line_args.y2,str_check);
+					strcpy(line_args.y2,token);
 					break;
 				case 5:
-					strcpy(line_args.thickness,str_check);
+					strcpy(line_args.thickness,token);
 					break;
 				case 6:
-					strcpy(line_args.color,str_check);
+					strcpy(line_args.color,token);
 					break;
 			}
 			fill++;
-			str_check = strtok (NULL, " ,.-");
+			token = strtok (NULL, ",");
 		}
 		draw_line(atoi(line_args.x1),atoi(line_args.y1),atoi(line_args.x2),atoi(line_args.y2),atoi(line_args.thickness),color(line_args.color));
+
+		UART_puts("x1 = "); UART_puts(line_args.x1); UART_puts("\r");
+		UART_puts("y1 = "); UART_puts(line_args.y1); UART_puts("\r");
+		UART_puts("x2 = "); UART_puts(line_args.x2); UART_puts("\r");
+		UART_puts("y2 = "); UART_puts(line_args.y2); UART_puts("\r");
+		UART_puts("thickness = "); UART_puts(line_args.thickness); UART_puts("\r");
+		UART_puts("color = "); UART_puts(line_args.color); UART_puts("\r");
 	}
 	else if(strcmp(functions, "ellips")==0)
 	{
 		fill=0;
 		UART_puts("ellips\r");
-		while(str_check != NULL)
+		while(token != NULL)
 		{
 			switch(fill)
 			{
 				case 0:
-					strcpy(functions,str_check);
+					strcpy(functions,token);
 					break;
 				case 1:
-					strcpy(ellips_args.x_center,str_check);
+					strcpy(ellips_args.x_center,token);
 					break;
 				case 2:
-					strcpy(ellips_args.y_center,str_check);
+					strcpy(ellips_args.y_center,token);
 					break;
 				case 3:
-					strcpy(ellips_args.x_rad,str_check);
+					strcpy(ellips_args.x_rad,token);
 					break;
 				case 4:
-					strcpy(ellips_args.y_rad,str_check);
+					strcpy(ellips_args.y_rad,token);
 					break;
 				case 5:
-					strcpy(ellips_args.color,str_check);
+					strcpy(ellips_args.color,token);
 					break;
 			}
 			fill++;
-			str_check = strtok (NULL, ",");
+			token = strtok (NULL, ",");
 		}
 		draw_ellips(atoi(ellips_args.x_center),atoi(ellips_args.y_center),atoi(ellips_args.x_rad),atoi(ellips_args.y_rad),color(ellips_args.color));
+		UART_puts("x_center = "); UART_puts(ellips_args.x_center); UART_puts("\r");
+		UART_puts("y_center = "); UART_puts(ellips_args.y_center); UART_puts("\r");
+		UART_puts("x_rad = "); UART_puts(ellips_args.x_rad); UART_puts("\r");
+		UART_puts("y_rad = "); UART_puts(ellips_args.y_rad); UART_puts("\r");
+		UART_puts("color = "); UART_puts(ellips_args.color); UART_puts("\r");
 	}
 	else if(strcmp(functions, "rechthoek")==0)
 	{
 		fill=0;
 		UART_puts("rechthoek\r");
-		while(str_check != NULL)
+		while(token != NULL)
 		{
 			switch(fill)
 			{
 				case 0:
-					strcpy(functions,str_check);
+					strcpy(functions,token);
 					break;
 				case 1:
-					strcpy(rectangle_args.x1,str_check);
+					strcpy(rectangle_args.x1,token);
 					break;
 				case 2:
-					strcpy(rectangle_args.y1,str_check);
+					strcpy(rectangle_args.y1,token);
 					break;
 				case 3:
-					strcpy(rectangle_args.x2,str_check);
+					strcpy(rectangle_args.x2,token);
 					break;
 				case 4:
-					strcpy(rectangle_args.y2,str_check);
+					strcpy(rectangle_args.y2,token);
 					break;
 				case 5:
-					strcpy(rectangle_args.color,str_check);
+					strcpy(rectangle_args.color,token);
 					break;
 			}
 			fill++;
-			str_check = strtok (NULL, ",");
+			token = strtok (NULL, ",");
 		}
 		draw_rectangle(atoi(rectangle_args.x1),atoi(rectangle_args.y1),atoi(rectangle_args.x2),atoi(rectangle_args.y2),color(rectangle_args.color));
+		UART_puts("x1 = "); UART_puts(rectangle_args.x1); UART_puts("\r");
+		UART_puts("y1 = "); UART_puts(rectangle_args.y1); UART_puts("\r");
+		UART_puts("x2 = "); UART_puts(rectangle_args.x2); UART_puts("\r");
+		UART_puts("y2 = "); UART_puts(rectangle_args.y2); UART_puts("\r");
+		UART_puts("color = "); UART_puts(rectangle_args.color); UART_puts("\r");
 	}
+	else if(strcmp(functions, "driehoek")==0)
+	{
+		fill=0;
+		UART_puts("driehoek\r");
+		while(token != NULL)
+		{
+			switch(fill)
+			{
+				case 0:
+					strcpy(functions,token);
+					break;
+				case 1:
+					strcpy(triangle_args.x1,token);
+					break;
+				case 2:
+					strcpy(triangle_args.y1,token);
+					break;
+				case 3:
+					strcpy(triangle_args.x2,token);
+					break;
+				case 4:
+					strcpy(triangle_args.y2,token);
+					break;
+				case 5:
+					strcpy(triangle_args.xtop,token);
+					break;
+				case 6:
+					strcpy(triangle_args.ytop,token);
+					break;
+				case 7:
+					strcpy(rectangle_args.color,token);
+					break;
+			}
+			fill++;
+			token = strtok (NULL, ",");
+		}
+		draw_triangle(atoi(triangle_args.x1),atoi(triangle_args.y1),atoi(triangle_args.x2),atoi(triangle_args.y2),atoi(triangle_args.xtop),atoi(triangle_args.ytop),color(triangle_args.color));
+		UART_puts("x1 = "); UART_puts(rectangle_args.x1); UART_puts("\r");
+		UART_puts("y1 = "); UART_puts(rectangle_args.y1); UART_puts("\r");
+		UART_puts("x2 = "); UART_puts(rectangle_args.x2); UART_puts("\r");
+		UART_puts("y2 = "); UART_puts(rectangle_args.y2); UART_puts("\r");
+		UART_puts("xtop = "); UART_puts(rectangle_args.xtop); UART_puts("\r");
+		UART_puts("ytop = "); UART_puts(rectangle_args.ytop); UART_puts("\r");
+		UART_puts("color = "); UART_puts(rectangle_args.color); UART_puts("\r");
+	}
+	else if(strcmp(functions, "tekst")==0)
+	{
+		fill=0;
+		UART_puts("tekst\r");
+		while(token != NULL)
+		{
+			switch(fill)
+			{
+				case 0:
+					strcpy(functions,token);
+					break;
+				case 1:
+					strcpy(text_args.x1,token);
+					break;
+				case 2:
+					strcpy(text_args.y1,token);
+					break;
+				case 3:
+					strcpy(text_args.text_in,token);
+					break;
+			}
+			fill++;
+			token = strtok (NULL, ",");
+		}
+		draw_text(atoi(text_args.x1),atoi(text_args.y1),text_args.text_in);
 
+		UART_puts("x1 = "); UART_puts(text_args.x1); UART_puts("\r");
+		UART_puts("y1 = "); UART_puts(text_args.y1); UART_puts("\r");
+		UART_puts("text_in = "); UART_puts(text_args.text_in); UART_puts("\r");
+	}
+	else if(strcmp(functions, "bitmap")==0)
+	{
+		fill=0;
+		UART_puts("bitmap\r");
+		while(token != NULL)
+		{
+			switch(fill)
+			{
+				case 0:
+					strcpy(functions,token);
+					break;
+				case 1:
+					strcpy(bitmap_args.bitmap_nr,token);
+					break;
+				case 2:
+					strcpy(bitmap_args.x1,token);
+					break;
+				case 3:
+					strcpy(bitmap_args.y1,token);
+					break;
+			}
+			fill++;
+			token = strtok (NULL, ",");
+		}
+		draw_bitmap(/*atoi(bitmap.bitmap_nr),*/atoi(bitmap_args.x1),atoi(bitmap_args.y1));
+		UART_puts("x1 = "); UART_puts(bitmap_args.x1); UART_puts("\r");
+		UART_puts("y1 = "); UART_puts(bitmap_args.y1); UART_puts("\r");
+		UART_puts("bitmap_nr = "); UART_puts(bitmap_args.bitmap_nr); UART_puts("\r");
 
-
-
-//	draw_ellips(atoi(line_args.x_center),atoi(line_args.y_center),atoi(line_args.x_rad),atoi(line_args.y_rad),color(line_args.color));
+	}
+	else if(strcmp(functions, "wacht")==0)
+	{
+		fill=0;
+		UART_puts("wacht\r");
+		while(token != NULL)
+		{
+			switch(fill)
+			{
+			case 0:
+				strcpy(functions,token);
+				break;
+			case 1:
+				strcpy(wait_args.time_ms,token);
+				break;
+			}
+			fill++;
+			token = strtok (NULL, ",");
+		}
+//    	wait_ms(atoi(wait_args.time_ms));
+		UART_puts("time_ms = "); UART_puts(wait_args.time_ms); UART_puts("\r");
+	}
 
 }
 
-uint8_t color(char color_input)
+int color(char *color_input)
 {
 	if(strcmp(line_args.color, "zwart")==0) return zwart;
 	else if(strcmp(line_args.color, "blauw\r")==0) return blauw;
@@ -165,114 +307,3 @@ uint8_t color(char color_input)
 	else if(strcmp(line_args.color, "paars")==0) return paars;
 	else return wit;
 };
-
-
-/*
-
-
-
-	UART_gets(functions,TRUE);
-
-	if(strcmp(functions, "lijn")==0)
-	{
-		UART_gets(parameters,TRUE);
-		str_check = strtok (parameters," ,");
-
-
-		while (str_check != NULL)
-		{
-			UART_puts(str_check);
-			UART_puts("\t");
-
-			switch(i){
-			case 0:
-				line_args.x1=str_check;
-				break;
-			case 1:
-				line_args.y1=str_check;
-				break;
-			case 2:
-				line_args.x2=str_check;
-				break;
-			case 3:
-				line_args.y2=str_check;
-				break;
-			case 4:
-				line_args.thickness=str_check;
-				break;
-			case 5:
-				strcpy(line_args.color,str_check);
-				break;
-			default:
-				break;
-			}
-			i++;
-			str_check = strtok (NULL, " ,.-");
-		}
-
-//		draw_line(line_args.x1,(int)line_args.y1,(int)line_args.x2,(int)line_args.y2,(int)line_args.thickness,(int)line_args.color);
-
-
-//
-//		UART_puts("color_line = "); UART_putchar(color_line);
-
-
-	}
-
-	else if(strcmp(functions, "triangle")==0)
-	{
-		UART_puts("You need to type the following parameter:"
-				"x1 y1 x2 y2 x3 y3 color\r");
-	}
-	else if(strcmp(functions, "rectangle")==0)
-	{
-		UART_puts("You need to type the following parameter:"
-				"x1 y1 x2 y2 color\r");
-	}
-	else if(strcmp(functions, "ellips")==0)
-	{
-		UART_puts("You need to type the following parameter:"
-				"x_center y_center x_raduis y_radius color\r");
-	}
-	else if(strcmp(functions, "text")==0)
-	{
-		UART_puts("You need to type the following parameter:"
-				"x1 y1 text font color style\r"
-				"style = normal or fat or cursive\r");
-	}
-	else if(strcmp(functions, "bitmap")==0)
-	{
-		UART_puts("You need to type the following bitmaps:"
-				"\r");
-	}
-	else if(strcmp(functions, "clr_screen")==0)
-	{
-		UART_puts("screen_clr_screen\r");
-	}
-
-//	else
-//		UART_puts("You typed the wrong function, you can choose one of these: line/triangle/rectangle/ellips/text/bitmap/clr_screen\r");
-
-
-
-	char * pch;
-
-	pch = strtok (text," ,");
-	while (pch != NULL)
-	{
-//		for(int i=0;i<7;i++)
-//			draw[i] = pch;
-		UART_puts(pch);
-		UART_puts("\t");
-
-		pch = strtok (NULL, " ,.-");
-	}
-
-
-//	for(int j=0;j<7;j++)
-//	{
-//		UART_puts(draw[j]);
-//		UART_puts("\r");
-//	}
-}
-*/
