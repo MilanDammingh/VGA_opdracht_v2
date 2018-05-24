@@ -19,7 +19,7 @@
 
 
 
-void draw_bitmap (int x, int y, char bitmap_selector[], int backcolor) {
+void draw_bitmap (int bitmap_selector, int x, int y, int backcolor) {
 
 //______________________________________BITMAP ARRAYS___________________________________________________
 
@@ -290,7 +290,7 @@ void draw_bitmap (int x, int y, char bitmap_selector[], int backcolor) {
 
 //______________________________________SETPIXEL FUNCTIONS___________________________________________________
 
-if (strcmp(bitmap_selector, "happy")==0){	//YOSHI HAPPY setpixel funtion
+if (strcmp(bitmap_selector, "1")==0){	//YOSHI HAPPY setpixel funtion
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
@@ -302,7 +302,7 @@ for (int i=0; i<40; i++) {
 	}
 }
 
-else if (strcmp(bitmap_selector, "sad")==0){	//BOO SAD setpixel function
+else if (strcmp(bitmap_selector, "2")==0){	//BOO SAD setpixel function
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
@@ -314,7 +314,7 @@ for (int i=0; i<40; i++) {
 	}
 }
 
-else if (strcmp(bitmap_selector, "up")==0){		//ARROW UP setpixel function
+else if (strcmp(bitmap_selector, "3")==0){		//ARROW UP setpixel function
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
@@ -326,7 +326,7 @@ for (int i=0; i<40; i++) {
 	}
 }
 
-else if (strcmp(bitmap_selector, "down")==0){	//ARROW DOWN setpixel function
+else if (strcmp(bitmap_selector, "4")==0){	//ARROW DOWN setpixel function
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
@@ -338,7 +338,7 @@ for (int i=0; i<40; i++) {
 	}
 }
 
-else if (strcmp(bitmap_selector, "right")==0){		//ARROW RIGHT setpixel function
+else if (strcmp(bitmap_selector, "5")==0){		//ARROW RIGHT setpixel function
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
@@ -350,7 +350,7 @@ for (int i=0; i<40; i++) {
 	}
 }
 
-else if (strcmp(bitmap_selector, "left")==0){		//ARROW LEFT setpixel function
+else if (strcmp(bitmap_selector, "6")==0){		//ARROW LEFT setpixel function
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 

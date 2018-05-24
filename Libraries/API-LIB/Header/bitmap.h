@@ -14,6 +14,6 @@
 #ifndef API_LIB_HEADER_BITMAP_H_
 #define API_LIB_HEADER_BITMAP_H_
 
-void draw_bitmap (int x, int y, char bitmap_selector[], int backcolor);
+void draw_bitmap (int bitmap_selector, int x, int y, , int backcolor);
 
 #endif /* API_LIB_HEADER_BITMAP_H_ */
