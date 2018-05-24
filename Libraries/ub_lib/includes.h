@@ -72,6 +72,7 @@
 #include "text.h"
 #include "wait_ms.h"
 #include "clr_screen.h"
+#include "letter_select.h"
 
 /*
 *********************************************************************************************************
