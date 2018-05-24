@@ -290,74 +290,82 @@ void draw_bitmap (int bitmap_selector, int x, int y, int backcolor) {
 
 //______________________________________SETPIXEL FUNCTIONS___________________________________________________
 
-if (strcmp(bitmap_selector, "1")==0){	//YOSHI HAPPY setpixel funtion
+if (strcmp(bitmap_selector, 1)==0){	//YOSHI HAPPY setpixel funtion
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
 		int x_pos = j + x;
 		int y_pos = i + y;
 
-		UB_VGA_SetPixel(x_pos, y_pos, yoshi_happy[i][j]);
+			if (yoshi_happy != backcolor){
+				UB_VGA_SetPixel(x_pos, y_pos, yoshi_happy[i][j]);
+			}
 		}
 	}
 }
 
-else if (strcmp(bitmap_selector, "2")==0){	//BOO SAD setpixel function
+else if (strcmp(bitmap_selector, 2)==0){	//BOO SAD setpixel function
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
 		int x_pos = j + x;
 		int y_pos = i + y;
 
-		UB_VGA_SetPixel(x_pos, y_pos, boo_sad[i][j]);
+			if (boo_sad != backcolor){
+				UB_VGA_SetPixel(x_pos, y_pos, boo_sad[i][j]);
+			}
 		}
 	}
 }
 
-else if (strcmp(bitmap_selector, "3")==0){		//ARROW UP setpixel function
+else if (strcmp(bitmap_selector, 3)==0){		//ARROW UP setpixel function
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
 		int x_pos = j + x;
 		int y_pos = i + y;
 
-		UB_VGA_SetPixel(x_pos, y_pos, arrow_up[i][j]);
+		if (arrow_up != backcolor){
+			UB_VGA_SetPixel(x_pos, y_pos, arrow_up[i][j]);
 		}
 	}
 }
 
-else if (strcmp(bitmap_selector, "4")==0){	//ARROW DOWN setpixel function
+else if (strcmp(bitmap_selector, 4)==0){	//ARROW DOWN setpixel function
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
 		int x_pos = j + x;
 		int y_pos = i + y;
 
-		UB_VGA_SetPixel(x_pos, y_pos, arrow_down[i][j]);
+		if (arrow_down != backcolor){
+			UB_VGA_SetPixel(x_pos, y_pos, arrow_down[i][j]);
 		}
 	}
 }
 
-else if (strcmp(bitmap_selector, "5")==0){		//ARROW RIGHT setpixel function
+else if (strcmp(bitmap_selector, 5)==0){		//ARROW RIGHT setpixel function
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
 		int x_pos = j + x;
 		int y_pos = i + y;
 
-		UB_VGA_SetPixel(x_pos, y_pos, arrow_right[i][j]);
+		if (arrow_right != backcolor){
+			UB_VGA_SetPixel(x_pos, y_pos, arrow_right[i][j]);
 		}
 	}
 }
 
-else if (strcmp(bitmap_selector, "6")==0){		//ARROW LEFT setpixel function
+else if (strcmp(bitmap_selector, 6)==0){		//ARROW LEFT setpixel function
 for (int i=0; i<40; i++) {
 	for (int j=0; j<40; j++) {
 
 		int x_pos = j + x;
 		int y_pos = i + y;
 
-		UB_VGA_SetPixel(x_pos, y_pos, arrow_left[i][j]);
+		if (arrow_left != backcolor){
+			UB_VGA_SetPixel(x_pos, y_pos, arrow_left[i][j]);
 		}
 	}
 }
