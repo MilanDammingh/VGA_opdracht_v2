@@ -1,2 +1,5 @@
+<<<<<<< Updated upstream
 terminal_input.c:14:6:get_data	56	static
 terminal_input.c:297:5:color	16	static
+=======
+>>>>>>> Stashed changes
