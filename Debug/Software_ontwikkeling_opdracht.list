@@ -6,9 +6,12 @@ Idx Name          Size      VMA       LMA       File off  Algn
   0 .isr_vector   00000188  08000000  08000000  00010000  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
 <<<<<<< HEAD
+<<<<<<< HEAD
   1 .text         00005770  08000188  08000188  00010188  2**3
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
   1 .text         0002fbe4  08000188  08000188  00010188  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   2 .rodata       00001978  0802fd6c  0802fd6c  0003fd6c  2**2
@@ -21,28 +24,29 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   6 .ccmram       00000000  10000000  10000000  000416ec  2**0
                   CONTENTS
-  7 .bss          00012e80  20000000  20000000  00050000  2**2
+  7 .bss          00012e14  20000000  20000000  00050000  2**2
                   ALLOC
-  8 ._user_heap_stack 00000400  20012e80  20012e80  00050000  2**0
+  8 ._user_heap_stack 00000400  20012e14  20012e14  00050000  2**0
                   ALLOC
   9 .ARM.attributes 00000030  00000000  00000000  000416ec  2**0
                   CONTENTS, READONLY
- 10 .debug_info   0000a419  00000000  00000000  0004171c  2**0
+ 10 .debug_info   0000a4b8  00000000  00000000  0004171c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_abbrev 00001820  00000000  00000000  0004bb35  2**0
+ 11 .debug_abbrev 00001853  00000000  00000000  0004bbd4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_aranges 000008f0  00000000  00000000  0004d358  2**3
+ 12 .debug_aranges 000008f0  00000000  00000000  0004d428  2**3
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000808  00000000  00000000  0004dc48  2**3
+ 13 .debug_ranges 00000808  00000000  00000000  0004dd18  2**3
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_line   00003fd6  00000000  00000000  0004e450  2**0
+ 14 .debug_line   00004010  00000000  00000000  0004e520  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_str    00003023  00000000  00000000  00052426  2**0
+ 15 .debug_str    00003003  00000000  00000000  00052530  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .comment      0000007c  00000000  00000000  00055449  2**0
+ 16 .comment      0000007c  00000000  00000000  00055533  2**0
                   CONTENTS, READONLY
- 17 .debug_frame  000025bc  00000000  00000000  000554c8  2**2
+ 17 .debug_frame  000025bc  00000000  00000000  000555b0  2**2
                   CONTENTS, READONLY, DEBUGGING
+<<<<<<< HEAD
  18 .stabstr      0000003f  00000000  00000000  00057a84  2**0
 =======
   1 .text         0000365c  08000188  08000188  00010188  2**3
@@ -86,6 +90,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
  18 .stabstr      0000003f  00000000  00000000  0003a4b4  2**0
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 18 .stabstr      0000003f  00000000  00000000  00057b6c  2**0
+>>>>>>> sambranch
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -102,10 +109,10 @@ Disassembly of section .text:
  800019a:	2301      	movs	r3, #1
  800019c:	7023      	strb	r3, [r4, #0]
  800019e:	bd10      	pop	{r4, pc}
-<<<<<<< HEAD
  80001a0:	20000000 	.word	0x20000000
  80001a4:	00000000 	.word	0x00000000
  80001a8:	0802fd54 	.word	0x0802fd54
+<<<<<<< HEAD
 =======
  80001a0:	20000680 	.word	0x20000680
  80001a4:	00000000 	.word	0x00000000
@@ -114,6 +121,8 @@ Disassembly of section .text:
 =======
  80001a8:	080037cc 	.word	0x080037cc
 >>>>>>> MilanV1
+>>>>>>> sambranch
+=======
 >>>>>>> sambranch
 
 080001ac <frame_dummy>:
@@ -126,10 +135,13 @@ Disassembly of section .text:
  80001ba:	bd08      	pop	{r3, pc}
  80001bc:	00000000 	.word	0x00000000
 <<<<<<< HEAD
+<<<<<<< HEAD
  80001c0:	20000684 	.word	0x20000684
  80001c4:	080058e0 	.word	0x080058e0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  80001c0:	20000004 	.word	0x20000004
  80001c4:	0802fd54 	.word	0x0802fd54
 >>>>>>> sambranch
@@ -54772,8 +54784,8 @@ for (int i=0; i<40; i++) {
 
 08028904 <letter_select>:
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "letter_select.h"
+
 
 
 void letter_select(int x, int y, char letter, int backcolor, int textcolor){
@@ -60858,7 +60870,7 @@ void letter_select(int x, int y, char letter, int backcolor, int textcolor){
 
 
 
-	//____________________________________SWITCH_________________________________________
+	//____________________________________SWITCH VOOR LETTER KEUZE_________________________________________
 
 	switch (letter)
  802cdfa:	f107 0318 	add.w	r3, r7, #24
@@ -63512,17 +63524,12 @@ void letter_select(int x, int y, char letter, int backcolor, int textcolor){
  802e7e2:	bf00      	nop
 
 0802e7e4 <draw_text>:
-#include <stdio.h>
-#include <stdlib.h>
-#include "letter_select.h"
-=======
- 80001c0:	20000684 	.word	0x20000684
- 80001c4:	080037cc 	.word	0x080037cc
->>>>>>> MilanV1
+
+#include "text.h"
 
 
-<<<<<<< HEAD
-void draw_text (int x, int y, char text[], int backcolor, int textcolor) {
+
+void draw_text (int x, int y, char text[], int backcolor, int textcolor) { //functie voor het schrijven van tekst
  802e7e4:	b580      	push	{r7, lr}
  802e7e6:	b088      	sub	sp, #32
  802e7e8:	af02      	add	r7, sp, #8
@@ -63531,7 +63538,7 @@ void draw_text (int x, int y, char text[], int backcolor, int textcolor) {
  802e7ee:	607a      	str	r2, [r7, #4]
  802e7f0:	603b      	str	r3, [r7, #0]
 
-	for(int i=0;i<strlen(text);i++)
+	for(int i=0;i<strlen(text);i++) //uit de "text" string individuele letters en kleuren halen
  802e7f2:	2300      	movs	r3, #0
  802e7f4:	617b      	str	r3, [r7, #20]
  802e7f6:	e010      	b.n	802e81a <draw_text+0x36>
@@ -63551,7 +63558,7 @@ void draw_text (int x, int y, char text[], int backcolor, int textcolor) {
  802e80e:	68fb      	ldr	r3, [r7, #12]
  802e810:	3305      	adds	r3, #5
  802e812:	60fb      	str	r3, [r7, #12]
-	for(int i=0;i<strlen(text);i++)
+	for(int i=0;i<strlen(text);i++) //uit de "text" string individuele letters en kleuren halen
  802e814:	697b      	ldr	r3, [r7, #20]
  802e816:	3301      	adds	r3, #1
  802e818:	617b      	str	r3, [r7, #20]
@@ -63569,6 +63576,7 @@ void draw_text (int x, int y, char text[], int backcolor, int textcolor) {
  802e82e:	bd80      	pop	{r7, pc}
 
 0802e830 <NVIC_Init>:
+<<<<<<< HEAD
 =======
 080001dc <__aeabi_drsub>:
  80001dc:	f081 4100 	eor.w	r1, r1, #2147483648	; 0x80000000
@@ -68168,12 +68176,15 @@ void wait_ms(int time_ms)
 08000eb4 <NVIC_Init>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  NVIC_InitStruct: pointer to a NVIC_InitTypeDef structure that contains
   *         the configuration information for the specified NVIC peripheral.
   * @retval None
   */
 void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002ba4:	b480      	push	{r7}
  8002ba6:	b085      	sub	sp, #20
@@ -68188,6 +68199,8 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
  8002bb6:	737b      	strb	r3, [r7, #13]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802e830:	b480      	push	{r7}
  802e832:	b085      	sub	sp, #20
  802e834:	af00      	add	r7, sp, #0
@@ -68199,6 +68212,7 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
  802e83e:	73bb      	strb	r3, [r7, #14]
  802e840:	230f      	movs	r3, #15
  802e842:	737b      	strb	r3, [r7, #13]
+<<<<<<< HEAD
 =======
  8000eb4:	b480      	push	{r7}
  8000eb6:	b085      	sub	sp, #20
@@ -68213,6 +68227,8 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
  8000ec6:	737b      	strb	r3, [r7, #13]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
   assert_param(IS_NVIC_PREEMPTION_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority));  
@@ -68220,12 +68236,15 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
     
   if (NVIC_InitStruct->NVIC_IRQChannelCmd != DISABLE)
 <<<<<<< HEAD
+<<<<<<< HEAD
  8002bb8:	687b      	ldr	r3, [r7, #4]
  8002bba:	78db      	ldrb	r3, [r3, #3]
  8002bbc:	2b00      	cmp	r3, #0
  8002bbe:	d039      	beq.n	8002c34 <NVIC_Init+0x90>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802e844:	687b      	ldr	r3, [r7, #4]
  802e846:	78db      	ldrb	r3, [r3, #3]
  802e848:	2b00      	cmp	r3, #0
@@ -68296,6 +68315,7 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
  802e8b6:	fa01 f303 	lsl.w	r3, r1, r3
     NVIC->ISER[NVIC_InitStruct->NVIC_IRQChannel >> 0x05] =
  802e8ba:	f842 3020 	str.w	r3, [r2, r0, lsl #2]
+<<<<<<< HEAD
 =======
  8000ec8:	687b      	ldr	r3, [r7, #4]
  8000eca:	78db      	ldrb	r3, [r3, #3]
@@ -68373,6 +68393,8 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
  8000f3e:	f842 3020 	str.w	r3, [r2, r0, lsl #2]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   {
     /* Disable the Selected IRQ Channels -------------------------------------*/
     NVIC->ICER[NVIC_InitStruct->NVIC_IRQChannel >> 0x05] =
@@ -68380,9 +68402,12 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8002c32:	e00f      	b.n	8002c54 <NVIC_Init+0xb0>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802e8be:	e00f      	b.n	802e8e0 <NVIC_Init+0xb0>
     NVIC->ICER[NVIC_InitStruct->NVIC_IRQChannel >> 0x05] =
  802e8c0:	490b      	ldr	r1, [pc, #44]	; (802e8f0 <NVIC_Init+0xc0>)
@@ -68410,6 +68435,7 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
  802e8f0:	e000e100 	.word	0xe000e100
 
 0802e8f4 <DMA_DeInit>:
+<<<<<<< HEAD
 =======
  8000f42:	e00f      	b.n	8000f64 <NVIC_Init+0xb0>
 >>>>>>> sambranch
@@ -68452,6 +68478,8 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
 08000f78 <DMA_DeInit>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  DMAy_Streamx: where y can be 1 or 2 to select the DMA and x can be 0
   *         to 7 to select the DMA Stream.
   * @retval None
@@ -68459,16 +68487,20 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
 void DMA_DeInit(DMA_Stream_TypeDef* DMAy_Streamx)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  8002c68:	b480      	push	{r7}
  8002c6a:	b083      	sub	sp, #12
  8002c6c:	af00      	add	r7, sp, #0
  8002c6e:	6078      	str	r0, [r7, #4]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802e8f4:	b480      	push	{r7}
  802e8f6:	b083      	sub	sp, #12
  802e8f8:	af00      	add	r7, sp, #0
  802e8fa:	6078      	str	r0, [r7, #4]
+<<<<<<< HEAD
 =======
  8000f78:	b480      	push	{r7}
  8000f7a:	b083      	sub	sp, #12
@@ -68476,11 +68508,14 @@ void DMA_DeInit(DMA_Stream_TypeDef* DMAy_Streamx)
  8000f7e:	6078      	str	r0, [r7, #4]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_DMA_ALL_PERIPH(DMAy_Streamx));
 
   /* Disable the selected DMAy Streamx */
   DMAy_Streamx->CR &= ~((uint32_t)DMA_SxCR_EN);
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002c70:	687b      	ldr	r3, [r7, #4]
  8002c72:	681b      	ldr	r3, [r3, #0]
@@ -68489,6 +68524,8 @@ void DMA_DeInit(DMA_Stream_TypeDef* DMAy_Streamx)
  8002c7a:	601a      	str	r2, [r3, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802e8fc:	687b      	ldr	r3, [r7, #4]
  802e8fe:	681b      	ldr	r3, [r3, #0]
  802e900:	f023 0201 	bic.w	r2, r3, #1
@@ -68543,6 +68580,7 @@ void DMA_DeInit(DMA_Stream_TypeDef* DMAy_Streamx)
  802e934:	4b45      	ldr	r3, [pc, #276]	; (802ea4c <DMA_DeInit+0x158>)
  802e936:	223d      	movs	r2, #61	; 0x3d
  802e938:	609a      	str	r2, [r3, #8]
+<<<<<<< HEAD
 =======
  8000f80:	687b      	ldr	r3, [r7, #4]
  8000f82:	681b      	ldr	r3, [r3, #0]
@@ -68606,6 +68644,8 @@ void DMA_DeInit(DMA_Stream_TypeDef* DMAy_Streamx)
  8000fbc:	609a      	str	r2, [r3, #8]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
     {
       /* Reset interrupt pending bits for DMA2 Stream7 */
       DMA2->HIFCR = DMA_Stream7_IT_MASK;
@@ -68613,9 +68653,12 @@ void DMA_DeInit(DMA_Stream_TypeDef* DMAy_Streamx)
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8002cae:	e07e      	b.n	8002dae <DMA_DeInit+0x146>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802e93a:	e07e      	b.n	802ea3a <DMA_DeInit+0x146>
   else if (DMAy_Streamx == DMA1_Stream1)
  802e93c:	687b      	ldr	r3, [r7, #4]
@@ -68810,6 +68853,7 @@ void DMA_DeInit(DMA_Stream_TypeDef* DMAy_Streamx)
  802ea98:	400264b8 	.word	0x400264b8
 
 0802ea9c <DMA_Init>:
+<<<<<<< HEAD
 =======
  8000fbe:	e07e      	b.n	80010be <DMA_DeInit+0x146>
 >>>>>>> sambranch
@@ -69039,12 +69083,15 @@ void DMA_DeInit(DMA_Stream_TypeDef* DMAy_Streamx)
 08001120 <DMA_Init>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  DMA_InitStruct: pointer to a DMA_InitTypeDef structure that contains
   *         the configuration information for the specified DMA Stream.  
   * @retval None
   */
 void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002e10:	b480      	push	{r7}
  8002e12:	b085      	sub	sp, #20
@@ -69056,6 +69103,8 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  8002e1c:	60fb      	str	r3, [r7, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ea9c:	b480      	push	{r7}
  802ea9e:	b085      	sub	sp, #20
  802eaa0:	af00      	add	r7, sp, #0
@@ -69064,6 +69113,7 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
   uint32_t tmpreg = 0;
  802eaa6:	2300      	movs	r3, #0
  802eaa8:	60fb      	str	r3, [r7, #12]
+<<<<<<< HEAD
 =======
  8001120:	b480      	push	{r7}
  8001122:	b085      	sub	sp, #20
@@ -69075,12 +69125,15 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  800112c:	60fb      	str	r3, [r7, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   assert_param(IS_DMA_MEMORY_BURST(DMA_InitStruct->DMA_MemoryBurst));
   assert_param(IS_DMA_PERIPHERAL_BURST(DMA_InitStruct->DMA_PeripheralBurst));
 
   /*------------------------- DMAy Streamx CR Configuration ------------------*/
   /* Get the DMAy_Streamx CR value */
   tmpreg = DMAy_Streamx->CR;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002e1e:	687b      	ldr	r3, [r7, #4]
  8002e20:	681b      	ldr	r3, [r3, #0]
@@ -69094,6 +69147,8 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  8002e2a:	60fb      	str	r3, [r7, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eaaa:	687b      	ldr	r3, [r7, #4]
  802eaac:	681b      	ldr	r3, [r3, #0]
  802eaae:	60fb      	str	r3, [r7, #12]
@@ -69104,6 +69159,7 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  802eab2:	4b25      	ldr	r3, [pc, #148]	; (802eb48 <DMA_Init+0xac>)
  802eab4:	4013      	ands	r3, r2
  802eab6:	60fb      	str	r3, [r7, #12]
+<<<<<<< HEAD
 =======
  800112e:	687b      	ldr	r3, [r7, #4]
  8001130:	681b      	ldr	r3, [r3, #0]
@@ -69117,12 +69173,15 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  800113a:	60fb      	str	r3, [r7, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Set MSIZE bits according to DMA_MemoryDataSize value */
   /* Set CIRC bit according to DMA_Mode value */
   /* Set PL bits according to DMA_Priority value */
   /* Set MBURST bits according to DMA_MemoryBurst value */
   /* Set PBURST bits according to DMA_PeripheralBurst value */
   tmpreg |= DMA_InitStruct->DMA_Channel | DMA_InitStruct->DMA_DIR |
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002e2c:	683b      	ldr	r3, [r7, #0]
  8002e2e:	681a      	ldr	r2, [r3, #0]
@@ -69131,6 +69190,8 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  8002e34:	431a      	orrs	r2, r3
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eab8:	683b      	ldr	r3, [r7, #0]
  802eaba:	681a      	ldr	r2, [r3, #0]
  802eabc:	683b      	ldr	r3, [r7, #0]
@@ -69182,6 +69243,7 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  802eaf8:	687b      	ldr	r3, [r7, #4]
  802eafa:	68fa      	ldr	r2, [r7, #12]
  802eafc:	601a      	str	r2, [r3, #0]
+<<<<<<< HEAD
 =======
  800113c:	683b      	ldr	r3, [r7, #0]
  800113e:	681a      	ldr	r2, [r3, #0]
@@ -69242,10 +69304,13 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  8001180:	601a      	str	r2, [r3, #0]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
   /*------------------------- DMAy Streamx FCR Configuration -----------------*/
   /* Get the DMAy_Streamx FCR value */
   tmpreg = DMAy_Streamx->FCR;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002e72:	687b      	ldr	r3, [r7, #4]
  8002e74:	695b      	ldr	r3, [r3, #20]
@@ -69258,6 +69323,8 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  8002e7e:	60fb      	str	r3, [r7, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eafe:	687b      	ldr	r3, [r7, #4]
  802eb00:	695b      	ldr	r3, [r3, #20]
  802eb02:	60fb      	str	r3, [r7, #12]
@@ -69267,6 +69334,7 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  802eb04:	68fb      	ldr	r3, [r7, #12]
  802eb06:	f023 0307 	bic.w	r3, r3, #7
  802eb0a:	60fb      	str	r3, [r7, #12]
+<<<<<<< HEAD
 =======
  8001182:	687b      	ldr	r3, [r7, #4]
  8001184:	695b      	ldr	r3, [r3, #20]
@@ -69279,11 +69347,14 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  800118e:	60fb      	str	r3, [r7, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
   /* Configure DMAy Streamx FIFO: 
     Set DMDIS bits according to DMA_FIFOMode value 
     Set FTH bits according to DMA_FIFOThreshold value */
   tmpreg |= DMA_InitStruct->DMA_FIFOMode | DMA_InitStruct->DMA_FIFOThreshold;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002e80:	683b      	ldr	r3, [r7, #0]
  8002e82:	6ada      	ldr	r2, [r3, #44]	; 0x2c
@@ -69301,6 +69372,8 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  8002e94:	615a      	str	r2, [r3, #20]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eb0c:	683b      	ldr	r3, [r7, #0]
  802eb0e:	6ada      	ldr	r2, [r3, #44]	; 0x2c
  802eb10:	683b      	ldr	r3, [r7, #0]
@@ -69315,6 +69388,7 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  802eb1c:	687b      	ldr	r3, [r7, #4]
  802eb1e:	68fa      	ldr	r2, [r7, #12]
  802eb20:	615a      	str	r2, [r3, #20]
+<<<<<<< HEAD
 =======
  8001190:	683b      	ldr	r3, [r7, #0]
  8001192:	6ada      	ldr	r2, [r3, #44]	; 0x2c
@@ -69332,10 +69406,13 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  80011a4:	615a      	str	r2, [r3, #20]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
   /*------------------------- DMAy Streamx NDTR Configuration ----------------*/
   /* Write to DMAy Streamx NDTR register */
   DMAy_Streamx->NDTR = DMA_InitStruct->DMA_BufferSize;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002e96:	683b      	ldr	r3, [r7, #0]
  8002e98:	691a      	ldr	r2, [r3, #16]
@@ -69343,10 +69420,13 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  8002e9c:	605a      	str	r2, [r3, #4]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eb22:	683b      	ldr	r3, [r7, #0]
  802eb24:	691a      	ldr	r2, [r3, #16]
  802eb26:	687b      	ldr	r3, [r7, #4]
  802eb28:	605a      	str	r2, [r3, #4]
+<<<<<<< HEAD
 =======
  80011a6:	683b      	ldr	r3, [r7, #0]
  80011a8:	691a      	ldr	r2, [r3, #16]
@@ -69354,10 +69434,13 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  80011ac:	605a      	str	r2, [r3, #4]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
   /*------------------------- DMAy Streamx PAR Configuration -----------------*/
   /* Write to DMAy Streamx PAR */
   DMAy_Streamx->PAR = DMA_InitStruct->DMA_PeripheralBaseAddr;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002e9e:	683b      	ldr	r3, [r7, #0]
  8002ea0:	685a      	ldr	r2, [r3, #4]
@@ -69365,10 +69448,13 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  8002ea4:	609a      	str	r2, [r3, #8]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eb2a:	683b      	ldr	r3, [r7, #0]
  802eb2c:	685a      	ldr	r2, [r3, #4]
  802eb2e:	687b      	ldr	r3, [r7, #4]
  802eb30:	609a      	str	r2, [r3, #8]
+<<<<<<< HEAD
 =======
  80011ae:	683b      	ldr	r3, [r7, #0]
  80011b0:	685a      	ldr	r2, [r3, #4]
@@ -69376,10 +69462,13 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  80011b4:	609a      	str	r2, [r3, #8]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
   /*------------------------- DMAy Streamx M0AR Configuration ----------------*/
   /* Write to DMAy Streamx M0AR */
   DMAy_Streamx->M0AR = DMA_InitStruct->DMA_Memory0BaseAddr;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002ea6:	683b      	ldr	r3, [r7, #0]
  8002ea8:	689a      	ldr	r2, [r3, #8]
@@ -69397,6 +69486,8 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
 08002ec0 <DMA_Cmd>:
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eb32:	683b      	ldr	r3, [r7, #0]
  802eb34:	689a      	ldr	r2, [r3, #8]
  802eb36:	687b      	ldr	r3, [r7, #4]
@@ -69411,6 +69502,7 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
  802eb48:	f01c803f 	.word	0xf01c803f
 
 0802eb4c <DMA_Cmd>:
+<<<<<<< HEAD
 =======
  80011b6:	683b      	ldr	r3, [r7, #0]
  80011b8:	689a      	ldr	r2, [r3, #8]
@@ -69428,12 +69520,15 @@ void DMA_Init(DMA_Stream_TypeDef* DMAy_Streamx, DMA_InitTypeDef* DMA_InitStruct)
 080011d0 <DMA_Cmd>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   *        this single data is finished.            
   *    
   * @retval None
   */
 void DMA_Cmd(DMA_Stream_TypeDef* DMAy_Streamx, FunctionalState NewState)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002ec0:	b480      	push	{r7}
  8002ec2:	b083      	sub	sp, #12
@@ -69443,12 +69538,15 @@ void DMA_Cmd(DMA_Stream_TypeDef* DMAy_Streamx, FunctionalState NewState)
  8002eca:	70fb      	strb	r3, [r7, #3]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eb4c:	b480      	push	{r7}
  802eb4e:	b083      	sub	sp, #12
  802eb50:	af00      	add	r7, sp, #0
  802eb52:	6078      	str	r0, [r7, #4]
  802eb54:	460b      	mov	r3, r1
  802eb56:	70fb      	strb	r3, [r7, #3]
+<<<<<<< HEAD
 =======
  80011d0:	b480      	push	{r7}
  80011d2:	b083      	sub	sp, #12
@@ -69458,11 +69556,14 @@ void DMA_Cmd(DMA_Stream_TypeDef* DMAy_Streamx, FunctionalState NewState)
  80011da:	70fb      	strb	r3, [r7, #3]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_DMA_ALL_PERIPH(DMAy_Streamx));
   assert_param(IS_FUNCTIONAL_STATE(NewState));
 
   if (NewState != DISABLE)
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002ecc:	78fb      	ldrb	r3, [r7, #3]
  8002ece:	2b00      	cmp	r3, #0
@@ -69477,6 +69578,8 @@ void DMA_Cmd(DMA_Stream_TypeDef* DMAy_Streamx, FunctionalState NewState)
  8002edc:	601a      	str	r2, [r3, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eb58:	78fb      	ldrb	r3, [r7, #3]
  802eb5a:	2b00      	cmp	r3, #0
  802eb5c:	d006      	beq.n	802eb6c <DMA_Cmd+0x20>
@@ -69488,6 +69591,7 @@ void DMA_Cmd(DMA_Stream_TypeDef* DMAy_Streamx, FunctionalState NewState)
  802eb62:	f043 0201 	orr.w	r2, r3, #1
  802eb66:	687b      	ldr	r3, [r7, #4]
  802eb68:	601a      	str	r2, [r3, #0]
+<<<<<<< HEAD
 =======
  80011dc:	78fb      	ldrb	r3, [r7, #3]
  80011de:	2b00      	cmp	r3, #0
@@ -69502,6 +69606,8 @@ void DMA_Cmd(DMA_Stream_TypeDef* DMAy_Streamx, FunctionalState NewState)
  80011ec:	601a      	str	r2, [r3, #0]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   else
   {
     /* Disable the selected DMAy Streamx by clearing EN bit */
@@ -69509,9 +69615,12 @@ void DMA_Cmd(DMA_Stream_TypeDef* DMAy_Streamx, FunctionalState NewState)
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8002ede:	e005      	b.n	8002eec <DMA_Cmd+0x2c>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eb6a:	e005      	b.n	802eb78 <DMA_Cmd+0x2c>
     DMAy_Streamx->CR &= ~(uint32_t)DMA_SxCR_EN;
  802eb6c:	687b      	ldr	r3, [r7, #4]
@@ -69527,6 +69636,7 @@ void DMA_Cmd(DMA_Stream_TypeDef* DMAy_Streamx, FunctionalState NewState)
  802eb82:	4770      	bx	lr
 
 0802eb84 <DMA_ITConfig>:
+<<<<<<< HEAD
 =======
  80011ee:	e005      	b.n	80011fc <DMA_Cmd+0x2c>
 >>>>>>> sambranch
@@ -69549,12 +69659,15 @@ void DMA_Cmd(DMA_Stream_TypeDef* DMAy_Streamx, FunctionalState NewState)
 08001208 <DMA_ITConfig>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  NewState: new state of the specified DMA interrupts.
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
 void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalState NewState)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002ef8:	b480      	push	{r7}
  8002efa:	b085      	sub	sp, #20
@@ -69565,6 +69678,8 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
  8002f04:	71fb      	strb	r3, [r7, #7]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eb84:	b480      	push	{r7}
  802eb86:	b085      	sub	sp, #20
  802eb88:	af00      	add	r7, sp, #0
@@ -69572,6 +69687,7 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
  802eb8c:	60b9      	str	r1, [r7, #8]
  802eb8e:	4613      	mov	r3, r2
  802eb90:	71fb      	strb	r3, [r7, #7]
+<<<<<<< HEAD
 =======
  8001208:	b480      	push	{r7}
  800120a:	b085      	sub	sp, #20
@@ -69582,6 +69698,8 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
  8001214:	71fb      	strb	r3, [r7, #7]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   assert_param(IS_DMA_ALL_PERIPH(DMAy_Streamx));
   assert_param(IS_DMA_CONFIG_IT(DMA_IT));
   assert_param(IS_FUNCTIONAL_STATE(NewState));
@@ -69589,12 +69707,15 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
   /* Check if the DMA_IT parameter contains a FIFO interrupt */
   if ((DMA_IT & DMA_IT_FE) != 0)
 <<<<<<< HEAD
+<<<<<<< HEAD
  8002f06:	68bb      	ldr	r3, [r7, #8]
  8002f08:	f003 0380 	and.w	r3, r3, #128	; 0x80
  8002f0c:	2b00      	cmp	r3, #0
  8002f0e:	d00f      	beq.n	8002f30 <DMA_ITConfig+0x38>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eb92:	68bb      	ldr	r3, [r7, #8]
  802eb94:	f003 0380 	and.w	r3, r3, #128	; 0x80
  802eb98:	2b00      	cmp	r3, #0
@@ -69613,6 +69734,7 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
  802ebaa:	68fb      	ldr	r3, [r7, #12]
  802ebac:	615a      	str	r2, [r3, #20]
  802ebae:	e005      	b.n	802ebbc <DMA_ITConfig+0x38>
+<<<<<<< HEAD
 =======
  8001216:	68bb      	ldr	r3, [r7, #8]
  8001218:	f003 0380 	and.w	r3, r3, #128	; 0x80
@@ -69643,11 +69765,14 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
  8001232:	e005      	b.n	8001240 <DMA_ITConfig+0x38>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
     }    
     else 
     {
       /* Disable the selected DMA FIFO interrupts */
       DMAy_Streamx->FCR &= ~(uint32_t)DMA_IT_FE;  
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002f24:	68fb      	ldr	r3, [r7, #12]
  8002f26:	695b      	ldr	r3, [r3, #20]
@@ -69656,11 +69781,14 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
  8002f2e:	615a      	str	r2, [r3, #20]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ebb0:	68fb      	ldr	r3, [r7, #12]
  802ebb2:	695b      	ldr	r3, [r3, #20]
  802ebb4:	f023 0280 	bic.w	r2, r3, #128	; 0x80
  802ebb8:	68fb      	ldr	r3, [r7, #12]
  802ebba:	615a      	str	r2, [r3, #20]
+<<<<<<< HEAD
 =======
  8001234:	68fb      	ldr	r3, [r7, #12]
  8001236:	695b      	ldr	r3, [r3, #20]
@@ -69669,17 +69797,22 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
  800123e:	615a      	str	r2, [r3, #20]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
     }
   }
 
   /* Check if the DMA_IT parameter contains a Transfer interrupt */
   if (DMA_IT != DMA_IT_FE)
 <<<<<<< HEAD
+<<<<<<< HEAD
  8002f30:	68bb      	ldr	r3, [r7, #8]
  8002f32:	2b80      	cmp	r3, #128	; 0x80
  8002f34:	d014      	beq.n	8002f60 <DMA_ITConfig+0x68>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ebbc:	68bb      	ldr	r3, [r7, #8]
  802ebbe:	2b80      	cmp	r3, #128	; 0x80
  802ebc0:	d014      	beq.n	802ebec <DMA_ITConfig+0x68>
@@ -69698,6 +69831,7 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
  802ebd2:	431a      	orrs	r2, r3
  802ebd4:	68fb      	ldr	r3, [r7, #12]
  802ebd6:	601a      	str	r2, [r3, #0]
+<<<<<<< HEAD
 =======
  8001240:	68bb      	ldr	r3, [r7, #8]
  8001242:	2b80      	cmp	r3, #128	; 0x80
@@ -69729,6 +69863,8 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
  800125a:	601a      	str	r2, [r3, #0]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
     {
       /* Disable the selected DMA transfer interrupts */
       DMAy_Streamx->CR &= ~(uint32_t)(DMA_IT & TRANSFER_IT_ENABLE_MASK);
@@ -69736,9 +69872,12 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8002f4c:	e008      	b.n	8002f60 <DMA_ITConfig+0x68>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ebd8:	e008      	b.n	802ebec <DMA_ITConfig+0x68>
       DMAy_Streamx->CR &= ~(uint32_t)(DMA_IT & TRANSFER_IT_ENABLE_MASK);
  802ebda:	68fb      	ldr	r3, [r7, #12]
@@ -69757,6 +69896,7 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
  802ebf6:	4770      	bx	lr
 
 0802ebf8 <DMA_GetITStatus>:
+<<<<<<< HEAD
 =======
  800125c:	e008      	b.n	8001270 <DMA_ITConfig+0x68>
 >>>>>>> sambranch
@@ -69782,12 +69922,15 @@ void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalS
 0800127c <DMA_GetITStatus>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   *            @arg DMA_IT_FEIFx:  Streamx FIFO error interrupt
   *         Where x can be 0 to 7 to select the DMA Stream.
   * @retval The new state of DMA_IT (SET or RESET).
   */
 ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002f6c:	b480      	push	{r7}
  8002f6e:	b087      	sub	sp, #28
@@ -69796,6 +69939,8 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8002f74:	6039      	str	r1, [r7, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ebf8:	b480      	push	{r7}
  802ebfa:	b087      	sub	sp, #28
  802ebfc:	af00      	add	r7, sp, #0
@@ -69810,6 +69955,7 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  802ec08:	60fb      	str	r3, [r7, #12]
  802ec0a:	2300      	movs	r3, #0
  802ec0c:	60bb      	str	r3, [r7, #8]
+<<<<<<< HEAD
 =======
  800127c:	b480      	push	{r7}
  800127e:	b087      	sub	sp, #28
@@ -69834,12 +69980,15 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8001290:	60bb      	str	r3, [r7, #8]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_DMA_ALL_PERIPH(DMAy_Streamx));
   assert_param(IS_DMA_GET_IT(DMA_IT));
  
   /* Determine the DMA to which belongs the stream */
   if (DMAy_Streamx < DMA2_Stream0)
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002f82:	687b      	ldr	r3, [r7, #4]
  8002f84:	4a22      	ldr	r2, [pc, #136]	; (8003010 <DMA_GetITStatus+0xa4>)
@@ -69853,6 +70002,8 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8002f8e:	e001      	b.n	8002f94 <DMA_GetITStatus+0x28>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ec0e:	687b      	ldr	r3, [r7, #4]
  802ec10:	4a22      	ldr	r2, [pc, #136]	; (802ec9c <DMA_GetITStatus+0xa4>)
  802ec12:	4293      	cmp	r3, r2
@@ -69863,6 +70014,7 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  802ec16:	4b22      	ldr	r3, [pc, #136]	; (802eca0 <DMA_GetITStatus+0xa8>)
  802ec18:	613b      	str	r3, [r7, #16]
  802ec1a:	e001      	b.n	802ec20 <DMA_GetITStatus+0x28>
+<<<<<<< HEAD
 =======
  8001292:	687b      	ldr	r3, [r7, #4]
  8001294:	4a22      	ldr	r2, [pc, #136]	; (8001320 <DMA_GetITStatus+0xa4>)
@@ -69876,11 +70028,14 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  800129e:	e001      	b.n	80012a4 <DMA_GetITStatus+0x28>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   } 
   else 
   {
     /* DMAy_Streamx belongs to DMA2 */
     DMAy = DMA2; 
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002f90:	4b21      	ldr	r3, [pc, #132]	; (8003018 <DMA_GetITStatus+0xac>)
  8002f92:	613b      	str	r3, [r7, #16]
@@ -69893,10 +70048,15 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  80012a2:	613b      	str	r3, [r7, #16]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802ec1c:	4b21      	ldr	r3, [pc, #132]	; (802eca4 <DMA_GetITStatus+0xac>)
+ 802ec1e:	613b      	str	r3, [r7, #16]
+>>>>>>> sambranch
   }
 
   /* Check if the interrupt enable bit is in the CR or FCR register */
   if ((DMA_IT & TRANSFER_IT_MASK) != (uint32_t)RESET)
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002f94:	683b      	ldr	r3, [r7, #0]
  8002f96:	f023 23f0 	bic.w	r3, r3, #4026593280	; 0xf000f000
@@ -69905,6 +70065,8 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8002fa0:	d00a      	beq.n	8002fb8 <DMA_GetITStatus+0x4c>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ec20:	683b      	ldr	r3, [r7, #0]
  802ec22:	f023 23f0 	bic.w	r3, r3, #4026593280	; 0xf000f000
  802ec26:	f023 13c3 	bic.w	r3, r3, #12779715	; 0xc300c3
@@ -69926,6 +70088,7 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  802ec3e:	4013      	ands	r3, r2
  802ec40:	60bb      	str	r3, [r7, #8]
  802ec42:	e004      	b.n	802ec4e <DMA_GetITStatus+0x56>
+<<<<<<< HEAD
 =======
  80012a4:	683b      	ldr	r3, [r7, #0]
  80012a6:	f023 23f0 	bic.w	r3, r3, #4026593280	; 0xf000f000
@@ -69959,11 +70122,14 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  80012c6:	e004      	b.n	80012d2 <DMA_GetITStatus+0x56>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
   else 
   {
     /* Check the enable bit in FCR register */
     enablestatus = (uint32_t)(DMAy_Streamx->FCR & DMA_IT_FE); 
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002fb8:	687b      	ldr	r3, [r7, #4]
  8002fba:	695b      	ldr	r3, [r3, #20]
@@ -69971,10 +70137,13 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8002fc0:	60bb      	str	r3, [r7, #8]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ec44:	687b      	ldr	r3, [r7, #4]
  802ec46:	695b      	ldr	r3, [r3, #20]
  802ec48:	f003 0380 	and.w	r3, r3, #128	; 0x80
  802ec4c:	60bb      	str	r3, [r7, #8]
+<<<<<<< HEAD
 =======
  80012c8:	687b      	ldr	r3, [r7, #4]
  80012ca:	695b      	ldr	r3, [r3, #20]
@@ -69982,10 +70151,13 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  80012d0:	60bb      	str	r3, [r7, #8]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
  
   /* Check if the interrupt pending flag is in LISR or HISR */
   if ((DMA_IT & HIGH_ISR_MASK) != (uint32_t)RESET)
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002fc2:	683b      	ldr	r3, [r7, #0]
  8002fc4:	f003 5300 	and.w	r3, r3, #536870912	; 0x20000000
@@ -70000,6 +70172,8 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8002fd2:	e002      	b.n	8002fda <DMA_GetITStatus+0x6e>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ec4e:	683b      	ldr	r3, [r7, #0]
  802ec50:	f003 5300 	and.w	r3, r3, #536870912	; 0x20000000
  802ec54:	2b00      	cmp	r3, #0
@@ -70011,6 +70185,7 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  802ec5a:	685b      	ldr	r3, [r3, #4]
  802ec5c:	60fb      	str	r3, [r7, #12]
  802ec5e:	e002      	b.n	802ec66 <DMA_GetITStatus+0x6e>
+<<<<<<< HEAD
 =======
  80012d2:	683b      	ldr	r3, [r7, #0]
  80012d4:	f003 5300 	and.w	r3, r3, #536870912	; 0x20000000
@@ -70025,11 +70200,14 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  80012e2:	e002      	b.n	80012ea <DMA_GetITStatus+0x6e>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
   else
   {
     /* Get DMAy LISR register value */
     tmpreg = DMAy->LISR ;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002fd4:	693b      	ldr	r3, [r7, #16]
  8002fd6:	681b      	ldr	r3, [r3, #0]
@@ -70045,10 +70223,16 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  80012e8:	60fb      	str	r3, [r7, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802ec60:	693b      	ldr	r3, [r7, #16]
+ 802ec62:	681b      	ldr	r3, [r3, #0]
+ 802ec64:	60fb      	str	r3, [r7, #12]
+>>>>>>> sambranch
   } 
 
   /* mask all reserved bits */
   tmpreg &= (uint32_t)RESERVED_MASK;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002fda:	68fb      	ldr	r3, [r7, #12]
  8002fdc:	f023 23f0 	bic.w	r3, r3, #4026593280	; 0xf000f000
@@ -70056,6 +70240,8 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8002fe4:	60fb      	str	r3, [r7, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ec66:	68fb      	ldr	r3, [r7, #12]
  802ec68:	f023 23f0 	bic.w	r3, r3, #4026593280	; 0xf000f000
  802ec6c:	f023 1382 	bic.w	r3, r3, #8519810	; 0x820082
@@ -70077,6 +70263,7 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  802ec82:	2301      	movs	r3, #1
  802ec84:	75fb      	strb	r3, [r7, #23]
  802ec86:	e001      	b.n	802ec8c <DMA_GetITStatus+0x94>
+<<<<<<< HEAD
 =======
  80012ea:	68fb      	ldr	r3, [r7, #12]
  80012ec:	f023 23f0 	bic.w	r3, r3, #4026593280	; 0xf000f000
@@ -70107,11 +70294,14 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  800130a:	e001      	b.n	8001310 <DMA_GetITStatus+0x94>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
   else
   {
     /* DMA_IT is reset */
     bitstatus = RESET;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8002ffc:	2300      	movs	r3, #0
  8002ffe:	75fb      	strb	r3, [r7, #23]
@@ -70124,10 +70314,15 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  800130e:	75fb      	strb	r3, [r7, #23]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802ec88:	2300      	movs	r3, #0
+ 802ec8a:	75fb      	strb	r3, [r7, #23]
+>>>>>>> sambranch
   }
 
   /* Return the DMA_IT status */
   return  bitstatus;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003000:	7dfb      	ldrb	r3, [r7, #23]
 }
@@ -70144,6 +70339,8 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
 0800301c <DMA_ClearITPendingBit>:
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ec8c:	7dfb      	ldrb	r3, [r7, #23]
 }
  802ec8e:	4618      	mov	r0, r3
@@ -70157,6 +70354,7 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  802eca4:	40026400 	.word	0x40026400
 
 0802eca8 <DMA_ClearITPendingBit>:
+<<<<<<< HEAD
 =======
  8001310:	7dfb      	ldrb	r3, [r7, #23]
 }
@@ -70173,12 +70371,15 @@ ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
 0800132c <DMA_ClearITPendingBit>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   *            @arg DMA_IT_FEIFx:  Streamx FIFO error interrupt
   *         Where x can be 0 to 7 to select the DMA Stream.
   * @retval None
   */
 void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  800301c:	b480      	push	{r7}
  800301e:	b085      	sub	sp, #20
@@ -70187,11 +70388,14 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8003024:	6039      	str	r1, [r7, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eca8:	b480      	push	{r7}
  802ecaa:	b085      	sub	sp, #20
  802ecac:	af00      	add	r7, sp, #0
  802ecae:	6078      	str	r0, [r7, #4]
  802ecb0:	6039      	str	r1, [r7, #0]
+<<<<<<< HEAD
 =======
  800132c:	b480      	push	{r7}
  800132e:	b085      	sub	sp, #20
@@ -70200,12 +70404,15 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8001334:	6039      	str	r1, [r7, #0]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_DMA_ALL_PERIPH(DMAy_Streamx));
   assert_param(IS_DMA_CLEAR_IT(DMA_IT));
 
   /* Determine the DMA to which belongs the stream */
   if (DMAy_Streamx < DMA2_Stream0)
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003026:	687b      	ldr	r3, [r7, #4]
  8003028:	4a10      	ldr	r2, [pc, #64]	; (800306c <DMA_ClearITPendingBit+0x50>)
@@ -70219,6 +70426,8 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8003032:	e001      	b.n	8003038 <DMA_ClearITPendingBit+0x1c>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ecb2:	687b      	ldr	r3, [r7, #4]
  802ecb4:	4a10      	ldr	r2, [pc, #64]	; (802ecf8 <DMA_ClearITPendingBit+0x50>)
  802ecb6:	4293      	cmp	r3, r2
@@ -70229,6 +70438,7 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  802ecba:	4b10      	ldr	r3, [pc, #64]	; (802ecfc <DMA_ClearITPendingBit+0x54>)
  802ecbc:	60fb      	str	r3, [r7, #12]
  802ecbe:	e001      	b.n	802ecc4 <DMA_ClearITPendingBit+0x1c>
+<<<<<<< HEAD
 =======
  8001336:	687b      	ldr	r3, [r7, #4]
  8001338:	4a10      	ldr	r2, [pc, #64]	; (800137c <DMA_ClearITPendingBit+0x50>)
@@ -70242,11 +70452,14 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8001342:	e001      	b.n	8001348 <DMA_ClearITPendingBit+0x1c>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   } 
   else 
   {
     /* DMAy_Streamx belongs to DMA2 */
     DMAy = DMA2; 
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003034:	4b0f      	ldr	r3, [pc, #60]	; (8003074 <DMA_ClearITPendingBit+0x58>)
  8003036:	60fb      	str	r3, [r7, #12]
@@ -70259,10 +70472,15 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  8001346:	60fb      	str	r3, [r7, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802ecc0:	4b0f      	ldr	r3, [pc, #60]	; (802ed00 <DMA_ClearITPendingBit+0x58>)
+ 802ecc2:	60fb      	str	r3, [r7, #12]
+>>>>>>> sambranch
   }
 
   /* Check if LIFCR or HIFCR register is targeted */
   if ((DMA_IT & HIGH_ISR_MASK) != (uint32_t)RESET)
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003038:	683b      	ldr	r3, [r7, #0]
  800303a:	f003 5300 	and.w	r3, r3, #536870912	; 0x20000000
@@ -70278,6 +70496,8 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  800304e:	60d3      	str	r3, [r2, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ecc4:	683b      	ldr	r3, [r7, #0]
  802ecc6:	f003 5300 	and.w	r3, r3, #536870912	; 0x20000000
  802ecca:	2b00      	cmp	r3, #0
@@ -70290,6 +70510,7 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  802ecd4:	f023 1382 	bic.w	r3, r3, #8519810	; 0x820082
  802ecd8:	68fa      	ldr	r2, [r7, #12]
  802ecda:	60d3      	str	r3, [r2, #12]
+<<<<<<< HEAD
 =======
  8001348:	683b      	ldr	r3, [r7, #0]
  800134a:	f003 5300 	and.w	r3, r3, #536870912	; 0x20000000
@@ -70305,6 +70526,8 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  800135e:	60d3      	str	r3, [r2, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   else 
   {
     /* Set DMAy LIFCR register clear interrupt bits */
@@ -70312,9 +70535,12 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
   }   
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003050:	e006      	b.n	8003060 <DMA_ClearITPendingBit+0x44>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ecdc:	e006      	b.n	802ecec <DMA_ClearITPendingBit+0x44>
     DMAy->LIFCR = (uint32_t)(DMA_IT & RESERVED_MASK);
  802ecde:	683b      	ldr	r3, [r7, #0]
@@ -70333,6 +70559,7 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
  802ed00:	40026400 	.word	0x40026400
 
 0802ed04 <GPIO_Init>:
+<<<<<<< HEAD
 =======
  8001360:	e006      	b.n	8001370 <DMA_ClearITPendingBit+0x44>
 >>>>>>> sambranch
@@ -70367,12 +70594,15 @@ void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT)
 08001388 <GPIO_Init>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  GPIO_InitStruct: pointer to a GPIO_InitTypeDef structure that contains
   *         the configuration information for the specified GPIO peripheral.
   * @retval None
   */
 void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003078:	b480      	push	{r7}
  800307a:	b087      	sub	sp, #28
@@ -70388,6 +70618,8 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  800308c:	60fb      	str	r3, [r7, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ed04:	b480      	push	{r7}
  802ed06:	b087      	sub	sp, #28
  802ed08:	af00      	add	r7, sp, #0
@@ -70400,6 +70632,7 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  802ed14:	613b      	str	r3, [r7, #16]
  802ed16:	2300      	movs	r3, #0
  802ed18:	60fb      	str	r3, [r7, #12]
+<<<<<<< HEAD
 =======
  8001388:	b480      	push	{r7}
  800138a:	b087      	sub	sp, #28
@@ -70415,6 +70648,8 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  800139c:	60fb      	str	r3, [r7, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   assert_param(IS_GPIO_MODE(GPIO_InitStruct->GPIO_Mode));
   assert_param(IS_GPIO_PUPD(GPIO_InitStruct->GPIO_PuPd));
 
@@ -70422,11 +70657,14 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
   /*-- GPIO Mode Configuration --*/
   for (pinpos = 0x00; pinpos < 0x10; pinpos++)
 <<<<<<< HEAD
+<<<<<<< HEAD
  800308e:	2300      	movs	r3, #0
  8003090:	617b      	str	r3, [r7, #20]
  8003092:	e076      	b.n	8003182 <GPIO_Init+0x10a>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ed1a:	2300      	movs	r3, #0
  802ed1c:	617b      	str	r3, [r7, #20]
  802ed1e:	e076      	b.n	802ee0e <GPIO_Init+0x10a>
@@ -70483,6 +70721,7 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  802ed74:	791b      	ldrb	r3, [r3, #4]
  802ed76:	2b02      	cmp	r3, #2
  802ed78:	d12e      	bne.n	802edd8 <GPIO_Init+0xd4>
+<<<<<<< HEAD
 =======
  800139e:	2300      	movs	r3, #0
  80013a0:	617b      	str	r3, [r7, #20]
@@ -70553,12 +70792,15 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  80013fc:	d12e      	bne.n	800145c <GPIO_Init+0xd4>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
       {
         /* Check Speed mode parameters */
         assert_param(IS_GPIO_SPEED(GPIO_InitStruct->GPIO_Speed));
 
         /* Speed mode configuration */
         GPIOx->OSPEEDR &= ~(GPIO_OSPEEDER_OSPEEDR0 << (pinpos * 2));
+<<<<<<< HEAD
 <<<<<<< HEAD
  80030ee:	687b      	ldr	r3, [r7, #4]
  80030f0:	689a      	ldr	r2, [r3, #8]
@@ -70584,6 +70826,8 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  800311a:	609a      	str	r2, [r3, #8]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ed7a:	687b      	ldr	r3, [r7, #4]
  802ed7c:	689a      	ldr	r2, [r3, #8]
  802ed7e:	697b      	ldr	r3, [r7, #20]
@@ -70606,6 +70850,7 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  802eda2:	431a      	orrs	r2, r3
  802eda4:	687b      	ldr	r3, [r7, #4]
  802eda6:	609a      	str	r2, [r3, #8]
+<<<<<<< HEAD
 =======
  80013fe:	687b      	ldr	r3, [r7, #4]
  8001400:	689a      	ldr	r2, [r3, #8]
@@ -70631,12 +70876,15 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  800142a:	609a      	str	r2, [r3, #8]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
         /* Check Output mode parameters */
         assert_param(IS_GPIO_OTYPE(GPIO_InitStruct->GPIO_OType));
 
         /* Output mode configuration*/
         GPIOx->OTYPER  &= ~((GPIO_OTYPER_OT_0) << ((uint16_t)pinpos)) ;
+<<<<<<< HEAD
 <<<<<<< HEAD
  800311c:	687b      	ldr	r3, [r7, #4]
  800311e:	685a      	ldr	r2, [r3, #4]
@@ -70664,6 +70912,8 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  800314a:	605a      	str	r2, [r3, #4]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eda8:	687b      	ldr	r3, [r7, #4]
  802edaa:	685a      	ldr	r2, [r3, #4]
  802edac:	697b      	ldr	r3, [r7, #20]
@@ -70688,6 +70938,7 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  802edd2:	431a      	orrs	r2, r3
  802edd4:	687b      	ldr	r3, [r7, #4]
  802edd6:	605a      	str	r2, [r3, #4]
+<<<<<<< HEAD
 =======
  800142c:	687b      	ldr	r3, [r7, #4]
  800142e:	685a      	ldr	r2, [r3, #4]
@@ -70715,10 +70966,13 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  800145a:	605a      	str	r2, [r3, #4]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
       }
 
       /* Pull-up Pull down resistor configuration*/
       GPIOx->PUPDR &= ~(GPIO_PUPDR_PUPDR0 << ((uint16_t)pinpos * 2));
+<<<<<<< HEAD
 <<<<<<< HEAD
  800314c:	687b      	ldr	r3, [r7, #4]
  800314e:	68da      	ldr	r2, [r3, #12]
@@ -70733,6 +70987,8 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  8003162:	60da      	str	r2, [r3, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802edd8:	687b      	ldr	r3, [r7, #4]
  802edda:	68da      	ldr	r2, [r3, #12]
  802eddc:	697b      	ldr	r3, [r7, #20]
@@ -70773,6 +71029,7 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
  802ee1e:	4770      	bx	lr
 
 0802ee20 <GPIO_PinAFConfig>:
+<<<<<<< HEAD
 =======
  800145c:	687b      	ldr	r3, [r7, #4]
  800145e:	68da      	ldr	r2, [r3, #12]
@@ -70820,12 +71077,15 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
 080014a4 <GPIO_PinAFConfig>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   *            @arg GPIO_AF_DCMI: Connect DCMI pins to AF13 
   *            @arg GPIO_AF_EVENTOUT: Connect EVENTOUT pins to AF15
   * @retval None
   */
 void GPIO_PinAFConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO_AF)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003194:	b480      	push	{r7}
  8003196:	b085      	sub	sp, #20
@@ -70837,6 +71097,8 @@ void GPIO_PinAFConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO
  80031a2:	707b      	strb	r3, [r7, #1]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ee20:	b480      	push	{r7}
  802ee22:	b085      	sub	sp, #20
  802ee24:	af00      	add	r7, sp, #0
@@ -70851,6 +71113,7 @@ void GPIO_PinAFConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO
   uint32_t temp_2 = 0x00;
  802ee34:	2300      	movs	r3, #0
  802ee36:	60bb      	str	r3, [r7, #8]
+<<<<<<< HEAD
 =======
  80014a4:	b480      	push	{r7}
  80014a6:	b085      	sub	sp, #20
@@ -70873,12 +71136,15 @@ void GPIO_PinAFConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO
  80014ba:	60bb      	str	r3, [r7, #8]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
   assert_param(IS_GPIO_PIN_SOURCE(GPIO_PinSource));
   assert_param(IS_GPIO_AF(GPIO_AF));
   
   temp = ((uint32_t)(GPIO_AF) << ((uint32_t)((uint32_t)GPIO_PinSource & (uint32_t)0x07) * 4)) ;
+<<<<<<< HEAD
 <<<<<<< HEAD
  80031ac:	787a      	ldrb	r2, [r7, #1]
  80031ae:	887b      	ldrh	r3, [r7, #2]
@@ -70888,6 +71154,8 @@ void GPIO_PinAFConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO
  80031ba:	60fb      	str	r3, [r7, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ee38:	787a      	ldrb	r2, [r7, #1]
  802ee3a:	887b      	ldrh	r3, [r7, #2]
  802ee3c:	f003 0307 	and.w	r3, r3, #7
@@ -70945,6 +71213,7 @@ void GPIO_PinAFConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO
 	...
 
 0802eeb4 <RCC_AHB1PeriphClockCmd>:
+<<<<<<< HEAD
 =======
  80014bc:	787a      	ldrb	r2, [r7, #1]
  80014be:	887b      	ldrh	r3, [r7, #2]
@@ -71238,12 +71507,15 @@ void RCC_GetClocksFreq(RCC_ClocksTypeDef* RCC_Clocks)
 08001688 <RCC_AHB1PeriphClockCmd>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  NewState: new state of the specified peripheral clock.
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
 void RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003378:	b480      	push	{r7}
  800337a:	b083      	sub	sp, #12
@@ -71253,12 +71525,15 @@ void RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState)
  8003382:	70fb      	strb	r3, [r7, #3]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eeb4:	b480      	push	{r7}
  802eeb6:	b083      	sub	sp, #12
  802eeb8:	af00      	add	r7, sp, #0
  802eeba:	6078      	str	r0, [r7, #4]
  802eebc:	460b      	mov	r3, r1
  802eebe:	70fb      	strb	r3, [r7, #3]
+<<<<<<< HEAD
 =======
  8001688:	b480      	push	{r7}
  800168a:	b083      	sub	sp, #12
@@ -71268,11 +71543,14 @@ void RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState)
  8001692:	70fb      	strb	r3, [r7, #3]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_RCC_AHB1_CLOCK_PERIPH(RCC_AHB1Periph));
 
   assert_param(IS_FUNCTIONAL_STATE(NewState));
   if (NewState != DISABLE)
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003384:	78fb      	ldrb	r3, [r7, #3]
  8003386:	2b00      	cmp	r3, #0
@@ -71287,6 +71565,8 @@ void RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState)
  8003394:	630b      	str	r3, [r1, #48]	; 0x30
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eec0:	78fb      	ldrb	r3, [r7, #3]
  802eec2:	2b00      	cmp	r3, #0
  802eec4:	d006      	beq.n	802eed4 <RCC_AHB1PeriphClockCmd+0x20>
@@ -71298,6 +71578,7 @@ void RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState)
  802eecc:	687b      	ldr	r3, [r7, #4]
  802eece:	4313      	orrs	r3, r2
  802eed0:	630b      	str	r3, [r1, #48]	; 0x30
+<<<<<<< HEAD
 =======
  8001694:	78fb      	ldrb	r3, [r7, #3]
  8001696:	2b00      	cmp	r3, #0
@@ -71312,6 +71593,8 @@ void RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState)
  80016a4:	630b      	str	r3, [r1, #48]	; 0x30
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
   else
   {
@@ -71319,9 +71602,12 @@ void RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState)
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003396:	e006      	b.n	80033a6 <RCC_AHB1PeriphClockCmd+0x2e>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eed2:	e006      	b.n	802eee2 <RCC_AHB1PeriphClockCmd+0x2e>
     RCC->AHB1ENR &= ~RCC_AHB1Periph;
  802eed4:	4906      	ldr	r1, [pc, #24]	; (802eef0 <RCC_AHB1PeriphClockCmd+0x3c>)
@@ -71341,6 +71627,7 @@ void RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState)
  802eef0:	40023800 	.word	0x40023800
 
 0802eef4 <RCC_APB1PeriphClockCmd>:
+<<<<<<< HEAD
 =======
  80016a6:	e006      	b.n	80016b6 <RCC_AHB1PeriphClockCmd+0x2e>
 >>>>>>> sambranch
@@ -71375,12 +71662,15 @@ void RCC_AHB1PeriphClockCmd(uint32_t RCC_AHB1Periph, FunctionalState NewState)
 080016c8 <RCC_APB1PeriphClockCmd>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  NewState: new state of the specified peripheral clock.
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
 void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  80033b8:	b480      	push	{r7}
  80033ba:	b083      	sub	sp, #12
@@ -71390,12 +71680,15 @@ void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
  80033c2:	70fb      	strb	r3, [r7, #3]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802eef4:	b480      	push	{r7}
  802eef6:	b083      	sub	sp, #12
  802eef8:	af00      	add	r7, sp, #0
  802eefa:	6078      	str	r0, [r7, #4]
  802eefc:	460b      	mov	r3, r1
  802eefe:	70fb      	strb	r3, [r7, #3]
+<<<<<<< HEAD
 =======
  80016c8:	b480      	push	{r7}
  80016ca:	b083      	sub	sp, #12
@@ -71405,11 +71698,14 @@ void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
  80016d2:	70fb      	strb	r3, [r7, #3]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));  
   assert_param(IS_FUNCTIONAL_STATE(NewState));
 
   if (NewState != DISABLE)
+<<<<<<< HEAD
 <<<<<<< HEAD
  80033c4:	78fb      	ldrb	r3, [r7, #3]
  80033c6:	2b00      	cmp	r3, #0
@@ -71424,6 +71720,8 @@ void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
  80033d4:	640b      	str	r3, [r1, #64]	; 0x40
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ef00:	78fb      	ldrb	r3, [r7, #3]
  802ef02:	2b00      	cmp	r3, #0
  802ef04:	d006      	beq.n	802ef14 <RCC_APB1PeriphClockCmd+0x20>
@@ -71435,6 +71733,7 @@ void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
  802ef0c:	687b      	ldr	r3, [r7, #4]
  802ef0e:	4313      	orrs	r3, r2
  802ef10:	640b      	str	r3, [r1, #64]	; 0x40
+<<<<<<< HEAD
 =======
  80016d4:	78fb      	ldrb	r3, [r7, #3]
  80016d6:	2b00      	cmp	r3, #0
@@ -71449,6 +71748,8 @@ void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
  80016e4:	640b      	str	r3, [r1, #64]	; 0x40
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
   else
   {
@@ -71456,9 +71757,12 @@ void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  80033d6:	e006      	b.n	80033e6 <RCC_APB1PeriphClockCmd+0x2e>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ef12:	e006      	b.n	802ef22 <RCC_APB1PeriphClockCmd+0x2e>
     RCC->APB1ENR &= ~RCC_APB1Periph;
  802ef14:	4906      	ldr	r1, [pc, #24]	; (802ef30 <RCC_APB1PeriphClockCmd+0x3c>)
@@ -71478,6 +71782,7 @@ void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
  802ef30:	40023800 	.word	0x40023800
 
 0802ef34 <RCC_APB2PeriphClockCmd>:
+<<<<<<< HEAD
 =======
  80016e6:	e006      	b.n	80016f6 <RCC_APB1PeriphClockCmd+0x2e>
 >>>>>>> sambranch
@@ -71512,12 +71817,15 @@ void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState)
 08001708 <RCC_APB2PeriphClockCmd>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  NewState: new state of the specified peripheral clock.
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
 void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  80033f8:	b480      	push	{r7}
  80033fa:	b083      	sub	sp, #12
@@ -71527,12 +71835,15 @@ void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
  8003402:	70fb      	strb	r3, [r7, #3]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ef34:	b480      	push	{r7}
  802ef36:	b083      	sub	sp, #12
  802ef38:	af00      	add	r7, sp, #0
  802ef3a:	6078      	str	r0, [r7, #4]
  802ef3c:	460b      	mov	r3, r1
  802ef3e:	70fb      	strb	r3, [r7, #3]
+<<<<<<< HEAD
 =======
  8001708:	b480      	push	{r7}
  800170a:	b083      	sub	sp, #12
@@ -71542,11 +71853,14 @@ void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
  8001712:	70fb      	strb	r3, [r7, #3]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
   assert_param(IS_FUNCTIONAL_STATE(NewState));
 
   if (NewState != DISABLE)
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003404:	78fb      	ldrb	r3, [r7, #3]
  8003406:	2b00      	cmp	r3, #0
@@ -71561,6 +71875,8 @@ void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
  8003414:	644b      	str	r3, [r1, #68]	; 0x44
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ef40:	78fb      	ldrb	r3, [r7, #3]
  802ef42:	2b00      	cmp	r3, #0
  802ef44:	d006      	beq.n	802ef54 <RCC_APB2PeriphClockCmd+0x20>
@@ -71572,6 +71888,7 @@ void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
  802ef4c:	687b      	ldr	r3, [r7, #4]
  802ef4e:	4313      	orrs	r3, r2
  802ef50:	644b      	str	r3, [r1, #68]	; 0x44
+<<<<<<< HEAD
 =======
  8001714:	78fb      	ldrb	r3, [r7, #3]
  8001716:	2b00      	cmp	r3, #0
@@ -71586,6 +71903,8 @@ void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
  8001724:	644b      	str	r3, [r1, #68]	; 0x44
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
   else
   {
@@ -71593,9 +71912,12 @@ void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003416:	e006      	b.n	8003426 <RCC_APB2PeriphClockCmd+0x2e>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ef52:	e006      	b.n	802ef62 <RCC_APB2PeriphClockCmd+0x2e>
     RCC->APB2ENR &= ~RCC_APB2Periph;
  802ef54:	4906      	ldr	r1, [pc, #24]	; (802ef70 <RCC_APB2PeriphClockCmd+0x3c>)
@@ -71615,6 +71937,7 @@ void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
  802ef70:	40023800 	.word	0x40023800
 
 0802ef74 <TIM_TimeBaseInit>:
+<<<<<<< HEAD
 =======
  8001726:	e006      	b.n	8001736 <RCC_APB2PeriphClockCmd+0x2e>
 >>>>>>> sambranch
@@ -71649,12 +71972,15 @@ void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState)
 08001748 <TIM_TimeBaseInit>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  TIM_TimeBaseInitStruct: pointer to a TIM_TimeBaseInitTypeDef structure
   *         that contains the configuration information for the specified TIM peripheral.
   * @retval None
   */
 void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseInitStruct)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003438:	b480      	push	{r7}
  800343a:	b085      	sub	sp, #20
@@ -71666,6 +71992,8 @@ void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseIn
  8003444:	81fb      	strh	r3, [r7, #14]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ef74:	b480      	push	{r7}
  802ef76:	b085      	sub	sp, #20
  802ef78:	af00      	add	r7, sp, #0
@@ -71674,6 +72002,7 @@ void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseIn
   uint16_t tmpcr1 = 0;
  802ef7e:	2300      	movs	r3, #0
  802ef80:	81fb      	strh	r3, [r7, #14]
+<<<<<<< HEAD
 =======
  8001748:	b480      	push	{r7}
  800174a:	b085      	sub	sp, #20
@@ -71685,6 +72014,8 @@ void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseIn
  8001754:	81fb      	strh	r3, [r7, #14]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_TIM_ALL_PERIPH(TIMx)); 
   assert_param(IS_TIM_COUNTER_MODE(TIM_TimeBaseInitStruct->TIM_CounterMode));
@@ -71692,11 +72023,14 @@ void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseIn
 
   tmpcr1 = TIMx->CR1;  
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003446:	687b      	ldr	r3, [r7, #4]
  8003448:	881b      	ldrh	r3, [r3, #0]
  800344a:	81fb      	strh	r3, [r7, #14]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802ef82:	687b      	ldr	r3, [r7, #4]
  802ef84:	881b      	ldrh	r3, [r3, #0]
  802ef86:	81fb      	strh	r3, [r7, #14]
@@ -71800,6 +72134,7 @@ void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseIn
  802f016:	b29a      	uxth	r2, r3
  802f018:	687b      	ldr	r3, [r7, #4]
  802f01a:	861a      	strh	r2, [r3, #48]	; 0x30
+<<<<<<< HEAD
 =======
  8001756:	687b      	ldr	r3, [r7, #4]
  8001758:	881b      	ldrh	r3, [r3, #0]
@@ -71914,11 +72249,14 @@ void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseIn
  80017ee:	861a      	strh	r2, [r3, #48]	; 0x30
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
 
   /* Generate an update event to reload the Prescaler 
      and the repetition counter(only for TIM1 and TIM8) value immediatly */
   TIMx->EGR = TIM_PSCReloadMode_Immediate;          
+<<<<<<< HEAD
 <<<<<<< HEAD
  80034e0:	687b      	ldr	r3, [r7, #4]
  80034e2:	2201      	movs	r2, #1
@@ -71941,6 +72279,8 @@ void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseIn
 08003510 <TIM_ARRPreloadConfig>:
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f01c:	687b      	ldr	r3, [r7, #4]
  802f01e:	2201      	movs	r2, #1
  802f020:	829a      	strh	r2, [r3, #20]
@@ -71960,6 +72300,7 @@ void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseIn
  802f048:	40001400 	.word	0x40001400
 
 0802f04c <TIM_ARRPreloadConfig>:
+<<<<<<< HEAD
 =======
  80017f0:	687b      	ldr	r3, [r7, #4]
  80017f2:	2201      	movs	r2, #1
@@ -71982,12 +72323,15 @@ void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseIn
 08001820 <TIM_ARRPreloadConfig>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  NewState: new state of the TIMx peripheral Preload register
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
 void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003510:	b480      	push	{r7}
  8003512:	b083      	sub	sp, #12
@@ -71997,12 +72341,15 @@ void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState)
  800351a:	70fb      	strb	r3, [r7, #3]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f04c:	b480      	push	{r7}
  802f04e:	b083      	sub	sp, #12
  802f050:	af00      	add	r7, sp, #0
  802f052:	6078      	str	r0, [r7, #4]
  802f054:	460b      	mov	r3, r1
  802f056:	70fb      	strb	r3, [r7, #3]
+<<<<<<< HEAD
 =======
  8001820:	b480      	push	{r7}
  8001822:	b083      	sub	sp, #12
@@ -72012,11 +72359,14 @@ void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState)
  800182a:	70fb      	strb	r3, [r7, #3]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_TIM_ALL_PERIPH(TIMx));
   assert_param(IS_FUNCTIONAL_STATE(NewState));
 
   if (NewState != DISABLE)
+<<<<<<< HEAD
 <<<<<<< HEAD
  800351c:	78fb      	ldrb	r3, [r7, #3]
  800351e:	2b00      	cmp	r3, #0
@@ -72033,6 +72383,8 @@ void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState)
  8003530:	801a      	strh	r2, [r3, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f058:	78fb      	ldrb	r3, [r7, #3]
  802f05a:	2b00      	cmp	r3, #0
  802f05c:	d008      	beq.n	802f070 <TIM_ARRPreloadConfig+0x24>
@@ -72046,6 +72398,7 @@ void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState)
  802f068:	b29a      	uxth	r2, r3
  802f06a:	687b      	ldr	r3, [r7, #4]
  802f06c:	801a      	strh	r2, [r3, #0]
+<<<<<<< HEAD
 =======
  800182c:	78fb      	ldrb	r3, [r7, #3]
  800182e:	2b00      	cmp	r3, #0
@@ -72062,6 +72415,8 @@ void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState)
  8001840:	801a      	strh	r2, [r3, #0]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   else
   {
     /* Reset the ARR Preload Bit */
@@ -72069,9 +72424,12 @@ void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState)
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003532:	e007      	b.n	8003544 <TIM_ARRPreloadConfig+0x34>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f06e:	e007      	b.n	802f080 <TIM_ARRPreloadConfig+0x34>
     TIMx->CR1 &= (uint16_t)~TIM_CR1_ARPE;
  802f070:	687b      	ldr	r3, [r7, #4]
@@ -72089,6 +72447,7 @@ void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState)
  802f08a:	4770      	bx	lr
 
 0802f08c <TIM_Cmd>:
+<<<<<<< HEAD
 =======
  8001842:	e007      	b.n	8001854 <TIM_ARRPreloadConfig+0x34>
 >>>>>>> sambranch
@@ -72113,12 +72472,15 @@ void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState)
 08001860 <TIM_Cmd>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  NewState: new state of the TIMx peripheral.
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
 void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003550:	b480      	push	{r7}
  8003552:	b083      	sub	sp, #12
@@ -72128,12 +72490,15 @@ void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState)
  800355a:	70fb      	strb	r3, [r7, #3]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f08c:	b480      	push	{r7}
  802f08e:	b083      	sub	sp, #12
  802f090:	af00      	add	r7, sp, #0
  802f092:	6078      	str	r0, [r7, #4]
  802f094:	460b      	mov	r3, r1
  802f096:	70fb      	strb	r3, [r7, #3]
+<<<<<<< HEAD
 =======
  8001860:	b480      	push	{r7}
  8001862:	b083      	sub	sp, #12
@@ -72143,11 +72508,14 @@ void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState)
  800186a:	70fb      	strb	r3, [r7, #3]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_TIM_ALL_PERIPH(TIMx)); 
   assert_param(IS_FUNCTIONAL_STATE(NewState));
   
   if (NewState != DISABLE)
+<<<<<<< HEAD
 <<<<<<< HEAD
  800355c:	78fb      	ldrb	r3, [r7, #3]
  800355e:	2b00      	cmp	r3, #0
@@ -72164,6 +72532,8 @@ void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState)
  8003570:	801a      	strh	r2, [r3, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f098:	78fb      	ldrb	r3, [r7, #3]
  802f09a:	2b00      	cmp	r3, #0
  802f09c:	d008      	beq.n	802f0b0 <TIM_Cmd+0x24>
@@ -72177,6 +72547,7 @@ void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState)
  802f0a8:	b29a      	uxth	r2, r3
  802f0aa:	687b      	ldr	r3, [r7, #4]
  802f0ac:	801a      	strh	r2, [r3, #0]
+<<<<<<< HEAD
 =======
  800186c:	78fb      	ldrb	r3, [r7, #3]
  800186e:	2b00      	cmp	r3, #0
@@ -72193,6 +72564,8 @@ void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState)
  8001880:	801a      	strh	r2, [r3, #0]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   else
   {
     /* Disable the TIM Counter */
@@ -72200,9 +72573,12 @@ void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState)
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003572:	e007      	b.n	8003584 <TIM_Cmd+0x34>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f0ae:	e007      	b.n	802f0c0 <TIM_Cmd+0x34>
     TIMx->CR1 &= (uint16_t)~TIM_CR1_CEN;
  802f0b0:	687b      	ldr	r3, [r7, #4]
@@ -72220,6 +72596,7 @@ void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState)
  802f0ca:	4770      	bx	lr
 
 0802f0cc <TIM_OC3Init>:
+<<<<<<< HEAD
 =======
  8001882:	e007      	b.n	8001894 <TIM_Cmd+0x34>
 >>>>>>> sambranch
@@ -72244,12 +72621,15 @@ void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState)
 080018a0 <TIM_OC3Init>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  TIM_OCInitStruct: pointer to a TIM_OCInitTypeDef structure that contains
   *         the configuration information for the specified TIM peripheral.
   * @retval None
   */
 void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003590:	b480      	push	{r7}
  8003592:	b085      	sub	sp, #20
@@ -72265,6 +72645,8 @@ void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  80035a4:	81bb      	strh	r3, [r7, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f0cc:	b480      	push	{r7}
  802f0ce:	b085      	sub	sp, #20
  802f0d0:	af00      	add	r7, sp, #0
@@ -72277,6 +72659,7 @@ void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  802f0dc:	81fb      	strh	r3, [r7, #14]
  802f0de:	2300      	movs	r3, #0
  802f0e0:	81bb      	strh	r3, [r7, #12]
+<<<<<<< HEAD
 =======
  80018a0:	b480      	push	{r7}
  80018a2:	b085      	sub	sp, #20
@@ -72292,12 +72675,15 @@ void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  80018b4:	81bb      	strh	r3, [r7, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   assert_param(IS_TIM_OC_MODE(TIM_OCInitStruct->TIM_OCMode));
   assert_param(IS_TIM_OUTPUT_STATE(TIM_OCInitStruct->TIM_OutputState));
   assert_param(IS_TIM_OC_POLARITY(TIM_OCInitStruct->TIM_OCPolarity));   
 
   /* Disable the Channel 3: Reset the CC2E Bit */
   TIMx->CCER &= (uint16_t)~TIM_CCER_CC3E;
+<<<<<<< HEAD
 <<<<<<< HEAD
  80035a6:	687b      	ldr	r3, [r7, #4]
  80035a8:	8c1b      	ldrh	r3, [r3, #32]
@@ -72308,6 +72694,8 @@ void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  80035b4:	841a      	strh	r2, [r3, #32]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f0e2:	687b      	ldr	r3, [r7, #4]
  802f0e4:	8c1b      	ldrh	r3, [r3, #32]
  802f0e6:	b29b      	uxth	r3, r3
@@ -72384,6 +72772,7 @@ void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  802f14c:	4a21      	ldr	r2, [pc, #132]	; (802f1d4 <TIM_OC3Init+0x108>)
  802f14e:	4293      	cmp	r3, r2
  802f150:	d12b      	bne.n	802f1aa <TIM_OC3Init+0xde>
+<<<<<<< HEAD
 =======
  80018b6:	687b      	ldr	r3, [r7, #4]
  80018b8:	8c1b      	ldrh	r3, [r3, #32]
@@ -72474,6 +72863,8 @@ void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  8001924:	d12b      	bne.n	800197e <TIM_OC3Init+0xde>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
     assert_param(IS_TIM_OCN_POLARITY(TIM_OCInitStruct->TIM_OCNPolarity));
     assert_param(IS_TIM_OCNIDLE_STATE(TIM_OCInitStruct->TIM_OCNIdleState));
     assert_param(IS_TIM_OCIDLE_STATE(TIM_OCInitStruct->TIM_OCIdleState));
@@ -72481,11 +72872,14 @@ void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
     /* Reset the Output N Polarity level */
     tmpccer &= (uint16_t)~TIM_CCER_CC3NP;
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003616:	89fb      	ldrh	r3, [r7, #14]
  8003618:	f423 6300 	bic.w	r3, r3, #2048	; 0x800
  800361c:	81fb      	strh	r3, [r7, #14]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f152:	89fb      	ldrh	r3, [r7, #14]
  802f154:	f423 6300 	bic.w	r3, r3, #2048	; 0x800
  802f158:	81fb      	strh	r3, [r7, #14]
@@ -72575,6 +72969,7 @@ void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  802f1d4:	40010400 	.word	0x40010400
 
 0802f1d8 <TIM_OC4Init>:
+<<<<<<< HEAD
 =======
  8001926:	89fb      	ldrh	r3, [r7, #14]
  8001928:	f423 6300 	bic.w	r3, r3, #2048	; 0x800
@@ -72679,12 +73074,15 @@ void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
 080019ac <TIM_OC4Init>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  TIM_OCInitStruct: pointer to a TIM_OCInitTypeDef structure that contains
   *         the configuration information for the specified TIM peripheral.
   * @retval None
   */
 void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  800369c:	b480      	push	{r7}
  800369e:	b085      	sub	sp, #20
@@ -72700,6 +73098,8 @@ void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  80036b0:	81fb      	strh	r3, [r7, #14]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f1d8:	b480      	push	{r7}
  802f1da:	b085      	sub	sp, #20
  802f1dc:	af00      	add	r7, sp, #0
@@ -72712,6 +73112,7 @@ void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  802f1e8:	817b      	strh	r3, [r7, #10]
  802f1ea:	2300      	movs	r3, #0
  802f1ec:	81fb      	strh	r3, [r7, #14]
+<<<<<<< HEAD
 =======
  80019ac:	b480      	push	{r7}
  80019ae:	b085      	sub	sp, #20
@@ -72727,12 +73128,15 @@ void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  80019c0:	81fb      	strh	r3, [r7, #14]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   assert_param(IS_TIM_OC_MODE(TIM_OCInitStruct->TIM_OCMode));
   assert_param(IS_TIM_OUTPUT_STATE(TIM_OCInitStruct->TIM_OutputState));
   assert_param(IS_TIM_OC_POLARITY(TIM_OCInitStruct->TIM_OCPolarity));   
 
   /* Disable the Channel 4: Reset the CC4E Bit */
   TIMx->CCER &= (uint16_t)~TIM_CCER_CC4E;
+<<<<<<< HEAD
 <<<<<<< HEAD
  80036b2:	687b      	ldr	r3, [r7, #4]
  80036b4:	8c1b      	ldrh	r3, [r3, #32]
@@ -72743,6 +73147,8 @@ void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  80036c0:	841a      	strh	r2, [r3, #32]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f1ee:	687b      	ldr	r3, [r7, #4]
  802f1f0:	8c1b      	ldrh	r3, [r3, #32]
  802f1f2:	b29b      	uxth	r3, r3
@@ -72822,6 +73228,7 @@ void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  802f25c:	4a11      	ldr	r2, [pc, #68]	; (802f2a4 <TIM_OC4Init+0xcc>)
  802f25e:	4293      	cmp	r3, r2
  802f260:	d10a      	bne.n	802f278 <TIM_OC4Init+0xa0>
+<<<<<<< HEAD
 =======
  80019c2:	687b      	ldr	r3, [r7, #4]
  80019c4:	8c1b      	ldrh	r3, [r3, #32]
@@ -72915,16 +73322,21 @@ void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  8001a34:	d10a      	bne.n	8001a4c <TIM_OC4Init+0xa0>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   {
     assert_param(IS_TIM_OCIDLE_STATE(TIM_OCInitStruct->TIM_OCIdleState));
     /* Reset the Output Compare IDLE State */
     tmpcr2 &=(uint16_t) ~TIM_CR2_OIS4;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003726:	89fb      	ldrh	r3, [r7, #14]
  8003728:	f423 4380 	bic.w	r3, r3, #16384	; 0x4000
  800372c:	81fb      	strh	r3, [r7, #14]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f262:	89fb      	ldrh	r3, [r7, #14]
  802f264:	f423 4380 	bic.w	r3, r3, #16384	; 0x4000
  802f268:	81fb      	strh	r3, [r7, #14]
@@ -72973,6 +73385,7 @@ void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
  802f2a4:	40010400 	.word	0x40010400
 
 0802f2a8 <TIM_OC3PreloadConfig>:
+<<<<<<< HEAD
 =======
  8001a36:	89fb      	ldrh	r3, [r7, #14]
  8001a38:	f423 4380 	bic.w	r3, r3, #16384	; 0x4000
@@ -73037,12 +73450,15 @@ void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)
 08001a7c <TIM_OC3PreloadConfig>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   *            @arg TIM_OCPreload_Enable
   *            @arg TIM_OCPreload_Disable
   * @retval None
   */
 void TIM_OC3PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  800376c:	b480      	push	{r7}
  800376e:	b085      	sub	sp, #20
@@ -73055,6 +73471,8 @@ void TIM_OC3PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
  800377a:	81fb      	strh	r3, [r7, #14]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f2a8:	b480      	push	{r7}
  802f2aa:	b085      	sub	sp, #20
  802f2ac:	af00      	add	r7, sp, #0
@@ -73064,6 +73482,7 @@ void TIM_OC3PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
   uint16_t tmpccmr2 = 0;
  802f2b4:	2300      	movs	r3, #0
  802f2b6:	81fb      	strh	r3, [r7, #14]
+<<<<<<< HEAD
 =======
  8001a7c:	b480      	push	{r7}
  8001a7e:	b085      	sub	sp, #20
@@ -73076,6 +73495,8 @@ void TIM_OC3PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
  8001a8a:	81fb      	strh	r3, [r7, #14]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
   /* Check the parameters */
   assert_param(IS_TIM_LIST3_PERIPH(TIMx));
@@ -73083,11 +73504,14 @@ void TIM_OC3PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
 
   tmpccmr2 = TIMx->CCMR2;
 <<<<<<< HEAD
+<<<<<<< HEAD
  800377c:	687b      	ldr	r3, [r7, #4]
  800377e:	8b9b      	ldrh	r3, [r3, #28]
  8003780:	81fb      	strh	r3, [r7, #14]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f2b8:	687b      	ldr	r3, [r7, #4]
  802f2ba:	8b9b      	ldrh	r3, [r3, #28]
  802f2bc:	81fb      	strh	r3, [r7, #14]
@@ -73118,6 +73542,7 @@ void TIM_OC3PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
  802f2de:	4770      	bx	lr
 
 0802f2e0 <TIM_OC4PreloadConfig>:
+<<<<<<< HEAD
 =======
  8001a8c:	687b      	ldr	r3, [r7, #4]
  8001a8e:	8b9b      	ldrh	r3, [r3, #28]
@@ -73155,12 +73580,15 @@ void TIM_OC3PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
 08001ab4 <TIM_OC4PreloadConfig>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   *            @arg TIM_OCPreload_Enable
   *            @arg TIM_OCPreload_Disable
   * @retval None
   */
 void TIM_OC4PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  80037a4:	b480      	push	{r7}
  80037a6:	b085      	sub	sp, #20
@@ -73173,6 +73601,8 @@ void TIM_OC4PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
  80037b2:	81fb      	strh	r3, [r7, #14]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f2e0:	b480      	push	{r7}
  802f2e2:	b085      	sub	sp, #20
  802f2e4:	af00      	add	r7, sp, #0
@@ -73182,6 +73612,7 @@ void TIM_OC4PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
   uint16_t tmpccmr2 = 0;
  802f2ec:	2300      	movs	r3, #0
  802f2ee:	81fb      	strh	r3, [r7, #14]
+<<<<<<< HEAD
 =======
  8001ab4:	b480      	push	{r7}
  8001ab6:	b085      	sub	sp, #20
@@ -73194,6 +73625,8 @@ void TIM_OC4PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
  8001ac2:	81fb      	strh	r3, [r7, #14]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
   /* Check the parameters */
   assert_param(IS_TIM_LIST3_PERIPH(TIMx));
@@ -73201,11 +73634,14 @@ void TIM_OC4PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
 
   tmpccmr2 = TIMx->CCMR2;
 <<<<<<< HEAD
+<<<<<<< HEAD
  80037b4:	687b      	ldr	r3, [r7, #4]
  80037b6:	8b9b      	ldrh	r3, [r3, #28]
  80037b8:	81fb      	strh	r3, [r7, #14]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f2f0:	687b      	ldr	r3, [r7, #4]
  802f2f2:	8b9b      	ldrh	r3, [r3, #28]
  802f2f4:	81fb      	strh	r3, [r7, #14]
@@ -73238,6 +73674,7 @@ void TIM_OC4PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
  802f31a:	4770      	bx	lr
 
 0802f31c <TIM_ITConfig>:
+<<<<<<< HEAD
 =======
  8001ac4:	687b      	ldr	r3, [r7, #4]
  8001ac6:	8b9b      	ldrh	r3, [r3, #28]
@@ -73277,12 +73714,15 @@ void TIM_OC4PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)
 08001af0 <TIM_ITConfig>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  NewState: new state of the TIM interrupts.
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
 void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)
 {  
+<<<<<<< HEAD
 <<<<<<< HEAD
  80037e0:	b480      	push	{r7}
  80037e2:	b083      	sub	sp, #12
@@ -73294,6 +73734,8 @@ void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)
  80037ee:	707b      	strb	r3, [r7, #1]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f31c:	b480      	push	{r7}
  802f31e:	b083      	sub	sp, #12
  802f320:	af00      	add	r7, sp, #0
@@ -73302,6 +73744,7 @@ void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)
  802f326:	807b      	strh	r3, [r7, #2]
  802f328:	4613      	mov	r3, r2
  802f32a:	707b      	strb	r3, [r7, #1]
+<<<<<<< HEAD
 =======
  8001af0:	b480      	push	{r7}
  8001af2:	b083      	sub	sp, #12
@@ -73313,12 +73756,15 @@ void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)
  8001afe:	707b      	strb	r3, [r7, #1]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_TIM_ALL_PERIPH(TIMx));
   assert_param(IS_TIM_IT(TIM_IT));
   assert_param(IS_FUNCTIONAL_STATE(NewState));
   
   if (NewState != DISABLE)
+<<<<<<< HEAD
 <<<<<<< HEAD
  80037f0:	787b      	ldrb	r3, [r7, #1]
  80037f2:	2b00      	cmp	r3, #0
@@ -73336,6 +73782,8 @@ void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)
  8003804:	819a      	strh	r2, [r3, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f32c:	787b      	ldrb	r3, [r7, #1]
  802f32e:	2b00      	cmp	r3, #0
  802f330:	d008      	beq.n	802f344 <TIM_ITConfig+0x28>
@@ -73350,6 +73798,7 @@ void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)
  802f33c:	b29a      	uxth	r2, r3
  802f33e:	687b      	ldr	r3, [r7, #4]
  802f340:	819a      	strh	r2, [r3, #12]
+<<<<<<< HEAD
 =======
  8001b00:	787b      	ldrb	r3, [r7, #1]
  8001b02:	2b00      	cmp	r3, #0
@@ -73367,6 +73816,8 @@ void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)
  8001b14:	819a      	strh	r2, [r3, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   else
   {
     /* Disable the Interrupt sources */
@@ -73374,9 +73825,12 @@ void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003806:	e009      	b.n	800381c <TIM_ITConfig+0x3c>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f342:	e009      	b.n	802f358 <TIM_ITConfig+0x3c>
     TIMx->DIER &= (uint16_t)~TIM_IT;
  802f344:	687b      	ldr	r3, [r7, #4]
@@ -73397,6 +73851,7 @@ void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)
  802f362:	4770      	bx	lr
 
 0802f364 <TIM_ClearITPendingBit>:
+<<<<<<< HEAD
 =======
  8001b16:	e009      	b.n	8001b2c <TIM_ITConfig+0x3c>
 >>>>>>> sambranch
@@ -73424,12 +73879,15 @@ void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)
 08001b38 <TIM_ClearITPendingBit>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @note   TIM_IT_COM and TIM_IT_Break are used only with TIM1 and TIM8.
   *      
   * @retval None
   */
 void TIM_ClearITPendingBit(TIM_TypeDef* TIMx, uint16_t TIM_IT)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003828:	b480      	push	{r7}
  800382a:	b083      	sub	sp, #12
@@ -73439,12 +73897,15 @@ void TIM_ClearITPendingBit(TIM_TypeDef* TIMx, uint16_t TIM_IT)
  8003832:	807b      	strh	r3, [r7, #2]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f364:	b480      	push	{r7}
  802f366:	b083      	sub	sp, #12
  802f368:	af00      	add	r7, sp, #0
  802f36a:	6078      	str	r0, [r7, #4]
  802f36c:	460b      	mov	r3, r1
  802f36e:	807b      	strh	r3, [r7, #2]
+<<<<<<< HEAD
 =======
  8001b38:	b480      	push	{r7}
  8001b3a:	b083      	sub	sp, #12
@@ -73454,11 +73915,14 @@ void TIM_ClearITPendingBit(TIM_TypeDef* TIMx, uint16_t TIM_IT)
  8001b42:	807b      	strh	r3, [r7, #2]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_TIM_ALL_PERIPH(TIMx));
 
   /* Clear the IT pending Bit */
   TIMx->SR = (uint16_t)~TIM_IT;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003834:	887b      	ldrh	r3, [r7, #2]
  8003836:	43db      	mvns	r3, r3
@@ -73467,6 +73931,8 @@ void TIM_ClearITPendingBit(TIM_TypeDef* TIMx, uint16_t TIM_IT)
  800383c:	821a      	strh	r2, [r3, #16]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f370:	887b      	ldrh	r3, [r7, #2]
  802f372:	43db      	mvns	r3, r3
  802f374:	b29a      	uxth	r2, r3
@@ -73480,6 +73946,7 @@ void TIM_ClearITPendingBit(TIM_TypeDef* TIMx, uint16_t TIM_IT)
  802f384:	4770      	bx	lr
 
 0802f386 <TIM_DMACmd>:
+<<<<<<< HEAD
 =======
  8001b44:	887b      	ldrh	r3, [r7, #2]
  8001b46:	43db      	mvns	r3, r3
@@ -73500,12 +73967,15 @@ void TIM_ClearITPendingBit(TIM_TypeDef* TIMx, uint16_t TIM_IT)
 08001b5a <TIM_DMACmd>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @param  NewState: new state of the DMA Request sources.
   *          This parameter can be: ENABLE or DISABLE.
   * @retval None
   */
 void TIM_DMACmd(TIM_TypeDef* TIMx, uint16_t TIM_DMASource, FunctionalState NewState)
 { 
+<<<<<<< HEAD
 <<<<<<< HEAD
  800384a:	b480      	push	{r7}
  800384c:	b083      	sub	sp, #12
@@ -73517,6 +73987,8 @@ void TIM_DMACmd(TIM_TypeDef* TIMx, uint16_t TIM_DMASource, FunctionalState NewSt
  8003858:	707b      	strb	r3, [r7, #1]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f386:	b480      	push	{r7}
  802f388:	b083      	sub	sp, #12
  802f38a:	af00      	add	r7, sp, #0
@@ -73525,6 +73997,7 @@ void TIM_DMACmd(TIM_TypeDef* TIMx, uint16_t TIM_DMASource, FunctionalState NewSt
  802f390:	807b      	strh	r3, [r7, #2]
  802f392:	4613      	mov	r3, r2
  802f394:	707b      	strb	r3, [r7, #1]
+<<<<<<< HEAD
 =======
  8001b5a:	b480      	push	{r7}
  8001b5c:	b083      	sub	sp, #12
@@ -73536,12 +74009,15 @@ void TIM_DMACmd(TIM_TypeDef* TIMx, uint16_t TIM_DMASource, FunctionalState NewSt
  8001b68:	707b      	strb	r3, [r7, #1]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   /* Check the parameters */
   assert_param(IS_TIM_LIST5_PERIPH(TIMx)); 
   assert_param(IS_TIM_DMA_SOURCE(TIM_DMASource));
   assert_param(IS_FUNCTIONAL_STATE(NewState));
   
   if (NewState != DISABLE)
+<<<<<<< HEAD
 <<<<<<< HEAD
  800385a:	787b      	ldrb	r3, [r7, #1]
  800385c:	2b00      	cmp	r3, #0
@@ -73559,6 +74035,8 @@ void TIM_DMACmd(TIM_TypeDef* TIMx, uint16_t TIM_DMASource, FunctionalState NewSt
  800386e:	819a      	strh	r2, [r3, #12]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f396:	787b      	ldrb	r3, [r7, #1]
  802f398:	2b00      	cmp	r3, #0
  802f39a:	d008      	beq.n	802f3ae <TIM_DMACmd+0x28>
@@ -73573,6 +74051,7 @@ void TIM_DMACmd(TIM_TypeDef* TIMx, uint16_t TIM_DMASource, FunctionalState NewSt
  802f3a6:	b29a      	uxth	r2, r3
  802f3a8:	687b      	ldr	r3, [r7, #4]
  802f3aa:	819a      	strh	r2, [r3, #12]
+<<<<<<< HEAD
 =======
  8001b6a:	787b      	ldrb	r3, [r7, #1]
  8001b6c:	2b00      	cmp	r3, #0
@@ -73590,6 +74069,8 @@ void TIM_DMACmd(TIM_TypeDef* TIMx, uint16_t TIM_DMASource, FunctionalState NewSt
  8001b7e:	819a      	strh	r2, [r3, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   else
   {
     /* Disable the DMA sources */
@@ -73597,9 +74078,12 @@ void TIM_DMACmd(TIM_TypeDef* TIMx, uint16_t TIM_DMASource, FunctionalState NewSt
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003870:	e009      	b.n	8003886 <TIM_DMACmd+0x3c>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f3ac:	e009      	b.n	802f3c2 <TIM_DMACmd+0x3c>
     TIMx->DIER &= (uint16_t)~TIM_DMASource;
  802f3ae:	687b      	ldr	r3, [r7, #4]
@@ -73882,6 +74366,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT)
 	...
 
 0802f51c <UB_VGA_Screen_Init>:
+<<<<<<< HEAD
 =======
  8001b80:	e009      	b.n	8001b96 <TIM_DMACmd+0x3c>
 >>>>>>> sambranch
@@ -74796,6 +75281,8 @@ void DELAY_ms(volatile unsigned int time)
 08002060 <UB_VGA_Screen_Init>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
 //--------------------------------------------------------------
 // Init VGA-Module
@@ -74803,11 +75290,14 @@ void DELAY_ms(volatile unsigned int time)
 void UB_VGA_Screen_Init(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003d8c:	b580      	push	{r7, lr}
  8003d8e:	b082      	sub	sp, #8
  8003d90:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f51c:	b580      	push	{r7, lr}
  802f51e:	b082      	sub	sp, #8
  802f520:	af00      	add	r7, sp, #0
@@ -74861,6 +75351,7 @@ void UB_VGA_Screen_Init(void)
  802f56a:	88bb      	ldrh	r3, [r7, #4]
  802f56c:	2bef      	cmp	r3, #239	; 0xef
  802f56e:	d9e4      	bls.n	802f53a <UB_VGA_Screen_Init+0x1e>
+<<<<<<< HEAD
 =======
  8002060:	b580      	push	{r7, lr}
  8002062:	b082      	sub	sp, #8
@@ -74926,11 +75417,14 @@ void UB_VGA_Screen_Init(void)
  80020b2:	d9e4      	bls.n	800207e <UB_VGA_Screen_Init+0x1e>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
     }
   }
 
   // init IO-Pins
   P_VGA_InitIO();
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003de0:	f000 f85e 	bl	8003ea0 <P_VGA_InitIO>
   // init Timer
@@ -74944,6 +75438,8 @@ void UB_VGA_Screen_Init(void)
  8003dec:	f000 f912 	bl	8004014 <P_VGA_InitINT>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f570:	f000 f85e 	bl	802f630 <P_VGA_InitIO>
   // init Timer
   P_VGA_InitTIM();
@@ -74954,6 +75450,7 @@ void UB_VGA_Screen_Init(void)
   // init Interrupts
   P_VGA_InitINT();
  802f57c:	f000 f912 	bl	802f7a4 <P_VGA_InitINT>
+<<<<<<< HEAD
 =======
  80020b4:	f000 f85e 	bl	8002174 <P_VGA_InitIO>
   // init Timer
@@ -74967,6 +75464,8 @@ void UB_VGA_Screen_Init(void)
  80020c0:	f000 f912 	bl	80022e8 <P_VGA_InitINT>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
   //-----------------------
   // Register swap and safe
@@ -74974,12 +75473,15 @@ void UB_VGA_Screen_Init(void)
   // content of CR-Register read and save
   VGA.dma2_cr_reg=DMA2_Stream5->CR;
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003df0:	4b05      	ldr	r3, [pc, #20]	; (8003e08 <UB_VGA_Screen_Init+0x7c>)
  8003df2:	681b      	ldr	r3, [r3, #0]
  8003df4:	4a02      	ldr	r2, [pc, #8]	; (8003e00 <UB_VGA_Screen_Init+0x74>)
  8003df6:	6093      	str	r3, [r2, #8]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f580:	4b05      	ldr	r3, [pc, #20]	; (802f598 <UB_VGA_Screen_Init+0x7c>)
  802f582:	681b      	ldr	r3, [r3, #0]
  802f584:	4a02      	ldr	r2, [pc, #8]	; (802f590 <UB_VGA_Screen_Init+0x74>)
@@ -74989,11 +75491,12 @@ void UB_VGA_Screen_Init(void)
  802f58a:	3708      	adds	r7, #8
  802f58c:	46bd      	mov	sp, r7
  802f58e:	bd80      	pop	{r7, pc}
- 802f590:	20000044 	.word	0x20000044
- 802f594:	20000054 	.word	0x20000054
+ 802f590:	20000034 	.word	0x20000034
+ 802f594:	20000040 	.word	0x20000040
  802f598:	40026488 	.word	0x40026488
 
 0802f59c <UB_VGA_FillScreen>:
+<<<<<<< HEAD
 =======
  80020c4:	4b05      	ldr	r3, [pc, #20]	; (80020dc <UB_VGA_Screen_Init+0x7c>)
  80020c6:	681b      	ldr	r3, [r3, #0]
@@ -75015,12 +75518,15 @@ void UB_VGA_Screen_Init(void)
 080020e0 <UB_VGA_FillScreen>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
 //--------------------------------------------------------------
 // fill the DMA RAM buffer with one color
 //--------------------------------------------------------------
 void UB_VGA_FillScreen(uint8_t color)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003e0c:	b580      	push	{r7, lr}
  8003e0e:	b084      	sub	sp, #16
@@ -75029,6 +75535,8 @@ void UB_VGA_FillScreen(uint8_t color)
  8003e14:	71fb      	strb	r3, [r7, #7]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f59c:	b580      	push	{r7, lr}
  802f59e:	b084      	sub	sp, #16
  802f5a0:	af00      	add	r7, sp, #0
@@ -75073,6 +75581,7 @@ void UB_VGA_FillScreen(uint8_t color)
  802f5de:	bd80      	pop	{r7, pc}
 
 0802f5e0 <UB_VGA_SetPixel>:
+<<<<<<< HEAD
 =======
  80020e0:	b580      	push	{r7, lr}
  80020e2:	b084      	sub	sp, #16
@@ -75124,12 +75633,15 @@ void UB_VGA_FillScreen(uint8_t color)
 08002124 <UB_VGA_SetPixel>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 //--------------------------------------------------------------
 // put one Pixel on the screen with one color
 // Important : the last Pixel+1 from every line must be black (don't know why??)
 //--------------------------------------------------------------
 void UB_VGA_SetPixel(uint16_t xp, uint16_t yp, uint8_t color)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003e50:	b480      	push	{r7}
  8003e52:	b083      	sub	sp, #12
@@ -75142,6 +75654,8 @@ void UB_VGA_SetPixel(uint16_t xp, uint16_t yp, uint8_t color)
  8003e60:	70fb      	strb	r3, [r7, #3]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f5e0:	b480      	push	{r7}
  802f5e2:	b083      	sub	sp, #12
  802f5e4:	af00      	add	r7, sp, #0
@@ -75184,9 +75698,10 @@ void UB_VGA_SetPixel(uint16_t xp, uint16_t yp, uint8_t color)
  802f624:	f85d 7b04 	ldr.w	r7, [sp], #4
  802f628:	4770      	bx	lr
  802f62a:	bf00      	nop
- 802f62c:	20000054 	.word	0x20000054
+ 802f62c:	20000040 	.word	0x20000040
 
 0802f630 <P_VGA_InitIO>:
+<<<<<<< HEAD
 =======
  8002124:	b480      	push	{r7}
  8002126:	b083      	sub	sp, #12
@@ -75247,12 +75762,15 @@ void UB_VGA_SetPixel(uint16_t xp, uint16_t yp, uint8_t color)
 08002174 <P_VGA_InitIO>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 //--------------------------------------------------------------
 // interne Funktionen
 // init aller IO-Pins
 //--------------------------------------------------------------
 void P_VGA_InitIO(void)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003ea0:	b580      	push	{r7, lr}
  8003ea2:	b082      	sub	sp, #8
@@ -75268,6 +75786,11 @@ void P_VGA_InitIO(void)
  8002178:	af00      	add	r7, sp, #0
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802f630:	b580      	push	{r7, lr}
+ 802f632:	b082      	sub	sp, #8
+ 802f634:	af00      	add	r7, sp, #0
+>>>>>>> sambranch
   // init RGB-Pins (PE8 - PE15)
   // as normal GPIOs
   //---------------------------------------------
@@ -75275,11 +75798,14 @@ void P_VGA_InitIO(void)
   // Clock Enable
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003ea6:	2101      	movs	r1, #1
  8003ea8:	2010      	movs	r0, #16
  8003eaa:	f7ff fa65 	bl	8003378 <RCC_AHB1PeriphClockCmd>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f636:	2101      	movs	r1, #1
  802f638:	2010      	movs	r0, #16
  802f63a:	f7ff fc3b 	bl	802eeb4 <RCC_AHB1PeriphClockCmd>
@@ -75311,6 +75837,7 @@ void P_VGA_InitIO(void)
  802f65e:	4b1c      	ldr	r3, [pc, #112]	; (802f6d0 <P_VGA_InitIO+0xa0>)
  802f660:	f44f 427f 	mov.w	r2, #65280	; 0xff00
  802f664:	835a      	strh	r2, [r3, #26]
+<<<<<<< HEAD
 =======
  800217a:	2101      	movs	r1, #1
  800217c:	2010      	movs	r0, #16
@@ -75351,6 +75878,8 @@ void P_VGA_InitIO(void)
  80021a8:	835a      	strh	r2, [r3, #26]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   // init of the H-Sync Pin (PB11)
   // using Timer2 and CH4
   //---------------------------------------------
@@ -75358,11 +75887,14 @@ void P_VGA_InitIO(void)
   // Clock Enable
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003ed6:	2101      	movs	r1, #1
  8003ed8:	2002      	movs	r0, #2
  8003eda:	f7ff fa4d 	bl	8003378 <RCC_AHB1PeriphClockCmd>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f666:	2101      	movs	r1, #1
  802f668:	2002      	movs	r0, #2
  802f66a:	f7ff fc23 	bl	802eeb4 <RCC_AHB1PeriphClockCmd>
@@ -75395,6 +75927,7 @@ void P_VGA_InitIO(void)
  802f690:	210b      	movs	r1, #11
  802f692:	4810      	ldr	r0, [pc, #64]	; (802f6d4 <P_VGA_InitIO+0xa4>)
  802f694:	f7ff fbc4 	bl	802ee20 <GPIO_PinAFConfig>
+<<<<<<< HEAD
 =======
  80021aa:	2101      	movs	r1, #1
  80021ac:	2002      	movs	r0, #2
@@ -75437,6 +75970,8 @@ void P_VGA_InitIO(void)
  80021d8:	f7ff f964 	bl	80014a4 <GPIO_PinAFConfig>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   // init of V-Sync Pin (PB12)
   // using GPIO
   //---------------------------------------------
@@ -75444,11 +75979,14 @@ void P_VGA_InitIO(void)
   // Clock Enable
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003f08:	2101      	movs	r1, #1
  8003f0a:	2002      	movs	r0, #2
  8003f0c:	f7ff fa34 	bl	8003378 <RCC_AHB1PeriphClockCmd>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f698:	2101      	movs	r1, #1
  802f69a:	2002      	movs	r0, #2
  802f69c:	f7ff fc0a 	bl	802eeb4 <RCC_AHB1PeriphClockCmd>
@@ -75488,6 +76026,7 @@ void P_VGA_InitIO(void)
  802f6d4:	40020400 	.word	0x40020400
 
 0802f6d8 <P_VGA_InitTIM>:
+<<<<<<< HEAD
 =======
  80021dc:	2101      	movs	r1, #1
  80021de:	2002      	movs	r0, #2
@@ -75541,12 +76080,15 @@ void P_VGA_InitIO(void)
 0800221c <P_VGA_InitTIM>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 //--------------------------------------------------------------
 // internal Function
 // init Timer
 //--------------------------------------------------------------
 void P_VGA_InitTIM(void)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8003f48:	b580      	push	{r7, lr}
  8003f4a:	b088      	sub	sp, #32
@@ -75562,6 +76104,11 @@ void P_VGA_InitTIM(void)
  8002220:	af00      	add	r7, sp, #0
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802f6d8:	b580      	push	{r7, lr}
+ 802f6da:	b088      	sub	sp, #32
+ 802f6dc:	af00      	add	r7, sp, #0
+>>>>>>> sambranch
   // init of Timer1 for
   // Pixeldata via DMA
   //---------------------------------------------
@@ -75569,11 +76116,14 @@ void P_VGA_InitTIM(void)
   // Clock enable
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003f4e:	2101      	movs	r1, #1
  8003f50:	2001      	movs	r0, #1
  8003f52:	f7ff fa51 	bl	80033f8 <RCC_APB2PeriphClockCmd>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f6de:	2101      	movs	r1, #1
  802f6e0:	2001      	movs	r0, #1
  802f6e2:	f7ff fc27 	bl	802ef34 <RCC_APB2PeriphClockCmd>
@@ -75596,6 +76146,7 @@ void P_VGA_InitTIM(void)
  802f6fa:	4619      	mov	r1, r3
  802f6fc:	4828      	ldr	r0, [pc, #160]	; (802f7a0 <P_VGA_InitTIM+0xc8>)
  802f6fe:	f7ff fc39 	bl	802ef74 <TIM_TimeBaseInit>
+<<<<<<< HEAD
 =======
  8002222:	2101      	movs	r1, #1
  8002224:	2001      	movs	r0, #1
@@ -75628,6 +76179,8 @@ void P_VGA_InitTIM(void)
  8002242:	f7ff fa81 	bl	8001748 <TIM_TimeBaseInit>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   // CH4 for HSYNC-Signal
   // CH3 for DMA Trigger start
   //---------------------------------------------
@@ -75635,11 +76188,14 @@ void P_VGA_InitTIM(void)
   // Clock enable
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 <<<<<<< HEAD
+<<<<<<< HEAD
  8003f72:	2101      	movs	r1, #1
  8003f74:	2001      	movs	r0, #1
  8003f76:	f7ff fa1f 	bl	80033b8 <RCC_APB1PeriphClockCmd>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f702:	2101      	movs	r1, #1
  802f704:	2001      	movs	r0, #1
  802f706:	f7ff fbf5 	bl	802eef4 <RCC_APB1PeriphClockCmd>
@@ -75737,6 +76293,7 @@ void P_VGA_InitTIM(void)
  802f7a0:	40010000 	.word	0x40010000
 
 0802f7a4 <P_VGA_InitINT>:
+<<<<<<< HEAD
 =======
  8002246:	2101      	movs	r1, #1
  8002248:	2001      	movs	r0, #1
@@ -75848,12 +76405,15 @@ void P_VGA_InitTIM(void)
 080022e8 <P_VGA_InitINT>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 //--------------------------------------------------------------
 // internal Function
 // init Interrupts
 //--------------------------------------------------------------
 void P_VGA_InitINT(void)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8004014:	b580      	push	{r7, lr}
  8004016:	b082      	sub	sp, #8
@@ -75869,6 +76429,11 @@ void P_VGA_InitINT(void)
  80022ec:	af00      	add	r7, sp, #0
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802f7a4:	b580      	push	{r7, lr}
+ 802f7a6:	b082      	sub	sp, #8
+ 802f7a8:	af00      	add	r7, sp, #0
+>>>>>>> sambranch
   // init from DMA Interrupt
   // for TransferComplete Interrupt
   // DMA2, Stream5, Channel6
@@ -75876,12 +76441,15 @@ void P_VGA_InitINT(void)
 
   DMA_ITConfig(DMA2_Stream5, DMA_IT_TC, ENABLE);
 <<<<<<< HEAD
+<<<<<<< HEAD
  800401a:	2201      	movs	r2, #1
  800401c:	2110      	movs	r1, #16
  800401e:	4812      	ldr	r0, [pc, #72]	; (8004068 <P_VGA_InitINT+0x54>)
  8004020:	f7fe ff6a 	bl	8002ef8 <DMA_ITConfig>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f7aa:	2201      	movs	r2, #1
  802f7ac:	2110      	movs	r1, #16
  802f7ae:	4812      	ldr	r0, [pc, #72]	; (802f7f8 <P_VGA_InitINT+0x54>)
@@ -75904,6 +76472,7 @@ void P_VGA_InitINT(void)
  802f7c4:	1d3b      	adds	r3, r7, #4
  802f7c6:	4618      	mov	r0, r3
  802f7c8:	f7ff f832 	bl	802e830 <NVIC_Init>
+<<<<<<< HEAD
 =======
  80022ee:	2201      	movs	r2, #1
  80022f0:	2110      	movs	r1, #16
@@ -75935,6 +76504,8 @@ void P_VGA_InitINT(void)
  800230c:	f7fe fdd2 	bl	8000eb4 <NVIC_Init>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   // init of Timer2 Interrupt
   // for HSync-Counter using Update
   // for DMA Trigger START using CH3
@@ -75942,12 +76513,15 @@ void P_VGA_InitINT(void)
 
   TIM_ITConfig(TIM2,TIM_IT_CC3,ENABLE);
 <<<<<<< HEAD
+<<<<<<< HEAD
  800403c:	2201      	movs	r2, #1
  800403e:	2108      	movs	r1, #8
  8004040:	f04f 4080 	mov.w	r0, #1073741824	; 0x40000000
  8004044:	f7ff fbcc 	bl	80037e0 <TIM_ITConfig>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f7cc:	2201      	movs	r2, #1
  802f7ce:	2108      	movs	r1, #8
  802f7d0:	f04f 4080 	mov.w	r0, #1073741824	; 0x40000000
@@ -75978,6 +76552,7 @@ void P_VGA_InitINT(void)
  802f7f8:	40026488 	.word	0x40026488
 
 0802f7fc <P_VGA_InitDMA>:
+<<<<<<< HEAD
 =======
  8002310:	2201      	movs	r2, #1
  8002312:	2108      	movs	r1, #8
@@ -76015,12 +76590,15 @@ void P_VGA_InitINT(void)
 08002340 <P_VGA_InitDMA>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 //--------------------------------------------------------------
 // internal Function
 // init DMA
 //--------------------------------------------------------------
 void P_VGA_InitDMA(void)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  800406c:	b580      	push	{r7, lr}
  800406e:	b090      	sub	sp, #64	; 0x40
@@ -76036,6 +76614,11 @@ void P_VGA_InitDMA(void)
  8002344:	af00      	add	r7, sp, #0
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802f7fc:	b580      	push	{r7, lr}
+ 802f7fe:	b090      	sub	sp, #64	; 0x40
+ 802f800:	af00      	add	r7, sp, #0
+>>>>>>> sambranch
   // (look at page 217 of the Ref Manual)
   // DMA=2, Channel=6, Stream=5
   //---------------------------------------------
@@ -76043,11 +76626,14 @@ void P_VGA_InitDMA(void)
   // Clock Enable (DMA)
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_DMA2, ENABLE);
 <<<<<<< HEAD
+<<<<<<< HEAD
  8004072:	2101      	movs	r1, #1
  8004074:	f44f 0080 	mov.w	r0, #4194304	; 0x400000
  8004078:	f7ff f97e 	bl	8003378 <RCC_AHB1PeriphClockCmd>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f802:	2101      	movs	r1, #1
  802f804:	f44f 0080 	mov.w	r0, #4194304	; 0x400000
  802f808:	f7ff fb54 	bl	802eeb4 <RCC_AHB1PeriphClockCmd>
@@ -76124,10 +76710,11 @@ void P_VGA_InitDMA(void)
  802f87a:	bd80      	pop	{r7, pc}
  802f87c:	40026488 	.word	0x40026488
  802f880:	40021015 	.word	0x40021015
- 802f884:	20000054 	.word	0x20000054
+ 802f884:	20000040 	.word	0x20000040
  802f888:	40010000 	.word	0x40010000
 
 0802f88c <TIM2_IRQHandler>:
+<<<<<<< HEAD
 =======
  8002346:	2101      	movs	r1, #1
  8002348:	f44f 0080 	mov.w	r0, #4194304	; 0x400000
@@ -76224,6 +76811,8 @@ void P_VGA_InitDMA(void)
 080023d0 <TIM2_IRQHandler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 //
 //   CC3-Interrupt    -> starts from DMA
 // Watch it.. higher troughput when interrupt flag is left alone
@@ -76231,10 +76820,13 @@ void P_VGA_InitDMA(void)
 void TIM2_IRQHandler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  80040fc:	b580      	push	{r7, lr}
  80040fe:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f88c:	b580      	push	{r7, lr}
  802f88e:	af00      	add	r7, sp, #0
 
@@ -76266,6 +76858,7 @@ void TIM2_IRQHandler(void)
  802f8b6:	4a20      	ldr	r2, [pc, #128]	; (802f938 <TIM2_IRQHandler+0xac>)
  802f8b8:	4b1e      	ldr	r3, [pc, #120]	; (802f934 <TIM2_IRQHandler+0xa8>)
  802f8ba:	605a      	str	r2, [r3, #4]
+<<<<<<< HEAD
 =======
  80023d0:	b580      	push	{r7, lr}
  80023d2:	af00      	add	r7, sp, #0
@@ -76306,10 +76899,13 @@ void TIM2_IRQHandler(void)
  80023fe:	605a      	str	r2, [r3, #4]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
 
   // HSync-Pixel
   if(VGA.hsync_cnt<VGA_VSYNC_IMP) {
+<<<<<<< HEAD
 <<<<<<< HEAD
  800412c:	4b1d      	ldr	r3, [pc, #116]	; (80041a4 <TIM2_IRQHandler+0xa8>)
  800412e:	881b      	ldrh	r3, [r3, #0]
@@ -76323,6 +76919,8 @@ void TIM2_IRQHandler(void)
  800413c:	e003      	b.n	8004146 <TIM2_IRQHandler+0x4a>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f8bc:	4b1d      	ldr	r3, [pc, #116]	; (802f934 <TIM2_IRQHandler+0xa8>)
  802f8be:	881b      	ldrh	r3, [r3, #0]
  802f8c0:	2b01      	cmp	r3, #1
@@ -76333,6 +76931,7 @@ void TIM2_IRQHandler(void)
  802f8c6:	f44f 5280 	mov.w	r2, #4096	; 0x1000
  802f8ca:	835a      	strh	r2, [r3, #26]
  802f8cc:	e003      	b.n	802f8d6 <TIM2_IRQHandler+0x4a>
+<<<<<<< HEAD
 =======
  8002400:	4b1d      	ldr	r3, [pc, #116]	; (8002478 <TIM2_IRQHandler+0xa8>)
  8002402:	881b      	ldrh	r3, [r3, #0]
@@ -76346,16 +76945,21 @@ void TIM2_IRQHandler(void)
  8002410:	e003      	b.n	800241a <TIM2_IRQHandler+0x4a>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
   else {
     // HSync High
     GPIOB->BSRRL = GPIO_Pin_12;
+<<<<<<< HEAD
 <<<<<<< HEAD
  800413e:	4b1b      	ldr	r3, [pc, #108]	; (80041ac <TIM2_IRQHandler+0xb0>)
  8004140:	f44f 5280 	mov.w	r2, #4096	; 0x1000
  8004144:	831a      	strh	r2, [r3, #24]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f8ce:	4b1b      	ldr	r3, [pc, #108]	; (802f93c <TIM2_IRQHandler+0xb0>)
  802f8d0:	f44f 5280 	mov.w	r2, #4096	; 0x1000
  802f8d4:	831a      	strh	r2, [r3, #24]
@@ -76423,13 +77027,14 @@ void TIM2_IRQHandler(void)
  802f92e:	bf00      	nop
  802f930:	bd80      	pop	{r7, pc}
  802f932:	bf00      	nop
- 802f934:	20000044 	.word	0x20000044
- 802f938:	20000054 	.word	0x20000054
+ 802f934:	20000034 	.word	0x20000034
+ 802f938:	20000040 	.word	0x20000040
  802f93c:	40020400 	.word	0x40020400
  802f940:	40026488 	.word	0x40026488
  802f944:	40010000 	.word	0x40010000
 
 0802f948 <DMA2_Stream5_IRQHandler>:
+<<<<<<< HEAD
 =======
  8002412:	4b1b      	ldr	r3, [pc, #108]	; (8002480 <TIM2_IRQHandler+0xb0>)
  8002414:	f44f 5280 	mov.w	r2, #4096	; 0x1000
@@ -76520,6 +77125,8 @@ void TIM2_IRQHandler(void)
 0800248c <DMA2_Stream5_IRQHandler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 //   after TransferCompleteInterrupt -> stop DMA
 //
 // still a bit buggy
@@ -76527,10 +77134,13 @@ void TIM2_IRQHandler(void)
 void DMA2_Stream5_IRQHandler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  80041b8:	b580      	push	{r7, lr}
  80041ba:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f948:	b580      	push	{r7, lr}
  802f94a:	af00      	add	r7, sp, #0
   if(DMA_GetITStatus(DMA2_Stream5, DMA_IT_TCIF5))
@@ -76546,6 +77156,7 @@ void DMA2_Stream5_IRQHandler(void)
  802f95a:	490a      	ldr	r1, [pc, #40]	; (802f984 <DMA2_Stream5_IRQHandler+0x3c>)
  802f95c:	480a      	ldr	r0, [pc, #40]	; (802f988 <DMA2_Stream5_IRQHandler+0x40>)
  802f95e:	f7ff f9a3 	bl	802eca8 <DMA_ClearITPendingBit>
+<<<<<<< HEAD
 =======
  800248c:	b580      	push	{r7, lr}
  800248e:	af00      	add	r7, sp, #0
@@ -76570,10 +77181,13 @@ void DMA2_Stream5_IRQHandler(void)
  80024a2:	f7fe ff43 	bl	800132c <DMA_ClearITPendingBit>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
     // stop after all pixels => DMA Transfer stop
 
     // Timer1 stop
     TIM1->CR1&=~TIM_CR1_CEN;
+<<<<<<< HEAD
 <<<<<<< HEAD
  80041d2:	4a0a      	ldr	r2, [pc, #40]	; (80041fc <DMA2_Stream5_IRQHandler+0x44>)
  80041d4:	4b09      	ldr	r3, [pc, #36]	; (80041fc <DMA2_Stream5_IRQHandler+0x44>)
@@ -76584,6 +77198,8 @@ void DMA2_Stream5_IRQHandler(void)
  80041e0:	8013      	strh	r3, [r2, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f962:	4a0a      	ldr	r2, [pc, #40]	; (802f98c <DMA2_Stream5_IRQHandler+0x44>)
  802f964:	4b09      	ldr	r3, [pc, #36]	; (802f98c <DMA2_Stream5_IRQHandler+0x44>)
  802f966:	881b      	ldrh	r3, [r3, #0]
@@ -76611,6 +77227,7 @@ void DMA2_Stream5_IRQHandler(void)
  802f990:	40021000 	.word	0x40021000
 
 0802f994 <USART2_IRQHandler>:
+<<<<<<< HEAD
 =======
  80024a6:	4a0a      	ldr	r2, [pc, #40]	; (80024d0 <DMA2_Stream5_IRQHandler+0x44>)
  80024a8:	4b09      	ldr	r3, [pc, #36]	; (80024d0 <DMA2_Stream5_IRQHandler+0x44>)
@@ -76826,6 +77443,8 @@ void UART_puts(char *s)
 080025d8 <USART2_IRQHandler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
 }
@@ -76833,11 +77452,14 @@ void UART_puts(char *s)
 void USART2_IRQHandler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  8004304:	b580      	push	{r7, lr}
  8004306:	b082      	sub	sp, #8
  8004308:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f994:	b580      	push	{r7, lr}
  802f996:	b082      	sub	sp, #8
  802f998:	af00      	add	r7, sp, #0
@@ -76860,6 +77482,7 @@ void USART2_IRQHandler(void)
  802f9b6:	889b      	ldrh	r3, [r3, #4]
  802f9b8:	b29b      	uxth	r3, r3
  802f9ba:	70fb      	strb	r3, [r7, #3]
+<<<<<<< HEAD
 =======
  80025d8:	b580      	push	{r7, lr}
  80025da:	b082      	sub	sp, #8
@@ -76892,12 +77515,15 @@ void USART2_IRQHandler(void)
  80025fe:	70fb      	strb	r3, [r7, #3]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 //		LCD_XY(10,1);
 //		LCD_put("UART:   ");
 //		LCD_XY(15,1);
 //		LCD_putchar(c);
 
 		if(c > 64 && c < 91)
+<<<<<<< HEAD
 <<<<<<< HEAD
  800432c:	78fb      	ldrb	r3, [r7, #3]
  800432e:	2b40      	cmp	r3, #64	; 0x40
@@ -76907,6 +77533,8 @@ void USART2_IRQHandler(void)
  8004336:	d802      	bhi.n	800433e <USART2_IRQHandler+0x3a>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802f9bc:	78fb      	ldrb	r3, [r7, #3]
  802f9be:	2b40      	cmp	r3, #64	; 0x40
  802f9c0:	d905      	bls.n	802f9ce <USART2_IRQHandler+0x3a>
@@ -76957,6 +77585,7 @@ void USART2_IRQHandler(void)
  802fa08:	480c      	ldr	r0, [pc, #48]	; (802fa3c <USART2_IRQHandler+0xa8>)
  802fa0a:	f7ff fce0 	bl	802f3ce <USART_SendData>
  802fa0e:	e009      	b.n	802fa24 <USART2_IRQHandler+0x90>
+<<<<<<< HEAD
 =======
  8002600:	78fb      	ldrb	r3, [r7, #3]
  8002602:	2b40      	cmp	r3, #64	; 0x40
@@ -77019,10 +77648,13 @@ void USART2_IRQHandler(void)
  8002652:	e009      	b.n	8002668 <USART2_IRQHandler+0x90>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 		}
 		else
 		{
 			string[charcounter] = c;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8004380:	4b0c      	ldr	r3, [pc, #48]	; (80043b4 <USART2_IRQHandler+0xb0>)
  8004382:	681b      	ldr	r3, [r3, #0]
@@ -77037,6 +77669,8 @@ void USART2_IRQHandler(void)
  8004392:	6013      	str	r3, [r2, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fa10:	4b0c      	ldr	r3, [pc, #48]	; (802fa44 <USART2_IRQHandler+0xb0>)
  802fa12:	681b      	ldr	r3, [r3, #0]
  802fa14:	490a      	ldr	r1, [pc, #40]	; (802fa40 <USART2_IRQHandler+0xac>)
@@ -77048,6 +77682,7 @@ void USART2_IRQHandler(void)
  802fa1e:	3301      	adds	r3, #1
  802fa20:	4a08      	ldr	r2, [pc, #32]	; (802fa44 <USART2_IRQHandler+0xb0>)
  802fa22:	6013      	str	r3, [r2, #0]
+<<<<<<< HEAD
 =======
  8002654:	4b0c      	ldr	r3, [pc, #48]	; (8002688 <USART2_IRQHandler+0xb0>)
  8002656:	681b      	ldr	r3, [r3, #0]
@@ -77062,10 +77697,13 @@ void USART2_IRQHandler(void)
  8002666:	6013      	str	r3, [r2, #0]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 		}
 
 
 		while (USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET); // Wait for Empty
+<<<<<<< HEAD
 <<<<<<< HEAD
  8004394:	bf00      	nop
  8004396:	2140      	movs	r1, #64	; 0x40
@@ -77076,6 +77714,8 @@ void USART2_IRQHandler(void)
  80043a2:	d0f8      	beq.n	8004396 <USART2_IRQHandler+0x92>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fa24:	bf00      	nop
  802fa26:	2140      	movs	r1, #64	; 0x40
  802fa28:	4804      	ldr	r0, [pc, #16]	; (802fa3c <USART2_IRQHandler+0xa8>)
@@ -77091,10 +77731,11 @@ void USART2_IRQHandler(void)
  802fa38:	46bd      	mov	sp, r7
  802fa3a:	bd80      	pop	{r7, pc}
  802fa3c:	40004400 	.word	0x40004400
- 802fa40:	20012e1c 	.word	0x20012e1c
+ 802fa40:	20012db0 	.word	0x20012db0
  802fa44:	2000001c 	.word	0x2000001c
 
 0802fa48 <main>:
+<<<<<<< HEAD
 #include "stm32_ub_vga_screen.h"
 #include <math.h>
 =======
@@ -77219,44 +77860,50 @@ void UART_gets(char *s, int echo)
  800442e:	bd80      	pop	{r7, pc}
 
 08004430 <main>:
+=======
+>>>>>>> sambranch
 #include "main.h"
-#include "includes.h"
->>>>>>> MilanV1
+
 
 
 int main(void)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8004430:	b580      	push	{r7, lr}
  8004432:	b084      	sub	sp, #16
  8004434:	af04      	add	r7, sp, #16
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fa48:	b580      	push	{r7, lr}
  802fa4a:	b084      	sub	sp, #16
  802fa4c:	af02      	add	r7, sp, #8
-	//  uint32_t n;
+	//_____________________________INIT______________________________________________
 
 	SystemInit(); // System speed to 168MHz
  802fa4e:	f000 f89f 	bl	802fb90 <SystemInit>
-	//UART_init();
-	//DELAY_init();
 	UB_VGA_Screen_Init(); // Init VGA-Screen
  802fa52:	f7ff fd63 	bl	802f51c <UB_VGA_Screen_Init>
 
-	int backcolor = lichtcyaan;
+	int backcolor = lichtcyaan;	//achtergrondkleur definieren
  802fa56:	237f      	movs	r3, #127	; 0x7f
  802fa58:	607b      	str	r3, [r7, #4]
-	int textcolor = geel;
+	int textcolor = geel;		//textkleur definieren
  802fa5a:	23fc      	movs	r3, #252	; 0xfc
  802fa5c:	603b      	str	r3, [r7, #0]
+//		UB_VGA_SetPixel(x1,k,50);
+//	for(int l=y1;l<=y2;l++)
+//		UB_VGA_SetPixel(x2,l,255);
+
 
 	UB_VGA_FillScreen(backcolor);
  802fa5e:	687b      	ldr	r3, [r7, #4]
  802fa60:	b2db      	uxtb	r3, r3
  802fa62:	4618      	mov	r0, r3
  802fa64:	f7ff fd9a 	bl	802f59c <UB_VGA_FillScreen>
-	//draw_rectangle (0,0,50,50,125);
+
 	draw_bitmap (65, 50, "happy", backcolor);
  802fa68:	687b      	ldr	r3, [r7, #4]
  802fa6a:	4a16      	ldr	r2, [pc, #88]	; (802fac4 <main+0x7c>)
@@ -77293,9 +77940,6 @@ int main(void)
  802faa8:	21aa      	movs	r1, #170	; 0xaa
  802faaa:	f44f 708c 	mov.w	r0, #280	; 0x118
  802faae:	f7d0 fb9d 	bl	80001ec <draw_bitmap>
-
-	//UB_VGA_SetPixel(10,10,127);
-
 	draw_text (70, 30, "writing code, it would be fun they said", backcolor, textcolor);
  802fab2:	683b      	ldr	r3, [r7, #0]
  802fab4:	9300      	str	r3, [sp, #0]
@@ -77305,10 +77949,10 @@ int main(void)
  802fabc:	2046      	movs	r0, #70	; 0x46
  802fabe:	f7fe fe91 	bl	802e7e4 <draw_text>
 
-	UART_puts(	"Welke van de volgende functies wil je gebruiken? "
-				"line/triangle/rectangle/ellips/text/bitmap/clr_screen\r");
-	char text[100];
-*/
+	//UB_VGA_SetPixel(10,10,127);
+	//draw_rectangle (0,0,50,50,125);
+
+
 	while(1)
  802fac2:	e7fe      	b.n	802fac2 <main+0x7a>
  802fac4:	08031694 	.word	0x08031694
@@ -77320,6 +77964,7 @@ int main(void)
  802fadc:	080316bc 	.word	0x080316bc
 
 0802fae0 <Reset_Handler>:
+<<<<<<< HEAD
 =======
  8002704:	b580      	push	{r7, lr}
  8002706:	b084      	sub	sp, #16
@@ -77385,6 +78030,8 @@ int main(void)
 08002764 <Reset_Handler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
 
     .section  .text.Reset_Handler
   .weak  Reset_Handler
@@ -77392,9 +78039,12 @@ int main(void)
 Reset_Handler:  
   ldr   sp, =_estack    /* Atollic update: set stack pointer */
 <<<<<<< HEAD
+<<<<<<< HEAD
  8004490:	f8df d034 	ldr.w	sp, [pc, #52]	; 80044c8 <LoopFillZerobss+0x14>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fae0:	f8df d034 	ldr.w	sp, [pc, #52]	; 802fb18 <LoopFillZerobss+0x14>
 
 /* Copy the data segment initializers from flash to SRAM */  
@@ -77473,9 +78123,10 @@ LoopFillZerobss:
   ldr  r2, =_sbss
  802fb28:	20000000 	.word	0x20000000
   ldr  r3, = _ebss
- 802fb2c:	20012e80 	.word	0x20012e80
+ 802fb2c:	20012e14 	.word	0x20012e14
 
 0802fb30 <ADC_IRQHandler>:
+<<<<<<< HEAD
 =======
  8002764:	f8df d034 	ldr.w	sp, [pc, #52]	; 800279c <LoopFillZerobss+0x14>
 >>>>>>> sambranch
@@ -77564,12 +78215,15 @@ LoopFillZerobss:
 080027b4 <ADC_IRQHandler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
  * @retval None       
 */
     .section  .text.Default_Handler,"ax",%progbits
 Default_Handler:
 Infinite_Loop:
   b  Infinite_Loop
+<<<<<<< HEAD
 <<<<<<< HEAD
  80044e0:	e7fe      	b.n	80044e0 <ADC_IRQHandler>
 
@@ -77585,6 +78239,11 @@ Infinite_Loop:
 080027b6 <NMI_Handler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802fb30:	e7fe      	b.n	802fb30 <ADC_IRQHandler>
+
+0802fb32 <NMI_Handler>:
+>>>>>>> sambranch
   * @brief   This function handles NMI exception.
   * @param  None
   * @retval None
@@ -77592,10 +78251,13 @@ Infinite_Loop:
 void NMI_Handler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  80044e2:	b480      	push	{r7}
  80044e4:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fb32:	b480      	push	{r7}
  802fb34:	af00      	add	r7, sp, #0
 }
@@ -77605,6 +78267,7 @@ void NMI_Handler(void)
  802fb3e:	4770      	bx	lr
 
 0802fb40 <HardFault_Handler>:
+<<<<<<< HEAD
 =======
  80027b6:	b480      	push	{r7}
  80027b8:	af00      	add	r7, sp, #0
@@ -77621,6 +78284,8 @@ void NMI_Handler(void)
 080027c4 <HardFault_Handler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @brief  This function handles Hard Fault exception.
   * @param  None
   * @retval None
@@ -77628,10 +78293,13 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  80044f0:	b480      	push	{r7}
  80044f2:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fb40:	b480      	push	{r7}
  802fb42:	af00      	add	r7, sp, #0
   /* Go to infinite loop when Hard Fault exception occurs */
@@ -77639,6 +78307,7 @@ void HardFault_Handler(void)
  802fb44:	e7fe      	b.n	802fb44 <HardFault_Handler+0x4>
 
 0802fb46 <MemManage_Handler>:
+<<<<<<< HEAD
 =======
  80027c4:	b480      	push	{r7}
  80027c6:	af00      	add	r7, sp, #0
@@ -77653,6 +78322,8 @@ void HardFault_Handler(void)
 080027ca <MemManage_Handler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @brief  This function handles Memory Manage exception.
   * @param  None
   * @retval None
@@ -77660,10 +78331,13 @@ void HardFault_Handler(void)
 void MemManage_Handler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  80044f6:	b480      	push	{r7}
  80044f8:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fb46:	b480      	push	{r7}
  802fb48:	af00      	add	r7, sp, #0
   /* Go to infinite loop when Memory Manage exception occurs */
@@ -77671,6 +78345,7 @@ void MemManage_Handler(void)
  802fb4a:	e7fe      	b.n	802fb4a <MemManage_Handler+0x4>
 
 0802fb4c <BusFault_Handler>:
+<<<<<<< HEAD
 =======
  80027ca:	b480      	push	{r7}
  80027cc:	af00      	add	r7, sp, #0
@@ -77685,6 +78360,8 @@ void MemManage_Handler(void)
 080027d0 <BusFault_Handler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @brief  This function handles Bus Fault exception.
   * @param  None
   * @retval None
@@ -77692,10 +78369,13 @@ void MemManage_Handler(void)
 void BusFault_Handler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  80044fc:	b480      	push	{r7}
  80044fe:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fb4c:	b480      	push	{r7}
  802fb4e:	af00      	add	r7, sp, #0
   /* Go to infinite loop when Bus Fault exception occurs */
@@ -77703,6 +78383,7 @@ void BusFault_Handler(void)
  802fb50:	e7fe      	b.n	802fb50 <BusFault_Handler+0x4>
 
 0802fb52 <UsageFault_Handler>:
+<<<<<<< HEAD
 =======
  80027d0:	b480      	push	{r7}
  80027d2:	af00      	add	r7, sp, #0
@@ -77717,6 +78398,8 @@ void BusFault_Handler(void)
 080027d6 <UsageFault_Handler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @brief  This function handles Usage Fault exception.
   * @param  None
   * @retval None
@@ -77724,10 +78407,13 @@ void BusFault_Handler(void)
 void UsageFault_Handler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  8004502:	b480      	push	{r7}
  8004504:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fb52:	b480      	push	{r7}
  802fb54:	af00      	add	r7, sp, #0
   /* Go to infinite loop when Usage Fault exception occurs */
@@ -77735,6 +78421,7 @@ void UsageFault_Handler(void)
  802fb56:	e7fe      	b.n	802fb56 <UsageFault_Handler+0x4>
 
 0802fb58 <SVC_Handler>:
+<<<<<<< HEAD
 =======
  80027d6:	b480      	push	{r7}
  80027d8:	af00      	add	r7, sp, #0
@@ -77749,6 +78436,8 @@ void UsageFault_Handler(void)
 080027dc <SVC_Handler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @brief  This function handles SVCall exception.
   * @param  None
   * @retval None
@@ -77756,10 +78445,13 @@ void UsageFault_Handler(void)
 void SVC_Handler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  8004508:	b480      	push	{r7}
  800450a:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fb58:	b480      	push	{r7}
  802fb5a:	af00      	add	r7, sp, #0
 }
@@ -77769,6 +78461,7 @@ void SVC_Handler(void)
  802fb64:	4770      	bx	lr
 
 0802fb66 <DebugMon_Handler>:
+<<<<<<< HEAD
 =======
  80027dc:	b480      	push	{r7}
  80027de:	af00      	add	r7, sp, #0
@@ -77785,6 +78478,8 @@ void SVC_Handler(void)
 080027ea <DebugMon_Handler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @brief  This function handles Debug Monitor exception.
   * @param  None
   * @retval None
@@ -77792,10 +78487,13 @@ void SVC_Handler(void)
 void DebugMon_Handler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  8004516:	b480      	push	{r7}
  8004518:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fb66:	b480      	push	{r7}
  802fb68:	af00      	add	r7, sp, #0
 }
@@ -77805,6 +78503,7 @@ void DebugMon_Handler(void)
  802fb72:	4770      	bx	lr
 
 0802fb74 <PendSV_Handler>:
+<<<<<<< HEAD
 =======
  80027ea:	b480      	push	{r7}
  80027ec:	af00      	add	r7, sp, #0
@@ -77821,6 +78520,8 @@ void DebugMon_Handler(void)
 080027f8 <PendSV_Handler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @brief  This function handles PendSVC exception.
   * @param  None
   * @retval None
@@ -77828,10 +78529,13 @@ void DebugMon_Handler(void)
 void PendSV_Handler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  8004524:	b480      	push	{r7}
  8004526:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fb74:	b480      	push	{r7}
  802fb76:	af00      	add	r7, sp, #0
 }
@@ -77841,6 +78545,7 @@ void PendSV_Handler(void)
  802fb80:	4770      	bx	lr
 
 0802fb82 <SysTick_Handler>:
+<<<<<<< HEAD
 =======
  80027f8:	b480      	push	{r7}
  80027fa:	af00      	add	r7, sp, #0
@@ -77857,6 +78562,8 @@ void PendSV_Handler(void)
 08002806 <SysTick_Handler>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   * @brief  This function handles SysTick Handler.
   * @param  None
   * @retval None
@@ -77864,10 +78571,13 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  8004532:	b480      	push	{r7}
  8004534:	af00      	add	r7, sp, #0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fb82:	b480      	push	{r7}
  802fb84:	af00      	add	r7, sp, #0
 /*  TimingDelay_Decrement(); */
@@ -77878,6 +78588,7 @@ void SysTick_Handler(void)
  802fb8e:	4770      	bx	lr
 
 0802fb90 <SystemInit>:
+<<<<<<< HEAD
 =======
  8002806:	b480      	push	{r7}
  8002808:	af00      	add	r7, sp, #0
@@ -77895,12 +78606,15 @@ void SysTick_Handler(void)
 08002814 <SystemInit>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   *         SystemFrequency variable.
   * @param  None
   * @retval None
   */
 void SystemInit(void)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  8004540:	b580      	push	{r7, lr}
  8004542:	af00      	add	r7, sp, #0
@@ -77914,6 +78628,8 @@ void SystemInit(void)
  8004550:	f8c2 3088 	str.w	r3, [r2, #136]	; 0x88
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fb90:	b580      	push	{r7, lr}
  802fb92:	af00      	add	r7, sp, #0
   /* FPU settings ------------------------------------------------------------*/
@@ -77924,6 +78640,7 @@ void SystemInit(void)
  802fb98:	f8d3 3088 	ldr.w	r3, [r3, #136]	; 0x88
  802fb9c:	f443 0370 	orr.w	r3, r3, #15728640	; 0xf00000
  802fba0:	f8c2 3088 	str.w	r3, [r2, #136]	; 0x88
+<<<<<<< HEAD
 =======
  8002814:	b580      	push	{r7, lr}
  8002816:	af00      	add	r7, sp, #0
@@ -77937,10 +78654,13 @@ void SystemInit(void)
  8002824:	f8c2 3088 	str.w	r3, [r2, #136]	; 0x88
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   #endif
   /* Reset the RCC clock configuration to the default reset state ------------*/
   /* Set HSION bit */
   RCC->CR |= (uint32_t)0x00000001;
+<<<<<<< HEAD
 <<<<<<< HEAD
  8004554:	4a13      	ldr	r2, [pc, #76]	; (80045a4 <SystemInit+0x64>)
  8004556:	4b13      	ldr	r3, [pc, #76]	; (80045a4 <SystemInit+0x64>)
@@ -77949,6 +78669,8 @@ void SystemInit(void)
  800455e:	6013      	str	r3, [r2, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fba4:	4a13      	ldr	r2, [pc, #76]	; (802fbf4 <SystemInit+0x64>)
  802fba6:	4b13      	ldr	r3, [pc, #76]	; (802fbf4 <SystemInit+0x64>)
  802fba8:	681b      	ldr	r3, [r3, #0]
@@ -77989,6 +78711,7 @@ void SystemInit(void)
  802fbd8:	4b06      	ldr	r3, [pc, #24]	; (802fbf4 <SystemInit+0x64>)
  802fbda:	2200      	movs	r2, #0
  802fbdc:	60da      	str	r2, [r3, #12]
+<<<<<<< HEAD
 =======
  8002828:	4a13      	ldr	r2, [pc, #76]	; (8002878 <SystemInit+0x64>)
  800282a:	4b13      	ldr	r3, [pc, #76]	; (8002878 <SystemInit+0x64>)
@@ -78038,12 +78761,15 @@ void SystemInit(void)
  8002860:	60da      	str	r2, [r3, #12]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   SystemInit_ExtMemCtl(); 
 #endif /* DATA_IN_ExtSRAM */
          
   /* Configure the System clock source, PLL Multiplier and Divider factors, 
      AHB/APBx prescalers and Flash settings ----------------------------------*/
   SetSysClock();
+<<<<<<< HEAD
 <<<<<<< HEAD
  800458e:	f000 f80d 	bl	80045ac <SetSysClock>
 =======
@@ -78053,12 +78779,16 @@ void SystemInit(void)
  8002862:	f000 f80d 	bl	8002880 <SetSysClock>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802fbde:	f000 f80d 	bl	802fbfc <SetSysClock>
+>>>>>>> sambranch
 
   /* Configure the Vector Table location add offset address ------------------*/
 #ifdef VECT_TAB_SRAM
   SCB->VTOR = SRAM_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal SRAM */
 #else
   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
+<<<<<<< HEAD
 <<<<<<< HEAD
  8004592:	4b03      	ldr	r3, [pc, #12]	; (80045a0 <SystemInit+0x60>)
  8004594:	f04f 6200 	mov.w	r2, #134217728	; 0x8000000
@@ -78075,6 +78805,8 @@ void SystemInit(void)
 080045ac <SetSysClock>:
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fbe2:	4b03      	ldr	r3, [pc, #12]	; (802fbf0 <SystemInit+0x60>)
  802fbe4:	f04f 6200 	mov.w	r2, #134217728	; 0x8000000
  802fbe8:	609a      	str	r2, [r3, #8]
@@ -78088,6 +78820,7 @@ void SystemInit(void)
  802fbf8:	24003010 	.word	0x24003010
 
 0802fbfc <SetSysClock>:
+<<<<<<< HEAD
 =======
  8002866:	4b03      	ldr	r3, [pc, #12]	; (8002874 <SystemInit+0x60>)
  8002868:	f04f 6200 	mov.w	r2, #134217728	; 0x8000000
@@ -78104,12 +78837,15 @@ void SystemInit(void)
 08002880 <SetSysClock>:
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   *         is reset to the default reset state (done in SystemInit() function).   
   * @param  None
   * @retval None
   */
 static void SetSysClock(void)
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  80045ac:	b480      	push	{r7}
  80045ae:	b083      	sub	sp, #12
@@ -78125,10 +78861,16 @@ static void SetSysClock(void)
  8002884:	af00      	add	r7, sp, #0
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+ 802fbfc:	b480      	push	{r7}
+ 802fbfe:	b083      	sub	sp, #12
+ 802fc00:	af00      	add	r7, sp, #0
+>>>>>>> sambranch
 /******************************************************************************/
 /*            PLL (clocked by HSE) used as System clock source                */
 /******************************************************************************/
   __IO uint32_t StartUpCounter = 0, HSEStatus = 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
  80045b2:	2300      	movs	r3, #0
  80045b4:	607b      	str	r3, [r7, #4]
@@ -78144,6 +78886,8 @@ static void SetSysClock(void)
  80045c4:	6013      	str	r3, [r2, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fc02:	2300      	movs	r3, #0
  802fc04:	607b      	str	r3, [r7, #4]
  802fc06:	2300      	movs	r3, #0
@@ -78156,6 +78900,7 @@ static void SetSysClock(void)
  802fc0e:	681b      	ldr	r3, [r3, #0]
  802fc10:	f443 3380 	orr.w	r3, r3, #65536	; 0x10000
  802fc14:	6013      	str	r3, [r2, #0]
+<<<<<<< HEAD
 =======
  8002886:	2300      	movs	r3, #0
  8002888:	607b      	str	r3, [r7, #4]
@@ -78171,11 +78916,14 @@ static void SetSysClock(void)
  8002898:	6013      	str	r3, [r2, #0]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
  
   /* Wait till HSE is ready and if Time out is reached exit */
   do
   {
     HSEStatus = RCC->CR & RCC_CR_HSERDY;
+<<<<<<< HEAD
 <<<<<<< HEAD
  80045c6:	4b33      	ldr	r3, [pc, #204]	; (8004694 <SetSysClock+0xe8>)
  80045c8:	681b      	ldr	r3, [r3, #0]
@@ -78183,6 +78931,8 @@ static void SetSysClock(void)
  80045ce:	603b      	str	r3, [r7, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fc16:	4b33      	ldr	r3, [pc, #204]	; (802fce4 <SetSysClock+0xe8>)
  802fc18:	681b      	ldr	r3, [r3, #0]
  802fc1a:	f403 3300 	and.w	r3, r3, #131072	; 0x20000
@@ -78210,6 +78960,7 @@ static void SetSysClock(void)
  802fc40:	2301      	movs	r3, #1
  802fc42:	603b      	str	r3, [r7, #0]
  802fc44:	e001      	b.n	802fc4a <SetSysClock+0x4e>
+<<<<<<< HEAD
 =======
  800289a:	4b33      	ldr	r3, [pc, #204]	; (8002968 <SetSysClock+0xe8>)
  800289c:	681b      	ldr	r3, [r3, #0]
@@ -78246,15 +78997,20 @@ static void SetSysClock(void)
  80028c8:	e001      	b.n	80028ce <SetSysClock+0x4e>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   }
   else
   {
     HSEStatus = (uint32_t)0x00;
 <<<<<<< HEAD
+<<<<<<< HEAD
  80045f6:	2300      	movs	r3, #0
  80045f8:	603b      	str	r3, [r7, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fc46:	2300      	movs	r3, #0
  802fc48:	603b      	str	r3, [r7, #0]
   }
@@ -78306,6 +79062,7 @@ static void SetSysClock(void)
  802fc88:	4b16      	ldr	r3, [pc, #88]	; (802fce4 <SetSysClock+0xe8>)
  802fc8a:	4a18      	ldr	r2, [pc, #96]	; (802fcec <SetSysClock+0xf0>)
  802fc8c:	605a      	str	r2, [r3, #4]
+<<<<<<< HEAD
 =======
  80028ca:	2300      	movs	r3, #0
  80028cc:	603b      	str	r3, [r7, #0]
@@ -78366,10 +79123,13 @@ static void SetSysClock(void)
  8002910:	605a      	str	r2, [r3, #4]
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
                    (RCC_PLLCFGR_PLLSRC_HSE) | (PLL_Q << 24);
 
     /* Enable the main PLL */
     RCC->CR |= RCC_CR_PLLON;
+<<<<<<< HEAD
 <<<<<<< HEAD
  800463e:	4a15      	ldr	r2, [pc, #84]	; (8004694 <SetSysClock+0xe8>)
  8004640:	4b14      	ldr	r3, [pc, #80]	; (8004694 <SetSysClock+0xe8>)
@@ -78387,6 +79147,8 @@ static void SetSysClock(void)
  8004656:	d0f9      	beq.n	800464c <SetSysClock+0xa0>
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fc8e:	4a15      	ldr	r2, [pc, #84]	; (802fce4 <SetSysClock+0xe8>)
  802fc90:	4b14      	ldr	r3, [pc, #80]	; (802fce4 <SetSysClock+0xe8>)
  802fc92:	681b      	ldr	r3, [r3, #0]
@@ -78401,6 +79163,7 @@ static void SetSysClock(void)
  802fca0:	f003 7300 	and.w	r3, r3, #33554432	; 0x2000000
  802fca4:	2b00      	cmp	r3, #0
  802fca6:	d0f9      	beq.n	802fc9c <SetSysClock+0xa0>
+<<<<<<< HEAD
 =======
  8002912:	4a15      	ldr	r2, [pc, #84]	; (8002968 <SetSysClock+0xe8>)
  8002914:	4b14      	ldr	r3, [pc, #80]	; (8002968 <SetSysClock+0xe8>)
@@ -78418,17 +79181,22 @@ static void SetSysClock(void)
  800292a:	d0f9      	beq.n	8002920 <SetSysClock+0xa0>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
     {
     }
    
     /* Configure Flash prefetch, Instruction cache, Data cache and wait state */
     FLASH->ACR = FLASH_ACR_PRFTEN |FLASH_ACR_ICEN |FLASH_ACR_DCEN |FLASH_ACR_LATENCY_5WS;
 <<<<<<< HEAD
+<<<<<<< HEAD
  8004658:	4b11      	ldr	r3, [pc, #68]	; (80046a0 <SetSysClock+0xf4>)
  800465a:	f240 7205 	movw	r2, #1797	; 0x705
  800465e:	601a      	str	r2, [r3, #0]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fca8:	4b11      	ldr	r3, [pc, #68]	; (802fcf0 <SetSysClock+0xf4>)
  802fcaa:	f240 7205 	movw	r2, #1797	; 0x705
  802fcae:	601a      	str	r2, [r3, #0]
@@ -78455,6 +79223,7 @@ static void SetSysClock(void)
  802fcce:	f003 030c 	and.w	r3, r3, #12
  802fcd2:	2b08      	cmp	r3, #8
  802fcd4:	d1f9      	bne.n	802fcca <SetSysClock+0xce>
+<<<<<<< HEAD
 =======
  800292c:	4b11      	ldr	r3, [pc, #68]	; (8002974 <SetSysClock+0xf4>)
  800292e:	f240 7205 	movw	r2, #1797	; 0x705
@@ -78493,12 +79262,15 @@ static void SetSysClock(void)
  8002958:	d1f9      	bne.n	800294e <SetSysClock+0xce>
 >>>>>>> MilanV1
 >>>>>>> sambranch
+=======
+>>>>>>> sambranch
   else
   { /* If HSE fails to start-up, the application will have wrong clock
          configuration. User can add here some code to deal with this error */
   }
 
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
  8004686:	bf00      	nop
  8004688:	370c      	adds	r7, #12
@@ -78519,6 +79291,8 @@ int color(char *color_input);
 void get_data() //krijg je hier geen argumenten binnen?
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> sambranch
  802fcd6:	bf00      	nop
  802fcd8:	370c      	adds	r7, #12
  802fcda:	46bd      	mov	sp, r7
@@ -78588,6 +79362,7 @@ void get_data() //krijg je hier geen argumenten binnen?
  802fd66:	bc08      	pop	{r3}
  802fd68:	469e      	mov	lr, r3
  802fd6a:	4770      	bx	lr
+<<<<<<< HEAD
 =======
  800295a:	bf00      	nop
  800295c:	370c      	adds	r7, #12
@@ -80994,4 +81769,6 @@ int color(char *color_input)
  80037e0:	469e      	mov	lr, r3
  80037e2:	4770      	bx	lr
 >>>>>>> MilanV1
+>>>>>>> sambranch
+=======
 >>>>>>> sambranch
