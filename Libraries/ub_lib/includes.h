@@ -90,8 +90,8 @@
 #include "rectangle.h"
 #include "ellips.h"
 #include "terminal_input.h"
-#include "text.h"
 #include "bitmap.h"
+#include "text.h"
 #include "wait_ms.h"
 #include "clr_screen.h"
 
