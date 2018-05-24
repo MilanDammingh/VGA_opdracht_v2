@@ -14,7 +14,8 @@ int color(char *color_input);
 void get_data() //krijg je hier geen argumenten binnen?
 {
 	int fill=0;
-
+//	UART_get();
+//	if(UART_get() == "\0")
 	UART_gets(parameters,TRUE);		// Get data from terminal
 	UART_puts("input = "); UART_puts(parameters); UART_puts("\r");
 	token = strtok (parameters,",");	// Put first argument in token

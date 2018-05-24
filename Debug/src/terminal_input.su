@@ -1,2 +1,2 @@
 terminal_input.c:14:6:get_data	56	static
-terminal_input.c:295:5:color	16	static
+terminal_input.c:296:5:color	16	static
