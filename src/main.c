@@ -20,6 +20,8 @@ int main(void)
 	//_____________________________INIT______________________________________________
 
 	SystemInit(); // System speed to 168MHz
+	UART_init();
+	DELAY_init();
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
 	int backcolor = lichtcyaan;	//achtergrondkleur definieren
@@ -30,14 +32,15 @@ int main(void)
 
 	UB_VGA_FillScreen(backcolor);
 
-	draw_bitmap (65, 50, 1, backcolor);
-	draw_bitmap (10, 50, 2, backcolor);
-	draw_bitmap (150, 170, 3, backcolor);
-	draw_bitmap (190, 170, 4, backcolor);
-	draw_bitmap (230, 170, 5, backcolor);
-	draw_bitmap (280, 170, 6, backcolor);
+	draw_bitmap (0,65, 50, backcolor);
+	draw_bitmap (1, 10, 50, backcolor);
+	draw_bitmap (2, 150, 170, backcolor);
+	draw_bitmap (3, 190, 170, backcolor);
+	draw_bitmap (4, 230, 170, backcolor);
+	draw_bitmap (5, 280, 170, backcolor);
 	draw_text (70, 30, "writing code, it would be fun they said", backcolor, textcolor);
 
+	draw_line(10,100,100,200,4,rood);
 
 
 	while(1)
