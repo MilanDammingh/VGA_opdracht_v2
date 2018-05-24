@@ -19,30 +19,41 @@ int main(void)
 {
 	//_____________________________INIT______________________________________________
 
+
 	SystemInit(); // System speed to 168MHz
+	UART_init();
+	DELAY_init();
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-	int backcolor = lichtcyaan;	//achtergrondkleur definieren
-	int textcolor = geel;		//textkleur definieren
-
-
 	//_________________________FUNCTIES OPROEPEN___________________________________
-
-	UB_VGA_FillScreen(backcolor);
-
-	draw_bitmap (65, 50, 1, backcolor);
-	draw_bitmap (10, 50, 2, backcolor);
-	draw_bitmap (150, 170, 3, backcolor);
-	draw_bitmap (190, 170, 4, backcolor);
-	draw_bitmap (230, 170, 5, backcolor);
-	draw_bitmap (280, 170, 6, backcolor);
-	draw_text (70, 30, "writing code, it would be fun they said", backcolor, textcolor);
-
-
+	UB_VGA_FillScreen(zwart);
 
 	while(1)
 	{
-		get_data();
+		get_data(); // front_layer(); // input terminal
+
+		if(clearscrn_args.function != 0)
+		{
+			UART_puts("function = "); UART_puts(clearscrn_args.function); UART_puts("\r");
+		}
+		else if(line_args.function != 0)
+		{
+			UART_puts("function = "); UART_puts(line_args.function); UART_puts("\r");
+		}
+		else if(ellips_args.function != 0)
+		{
+			UART_puts("function = "); UART_puts(ellips_args.function); UART_puts("\r");
+		}
+//			UART_puts("function = "); UART_puts(ellips_args.function); UART_puts("\r");
+//			UART_puts("function = "); UART_puts(rectangle_args.function); UART_puts("\r");
+//			UART_puts("function = "); UART_puts(triangle_args.function); UART_puts("\r");
+//			UART_puts("function = "); UART_puts(text_args.function); UART_puts("\r");
+//			UART_puts("function = "); UART_puts(bitmap_args.function); UART_puts("\r");
+//			UART_puts("function = "); UART_puts(wait_args.function); UART_puts("\r");
+
+
+//		logic_layer(); //oproepen_functies();
+//		io_layer(); // UB_VGA_SetPixel(xp,yp,color);
 	}
 
 }

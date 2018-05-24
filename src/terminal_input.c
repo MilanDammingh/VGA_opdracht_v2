@@ -11,11 +11,9 @@ int color(char *color_input);
 
 
 
-void get_data() //krijg je hier geen argumenten binnen?
+void get_data()
 {
 	int fill=0;
-//	UART_get();
-//	if(UART_get() == "\0")
 	UART_gets(parameters,TRUE);		// Get data from terminal
 	UART_puts("input = "); UART_puts(parameters); UART_puts("\r");
 	token = strtok (parameters,",");	// Put first argument in token
@@ -30,7 +28,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 		  switch(fill)						// Fill char string with each parameter
 		  {
 			case 0:
-			  strcpy(functions,token);
+			  strcpy(clearscrn_args.function,token);
 			  break;
 			case 1:
 			  strcpy(clearscrn_args.color,token);
@@ -52,7 +50,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 			switch(fill)
 			{
 				case 0:
-					strcpy(functions,token);
+					strcpy(line_args.function,token);
 					break;
 				case 1:
 					strcpy(line_args.x1,token);
@@ -94,7 +92,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 			switch(fill)
 			{
 				case 0:
-					strcpy(functions,token);
+					strcpy(ellips_args.function,token);
 					break;
 				case 1:
 					strcpy(ellips_args.x_center,token);
@@ -132,7 +130,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 			switch(fill)
 			{
 				case 0:
-					strcpy(functions,token);
+					strcpy(rectangle_args.function,token);
 					break;
 				case 1:
 					strcpy(rectangle_args.x1,token);
@@ -170,7 +168,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 			switch(fill)
 			{
 				case 0:
-					strcpy(functions,token);
+					strcpy(triangle_args.function,token);
 					break;
 				case 1:
 					strcpy(triangle_args.x1,token);
@@ -191,7 +189,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 					strcpy(triangle_args.ytop,token);
 					break;
 				case 7:
-					strcpy(rectangle_args.color,token);
+					strcpy(triangle_args.color,token);
 					break;
 			}
 			fill++;
@@ -216,7 +214,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 			switch(fill)
 			{
 				case 0:
-					strcpy(functions,token);
+					strcpy(text_args.function,token);
 					break;
 				case 1:
 					strcpy(text_args.x1,token);
@@ -227,11 +225,15 @@ void get_data() //krijg je hier geen argumenten binnen?
 				case 3:
 					strcpy(text_args.text_in,token);
 					break;
+				case 4:
+					strcpy(text_args.color,token);
+					break;
+
 			}
 			fill++;
 			token = strtok (NULL, ",");
 		}
-		draw_text(atoi(text_args.x1),atoi(text_args.y1),text_args.text_in,zwart,wit);
+		draw_text(atoi(text_args.x1),atoi(text_args.y1),text_args.text_in,color(clearscrn_args.color),color(text_args.color));
 
 //		UART_puts("x1 = "); UART_puts(text_args.x1); UART_puts("\r");
 //		UART_puts("y1 = "); UART_puts(text_args.y1); UART_puts("\r");
@@ -246,7 +248,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 			switch(fill)
 			{
 				case 0:
-					strcpy(functions,token);
+					strcpy(bitmap_args.function,token);
 					break;
 				case 1:
 					strcpy(bitmap_args.bitmap_nr,token);
@@ -261,7 +263,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 			fill++;
 			token = strtok (NULL, ",");
 		}
-		draw_bitmap(atoi(bitmap_args.bitmap_nr),atoi(bitmap_args.x1),atoi(bitmap_args.y1),zwart);
+		draw_bitmap(atoi(bitmap_args.bitmap_nr),atoi(bitmap_args.x1),atoi(bitmap_args.y1),color(clearscrn_args.color));
 
 
 //		UART_puts("x1 = "); UART_puts(bitmap_args.x1); UART_puts("\r");
@@ -278,7 +280,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 			switch(fill)
 			{
 			case 0:
-				strcpy(functions,token);
+				strcpy(wait_args.function,token);
 				break;
 			case 1:
 				strcpy(wait_args.time_ms,token);
@@ -291,16 +293,14 @@ void get_data() //krijg je hier geen argumenten binnen?
 
 //    	UART_puts("time_ms = "); UART_puts(wait_args.time_ms); UART_puts("\r");
 	}
-
 }
-// If
+
 int color(char *color_input)
 {
 	if(strcmp(color_input, "zwart")==0) return zwart;
-	else if(strcmp(color_input, "blauw\r")==0) return blauw;
+	else if(strcmp(color_input, "blauw")==0) return blauw;
 	else if(strcmp(color_input, "lichtblauw")==0) return lichtblauw;
 	else if(strcmp(color_input, "groen")==0) return groen;
-	else if(strcmp(color_input, "groen\r")==0) return groen;
 	else if(strcmp(color_input, "lichtgroen")==0) return lichtgroen;
 	else if(strcmp(color_input, "rood")==0) return rood;
 	else if(strcmp(color_input, "lichtrood")==0) return lichtrood;
@@ -313,5 +313,5 @@ int color(char *color_input)
 	else if(strcmp(color_input, "bruin")==0) return bruin;
 	else if(strcmp(color_input, "grijs")==0) return grijs;
 	else if(strcmp(color_input, "paars")==0) return paars;
-	else return wit;
+	else return paars;
 };

@@ -249,8 +249,8 @@ void UART_gets(char *s, int echo)
 			continue;
 
 
-//		if (echo)              // if output-flag set
-//			UART_putchar(*s);  // to read what u entered
+		if (echo)              // if output-flag set
+			UART_putchar(*s);  // to read what u entered
 
 
 		if (*s==CR)            // if enter pressed

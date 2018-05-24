@@ -14,15 +14,15 @@ void letter_select(int x, int y, char letter, int backcolor, int textcolor){
 	//____________________________________ALFABET IN C ARRAY_________________________________________
 
 	int letter_A[10][4] = {
-			  backcolor, backcolor, backcolor, backcolor,  	//....
-			  backcolor, backcolor, backcolor, backcolor,  	//....
+			  backcolor, backcolor, backcolor, backcolor, //....
+			  backcolor, backcolor, backcolor, backcolor, //....
 			  backcolor, textcolor, textcolor, backcolor, //.@@.
 			  backcolor, textcolor, textcolor, backcolor, //.@@.
 			  textcolor, backcolor, backcolor, textcolor, //@..@
 			  textcolor, backcolor, backcolor, textcolor, //@..@
 			  textcolor, textcolor, textcolor, textcolor, //@@@@
-			  textcolor, backcolor, backcolor, textcolor,  //@..@
-			  backcolor, backcolor, backcolor, backcolor,  //....
+			  textcolor, backcolor, backcolor, textcolor, //@..@
+			  backcolor, backcolor, backcolor, backcolor, //....
 			  backcolor, backcolor, backcolor, backcolor
 	};
 	int letter_B[10][4] = {
