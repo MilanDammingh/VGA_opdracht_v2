@@ -4,12 +4,9 @@
  *  Created on: 3 mei 2018
  *      Author: Samuel Benhaiem
  */
-#include "line.h"
-#include "stm32_ub_vga_screen.h"
+
 #include "bitmap.h"
-#include "includes.h"
-#include <stdio.h>
-#include <stdlib.h>
+
 
 
 //Bitmap function, please provide X, Y and choose between these bitmaps:

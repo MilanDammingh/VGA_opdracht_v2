@@ -6,11 +6,7 @@
  */
 
 #include "text.h"
-#include "stm32_ub_vga_screen.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "letter_select.h"
 
 
 void draw_text (int x, int y, char text[], int backcolor, int textcolor) { //functie voor het schrijven van tekst

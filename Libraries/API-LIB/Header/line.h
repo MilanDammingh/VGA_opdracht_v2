@@ -5,10 +5,13 @@
  *      Author: Milan Dammingh
  */
 
+
 #ifndef API_LIB_HEADER_LINE_H_
 #define API_LIB_HEADER_LINE_H_
 
-#include "includes.h"
+#include "stm32_ub_vga_screen.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 #define sgn(x) ((x<0)?-1:((x>0)?1:0)) /* macro to return the sign of a
                                          number */

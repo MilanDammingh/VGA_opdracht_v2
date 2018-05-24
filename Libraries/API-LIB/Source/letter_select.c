@@ -4,10 +4,9 @@
  *  Created on: May 23, 2018
  *      Author: Samuel Benhaiem
  */
-#include "stm32_ub_vga_screen.h"
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "letter_select.h"
+
 
 
 void letter_select(int x, int y, char letter, int backcolor, int textcolor){

@@ -4,6 +4,7 @@
  *  Created on: 3 mei 2018
  *      Author: Milan Dammingh
  */
+#include "line.h"
 
 #ifndef API_LIB_HEADER_RECTANGLE_H_
 #define API_LIB_HEADER_RECTANGLE_H_
