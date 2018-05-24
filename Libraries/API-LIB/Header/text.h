@@ -16,7 +16,7 @@
 void draw_text (int x, int y, char text[], int backcolor, int textcolor);
 // Includes
 #include "includes.h"
-void letter_select(int x, int y, char letter);
+void letter_select(int x, int y, char letter, int backcolor, int textcolor);
 // Prototype
 
 

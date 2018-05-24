@@ -9,7 +9,6 @@
 #define TERMINAL_INPUT_H_
 
 #include "includes.h"
-#include <string.h>
 
 char *token;
 char functions[20];

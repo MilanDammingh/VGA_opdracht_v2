@@ -231,7 +231,7 @@ void get_data() //krijg je hier geen argumenten binnen?
 			fill++;
 			token = strtok (NULL, ",");
 		}
-		draw_text(atoi(text_args.x1),atoi(text_args.y1),text_args.text_in);
+		draw_text(atoi(text_args.x1),atoi(text_args.y1),text_args.text_in,zwart,wit);
 
 //		UART_puts("x1 = "); UART_puts(text_args.x1); UART_puts("\r");
 //		UART_puts("y1 = "); UART_puts(text_args.y1); UART_puts("\r");
@@ -261,7 +261,8 @@ void get_data() //krijg je hier geen argumenten binnen?
 			fill++;
 			token = strtok (NULL, ",");
 		}
-		draw_bitmap(/*atoi(bitmap.bitmap_nr),*/atoi(bitmap_args.x1),atoi(bitmap_args.y1));
+		draw_bitmap(atoi(bitmap_args.bitmap_nr),atoi(bitmap_args.x1),atoi(bitmap_args.y1),zwart);
+
 
 //		UART_puts("x1 = "); UART_puts(bitmap_args.x1); UART_puts("\r");
 //		UART_puts("y1 = "); UART_puts(bitmap_args.y1); UART_puts("\r");
