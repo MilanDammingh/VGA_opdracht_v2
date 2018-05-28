@@ -23,14 +23,21 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   9 .ARM.attributes 00000030  00000000  00000000  00020680  2**0
                   CONTENTS, READONLY
+<<<<<<< HEAD
  10 .debug_info   0000d0b4  00000000  00000000  000206b0  2**0
                   CONTENTS, READONLY, DEBUGGING
  11 .debug_abbrev 00001e02  00000000  00000000  0002d764  2**0
+=======
+ 10 .debug_info   0000c4f5  00000000  00000000  000206b0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_aranges 000009b0  00000000  00000000  0002f568  2**3
+ 11 .debug_abbrev 00001c58  00000000  00000000  0002cba5  2**0
+>>>>>>> sambranch
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000890  00000000  00000000  0002ff18  2**3
+ 12 .debug_aranges 00000998  00000000  00000000  0002e800  2**3
                   CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000890  00000000  00000000  0002f198  2**3
+                  CONTENTS, READONLY, DEBUGGING
+<<<<<<< HEAD
  14 .debug_line   00005433  00000000  00000000  000307a8  2**0
                   CONTENTS, READONLY, DEBUGGING
  15 .debug_str    000031c3  00000000  00000000  00035bdb  2**0
@@ -40,6 +47,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
  17 .debug_frame  00002d98  00000000  00000000  00038e1c  2**2
                   CONTENTS, READONLY, DEBUGGING
  18 .stabstr      0000003f  00000000  00000000  0003bbb4  2**0
+=======
+ 14 .debug_line   00004d44  00000000  00000000  0002fa28  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_str    00003160  00000000  00000000  0003476c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 16 .comment      0000007c  00000000  00000000  000378cc  2**0
+                  CONTENTS, READONLY
+ 17 .debug_frame  00002d98  00000000  00000000  00037948  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 18 .stabstr      0000003f  00000000  00000000  0003a6e0  2**0
+>>>>>>> sambranch
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -13530,10 +13548,10 @@ void DELAY_init(void)
  8007fb4:	40c19400 	.word	0x40c19400
  8007fb8:	00000000 	.word	0x00000000
  8007fbc:	41612a88 	.word	0x41612a88
- 8007fc0:	2001388c 	.word	0x2001388c
+ 8007fc0:	20013878 	.word	0x20013878
  8007fc4:	3ff40000 	.word	0x3ff40000
  8007fc8:	40220000 	.word	0x40220000
- 8007fcc:	20013890 	.word	0x20013890
+ 8007fcc:	2001387c 	.word	0x2001387c
  8007fd0:	20013898 	.word	0x20013898
  8007fd4:	20013894 	.word	0x20013894
 
@@ -15325,8 +15343,43 @@ void input_uart()
  8008a54:	4896      	ldr	r0, [pc, #600]	; (8008cb0 <input_uart+0x5d4>)
  8008a56:	f7ff fd7d 	bl	8008554 <UART_puts>
 		func_chooser();
+<<<<<<< HEAD
  8008a5a:	f000 fcd1 	bl	8009400 <func_chooser>
  8008a5e:	e197      	b.n	8008d90 <input_uart+0x6b4>
+=======
+ 800897c:	f000 fc8c 	bl	8009298 <func_chooser>
+ 8008980:	e165      	b.n	8008c4e <input_uart+0x572>
+ 8008982:	bf00      	nop
+ 8008984:	20013918 	.word	0x20013918
+ 8008988:	0800a264 	.word	0x0800a264
+ 800898c:	20013900 	.word	0x20013900
+ 8008990:	20013880 	.word	0x20013880
+ 8008994:	0800a268 	.word	0x0800a268
+ 8008998:	200006e4 	.word	0x200006e4
+ 800899c:	20000761 	.word	0x20000761
+ 80089a0:	0800a274 	.word	0x0800a274
+ 80089a4:	20013590 	.word	0x20013590
+ 80089a8:	2001359a 	.word	0x2001359a
+ 80089ac:	2001359f 	.word	0x2001359f
+ 80089b0:	200135a4 	.word	0x200135a4
+ 80089b4:	200135a9 	.word	0x200135a9
+ 80089b8:	200135cc 	.word	0x200135cc
+ 80089bc:	2001360d 	.word	0x2001360d
+ 80089c0:	0800a27c 	.word	0x0800a27c
+ 80089c4:	200137e0 	.word	0x200137e0
+ 80089c8:	20013808 	.word	0x20013808
+ 80089cc:	2001380d 	.word	0x2001380d
+ 80089d0:	20013812 	.word	0x20013812
+ 80089d4:	20013817 	.word	0x20013817
+ 80089d8:	2001385d 	.word	0x2001385d
+ 80089dc:	0800a284 	.word	0x0800a284
+ 80089e0:	20013468 	.word	0x20013468
+ 80089e4:	20013472 	.word	0x20013472
+ 80089e8:	20013477 	.word	0x20013477
+ 80089ec:	2001347c 	.word	0x2001347c
+ 80089f0:	20013481 	.word	0x20013481
+ 80089f4:	200134e5 	.word	0x200134e5
+>>>>>>> sambranch
 	}
 	else if(strcmp(functions, "driehoek")==0)
  8008a60:	4994      	ldr	r1, [pc, #592]	; (8008cb4 <input_uart+0x5d8>)
@@ -15783,6 +15836,7 @@ void input_uart()
  8008d90:	f000 f814 	bl	8008dbc <error_handling>
 
 }
+<<<<<<< HEAD
  8008d94:	bf00      	nop
  8008d96:	3708      	adds	r7, #8
  8008d98:	46bd      	mov	sp, r7
@@ -15797,6 +15851,41 @@ void input_uart()
  8008db8:	0800a328 	.word	0x0800a328
 
 08008dbc <error_handling>:
+=======
+ 8008c52:	bf00      	nop
+ 8008c54:	3708      	adds	r7, #8
+ 8008c56:	46bd      	mov	sp, r7
+ 8008c58:	bd80      	pop	{r7, pc}
+ 8008c5a:	bf00      	nop
+ 8008c5c:	0800a290 	.word	0x0800a290
+ 8008c60:	20013880 	.word	0x20013880
+ 8008c64:	20013900 	.word	0x20013900
+ 8008c68:	200134fc 	.word	0x200134fc
+ 8008c6c:	20013506 	.word	0x20013506
+ 8008c70:	2001350b 	.word	0x2001350b
+ 8008c74:	20013510 	.word	0x20013510
+ 8008c78:	20013515 	.word	0x20013515
+ 8008c7c:	2001351a 	.word	0x2001351a
+ 8008c80:	2001351f 	.word	0x2001351f
+ 8008c84:	20013579 	.word	0x20013579
+ 8008c88:	0800a264 	.word	0x0800a264
+ 8008c8c:	0800a29c 	.word	0x0800a29c
+ 8008c90:	200136b8 	.word	0x200136b8
+ 8008c94:	200136c2 	.word	0x200136c2
+ 8008c98:	200136c7 	.word	0x200136c7
+ 8008c9c:	200136f9 	.word	0x200136f9
+ 8008ca0:	20013735 	.word	0x20013735
+ 8008ca4:	0800a2a4 	.word	0x0800a2a4
+ 8008ca8:	20013624 	.word	0x20013624
+ 8008cac:	20013697 	.word	0x20013697
+ 8008cb0:	2001362e 	.word	0x2001362e
+ 8008cb4:	20013633 	.word	0x20013633
+ 8008cb8:	0800a2ac 	.word	0x0800a2ac
+ 8008cbc:	2001374c 	.word	0x2001374c
+ 8008cc0:	200137c4 	.word	0x200137c4
+
+08008cc4 <error_handling>:
+>>>>>>> sambranch
 
 void error_handling()
 {

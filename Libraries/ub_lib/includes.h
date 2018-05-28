@@ -63,16 +63,7 @@
 *********************************************************************************************************
 */
 
-#include "line.h"
-#include "triangle.h"
-#include "rectangle.h"
-#include "ellips.h"
-#include "terminal_input.h"
-#include "bitmap.h"
-#include "text.h"
-#include "wait_ms.h"
-#include "clr_screen.h"
-#include "letter_select.h"
+#include "EE-API-library.h"
 
 /*
 *********************************************************************************************************
