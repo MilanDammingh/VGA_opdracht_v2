@@ -1,10 +1,19 @@
-/*
- * front_layer.c
- *
- *  Created on: 28 mei 2018
- *      Author: Milan Dammingh
- */
+/**
+  ******************************************************************************
+  * @file    system_stm32f4xx.c
+  * @author  Milan Dammingh & Samuel Benhaiem
+  * @version V1.1.0
+  * @date    18-January-2013
+  * @brief   CMSIS Cortex-M4 Device Peripheral Access Layer System Source File.
+  *
+  ******************************************************************************
+  */
+
 #include "front_layer.h"
+
+/*!
+ *  This function is the interface of the UART.
+ */
 
 void input_uart()
 {
@@ -242,6 +251,10 @@ void input_uart()
 	error_handling();
 
 }
+
+/*!
+ *  This function is used for error handling. There is a handling for wrong typed functions and out of range pixels
+ */
 
 void error_handling()
 {

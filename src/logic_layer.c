@@ -7,6 +7,11 @@
 #include "logic_layer.h"
 
 
+/*!
+ *  The color function compares a part of the input string with a color and returns the hex value of the color
+ */
+
+
 
 int color(char *color_input)
 {
@@ -28,6 +33,10 @@ int color(char *color_input)
 	else if(strcmp(color_input, "paars")==0) return paars;
 	else return paars;
 };
+
+/*!
+ *  The func_chooser function compares the first argument of the input arguments and calls the right function
+ */
 
 
 void func_chooser()
