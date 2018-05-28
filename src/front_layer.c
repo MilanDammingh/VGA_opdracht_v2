@@ -1,10 +1,19 @@
-/*
- * front_layer.c
- *
- *  Created on: 28 mei 2018
- *      Author: Milan Dammingh
- */
+/**
+  ******************************************************************************
+  * @file    system_stm32f4xx.c
+  * @author  Milan Dammingh & Samuel Benhaiem
+  * @version V1.1.0
+  * @date    18-January-2013
+  * @brief   CMSIS Cortex-M4 Device Peripheral Access Layer System Source File.
+  *
+  ******************************************************************************
+  */
+
 #include "front_layer.h"
+
+/*!
+ *  This function is the interface of the UART.
+ */
 
 void input_uart()
 {
@@ -281,7 +290,15 @@ void input_uart()
 	}
 }
 
+<<<<<<< HEAD
 void error_handling_1()
+=======
+/*!
+ *  This function is used for error handling. There is a handling for wrong typed functions and out of range pixels
+ */
+
+void error_handling()
+>>>>>>> sambranch
 {
 	// functie controle
 	if(	strcmp(fl_token,"clearscherm")!=0 && strcmp(fl_token,"lijn")!=0 && strcmp(fl_token,"ellips")!=0 && strcmp(fl_token,"rechthoek")!=0 &&
