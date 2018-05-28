@@ -1,13 +1,12 @@
 /*
+
  * terminal_input.c
  *
  *  Created on: 22 mei 2018
  *      Author: Milan Dammingh
- */
+
 
 #include "terminal_input.h"
-
-int color(char *color_input);
 
 
 
@@ -38,7 +37,6 @@ void get_data()
 		  token = strtok (NULL, ",");
 		}
 	    clr_screen(color(clearscrn_args.color));
-
 //		UART_puts("color = "); UART_puts(clearscrn_args.color); UART_puts("\r");
 	}
 	else if(strcmp(functions, "lijn")==0)
@@ -315,3 +313,4 @@ int color(char *color_input)
 	else if(strcmp(color_input, "paars")==0) return paars;
 	else return paars;
 };
+*/

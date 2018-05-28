@@ -11,6 +11,11 @@
 // Includes
 #include "includes.h"
 
-int logic_layer();
+char *ll_token;
+char functions[20];
+//char parameters[100];
+
+int color(char *color_input);
+void func_chooser();
 
 #endif /* LOGIC_LAYER_H_ */

@@ -1,1 +1,2 @@
-logic_layer.c:9:5:logic_layer	8	static
+logic_layer.c:11:5:color	16	static
+logic_layer.c:33:6:func_chooser	80	static

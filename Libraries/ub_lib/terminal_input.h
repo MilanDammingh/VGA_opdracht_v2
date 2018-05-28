@@ -1,9 +1,10 @@
 /*
+
  * terminal_input.h
  *
  *  Created on: 22 mei 2018
  *      Author: Milan Dammingh
- */
+
 
 #ifndef TERMINAL_INPUT_H_
 #define TERMINAL_INPUT_H_
@@ -42,5 +43,8 @@ char parameters[100];
 //struct arguments wait_args;
 
 void get_data(void);
+int color(char *color_input);
 
-#endif /* TERMINAL_INPUT_H_ */
+
+#endif  TERMINAL_INPUT_H_
+*/
