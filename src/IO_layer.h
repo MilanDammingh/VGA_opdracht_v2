@@ -11,5 +11,8 @@
 #include "includes.h"
 
 void IO_Init();
+void UART_init(void);
+void DELAY_init(void);
+void UB_VGA_Screen_Init();
 
 #endif /* IO_LAYER_H_ */

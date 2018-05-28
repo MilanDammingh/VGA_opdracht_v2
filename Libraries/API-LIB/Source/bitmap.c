@@ -18,11 +18,11 @@
 //	- arrow left "left"
 
 
-
+/*
 void draw_bitmap (int bitmap_selector, int x, int y, int backcolor) {
 
 //______________________________________BITMAP ARRAYS___________________________________________________
-/*
+
 
 	int yoshi_happy [40][40] = {
 			backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor,backcolor
@@ -368,6 +368,6 @@ void draw_bitmap (int bitmap_selector, int x, int y, int backcolor) {
 			}
 		}
 	}
-*/
-}
+
+}*/
 

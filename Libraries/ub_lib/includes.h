@@ -105,6 +105,7 @@
 #define TRUE		1
 #define FALSE		0
 
+/*
 struct arguments {
 	char function[10];
 	char x1[5];
@@ -132,6 +133,6 @@ struct arguments triangle_args;
 struct arguments text_args;
 struct arguments bitmap_args;
 struct arguments wait_args;
-
+*/
 #endif
 

@@ -8,6 +8,7 @@
 // Includes
 #include "ellips.h"
 
+/*
 void draw_ellips (int x_center,int y_center, int x_rad, int y_rad, int color)
 {
 	for(int y=-y_rad; y<=y_rad; y++) {
@@ -16,5 +17,5 @@ void draw_ellips (int x_center,int y_center, int x_rad, int y_rad, int color)
 	        	UB_VGA_SetPixel(x_center+x,y_center+y,color);
 	    }
 	}
-}
+}*/
 

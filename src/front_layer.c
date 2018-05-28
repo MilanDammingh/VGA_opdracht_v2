@@ -8,273 +8,283 @@
 
 void input_uart()
 {
+	int fill;
 	UART_gets(parameters,TRUE);		// Get data from terminal
 	fl_token = strtok (parameters,",");	// Put first argument in fl_token
-	strcpy(func_input,fl_token);
-
-	split_string(parameters);
-}
-
-void split_string()
-{
-	int fill;
-	ll_token = strtok (parameters,",");	// Put first argument in ll_token
-	strcpy(functions,ll_token);			// String compare to functions
+	strcpy(functions,fl_token);			// String compare to functions
 
 	if(strcmp(functions, "clearscherm")==0)	// Function is clearscreen
 	{
 		fill=0;
-		while(ll_token != NULL)				// While something in ll_token execute code below
+		while(fl_token != NULL)				// While something in fl_token execute code below
 		{
 		  switch(fill)						// Fill char string with each parameter
 		  {
 			case 0:
-			  strcpy(clearscrn_args.function,ll_token);
+			  strcpy(clearscrn_args.function,fl_token);
 			  break;
 			case 1:
-			  strcpy(clearscrn_args.color,ll_token);
+			  strcpy(clearscrn_args.color,fl_token);
 			  break;
 		  }
 		  fill++;
-		  ll_token = strtok (NULL, ",");
+		  fl_token = strtok (NULL, ",");
 		}
 		func_chooser();
 	}
 	else if(strcmp(functions, "lijn")==0)
 	{
 		fill=0;
-		while(ll_token!= NULL)
+		while(fl_token!= NULL)
 		{
 			switch(fill)
 			{
 				case 0:
-					strcpy(line_args.function,ll_token);
+					strcpy(line_args.function,fl_token);
 					break;
 				case 1:
-					strcpy(line_args.x1,ll_token);
+					strcpy(line_args.x1,fl_token);
 					break;
 				case 2:
-					strcpy(line_args.y1,ll_token);
+					strcpy(line_args.y1,fl_token);
 					break;
 				case 3:
-					strcpy(line_args.x2,ll_token);
+					strcpy(line_args.x2,fl_token);
 					break;
 				case 4:
-					strcpy(line_args.y2,ll_token);
+					strcpy(line_args.y2,fl_token);
 					break;
 				case 5:
-					strcpy(line_args.thickness,ll_token);
+					strcpy(line_args.thickness,fl_token);
 					break;
 				case 6:
-					strcpy(line_args.color,ll_token);
+					strcpy(line_args.color,fl_token);
 					break;
 			}
 			fill++;
-			ll_token = strtok (NULL, ",");
+			fl_token = strtok (NULL, ",");
 		}
 		func_chooser();
 	}
 	else if(strcmp(functions, "ellips")==0)
 	{
 		fill=0;
-		while(ll_token != NULL)
+		while(fl_token != NULL)
 		{
 			switch(fill)
 			{
 				case 0:
-					strcpy(ellips_args.function,ll_token);
+					strcpy(ellips_args.function,fl_token);
 					break;
 				case 1:
-					strcpy(ellips_args.x_center,ll_token);
+					strcpy(ellips_args.x_center,fl_token);
 					break;
 				case 2:
-					strcpy(ellips_args.y_center,ll_token);
+					strcpy(ellips_args.y_center,fl_token);
 					break;
 				case 3:
-					strcpy(ellips_args.x_rad,ll_token);
+					strcpy(ellips_args.x_rad,fl_token);
 					break;
 				case 4:
-					strcpy(ellips_args.y_rad,ll_token);
+					strcpy(ellips_args.y_rad,fl_token);
 					break;
 				case 5:
-					strcpy(ellips_args.color,ll_token);
+					strcpy(ellips_args.color,fl_token);
 					break;
 			}
 			fill++;
-			ll_token = strtok (NULL, ",");
+			fl_token = strtok (NULL, ",");
 		}
 		func_chooser();
 	}
 	else if(strcmp(functions, "rechthoek")==0)
 	{
 		fill=0;
-		while(ll_token != NULL)
+		while(fl_token != NULL)
 		{
 			switch(fill)
 			{
 				case 0:
-					strcpy(rectangle_args.function,ll_token);
+					strcpy(rectangle_args.function,fl_token);
 					break;
 				case 1:
-					strcpy(rectangle_args.x1,ll_token);
+					strcpy(rectangle_args.x1,fl_token);
 					break;
 				case 2:
-					strcpy(rectangle_args.y1,ll_token);
+					strcpy(rectangle_args.y1,fl_token);
 					break;
 				case 3:
-					strcpy(rectangle_args.x2,ll_token);
+					strcpy(rectangle_args.x2,fl_token);
 					break;
 				case 4:
-					strcpy(rectangle_args.y2,ll_token);
+					strcpy(rectangle_args.y2,fl_token);
 					break;
 				case 5:
-					strcpy(rectangle_args.color,ll_token);
+					strcpy(rectangle_args.color,fl_token);
 					break;
 			}
 			fill++;
-			ll_token = strtok (NULL, ",");
+			fl_token = strtok (NULL, ",");
 		}
 		func_chooser();
 	}
 	else if(strcmp(functions, "driehoek")==0)
 	{
 		fill=0;
-		while(ll_token != NULL)
+		while(fl_token != NULL)
 		{
 			switch(fill)
 			{
 				case 0:
-					strcpy(triangle_args.function,ll_token);
+					strcpy(triangle_args.function,fl_token);
 					break;
 				case 1:
-					strcpy(triangle_args.x1,ll_token);
+					strcpy(triangle_args.x1,fl_token);
 					break;
 				case 2:
-					strcpy(triangle_args.y1,ll_token);
+					strcpy(triangle_args.y1,fl_token);
 					break;
 				case 3:
-					strcpy(triangle_args.x2,ll_token);
+					strcpy(triangle_args.x2,fl_token);
 					break;
 				case 4:
-					strcpy(triangle_args.y2,ll_token);
+					strcpy(triangle_args.y2,fl_token);
 					break;
 				case 5:
-					strcpy(triangle_args.xtop,ll_token);
+					strcpy(triangle_args.xtop,fl_token);
 					break;
 				case 6:
-					strcpy(triangle_args.ytop,ll_token);
+					strcpy(triangle_args.ytop,fl_token);
 					break;
 				case 7:
-					strcpy(triangle_args.color,ll_token);
+					strcpy(triangle_args.color,fl_token);
 					break;
 			}
 			fill++;
-			ll_token = strtok (NULL, ",");
+			fl_token = strtok (NULL, ",");
 		}
 		func_chooser();
 	}
 	else if(strcmp(functions, "tekst")==0)
 	{
 		fill=0;
-		while(ll_token != NULL)
+		while(fl_token != NULL)
 		{
 			switch(fill)
 			{
 				case 0:
-					strcpy(text_args.function,ll_token);
+					strcpy(text_args.function,fl_token);
 					break;
 				case 1:
-					strcpy(text_args.x1,ll_token);
+					strcpy(text_args.x1,fl_token);
 					break;
 				case 2:
-					strcpy(text_args.y1,ll_token);
+					strcpy(text_args.y1,fl_token);
 					break;
 				case 3:
-					strcpy(text_args.text_in,ll_token);
+					strcpy(text_args.text_in,fl_token);
 					break;
 				case 4:
-					strcpy(text_args.color,ll_token);
+					strcpy(text_args.color,fl_token);
 					break;
 
 			}
 			fill++;
-			ll_token = strtok (NULL, ",");
+			fl_token = strtok (NULL, ",");
 		}
 		func_chooser();
 	}
 	else if(strcmp(functions, "bitmap")==0)
 	{
 		fill=0;
-		while(ll_token != NULL)
+		while(fl_token != NULL)
 		{
 			switch(fill)
 			{
 				case 0:
-					strcpy(bitmap_args.function,ll_token);
+					strcpy(bitmap_args.function,fl_token);
 					break;
 				case 1:
-					strcpy(bitmap_args.bitmap_nr,ll_token);
+					strcpy(bitmap_args.bitmap_nr,fl_token);
 					break;
 				case 2:
-					strcpy(bitmap_args.x1,ll_token);
+					strcpy(bitmap_args.x1,fl_token);
 					break;
 				case 3:
-					strcpy(bitmap_args.y1,ll_token);
+					strcpy(bitmap_args.y1,fl_token);
 					break;
 			}
 			fill++;
-			ll_token = strtok (NULL, ",");
+			fl_token = strtok (NULL, ",");
 		}
 		func_chooser();
 	}
 	else if(strcmp(functions, "wacht")==0)
 	{
 		fill=0;
-		while(ll_token != NULL)
+		while(fl_token != NULL)
 		{
 			switch(fill)
 			{
 			case 0:
-				strcpy(wait_args.function,ll_token);
+				strcpy(wait_args.function,fl_token);
 				break;
 			case 1:
-				strcpy(wait_args.time_ms,ll_token);
+				strcpy(wait_args.time_ms,fl_token);
 				break;
 			}
 			fill++;
-			ll_token = strtok (NULL, ",");
+			fl_token = strtok (NULL, ",");
 		}
 		func_chooser();
 	}
+
+	error_handling();
+
 }
 
 void error_handling()
 {
 	// functie controle
-	if(!strcmp(fl_token,"clearscherm") || !strcmp(fl_token,"lijn") || !strcmp(fl_token,"ellips") || !strcmp(fl_token,"rechthoek") ||
-			!strcmp(fl_token,"driehoek") || !strcmp(fl_token,"tekst") || !strcmp(fl_token,"bitmap") || !strcmp(fl_token,"wacht"));
+	if(strcmp(fl_token,"clearscherm") || strcmp(fl_token,"lijn") || strcmp(fl_token,"ellips") || strcmp(fl_token,"rechthoek") ||
+			strcmp(fl_token,"driehoek") || strcmp(fl_token,"tekst") || strcmp(fl_token,"bitmap") || strcmp(fl_token,"wacht"));
 	else
 	{
 		// Error handling
-		UART_puts("ERROR 1: wrong typed function");
+		UART_puts("ERROR 1: wrong typed function\r");
 	}
 
+
+
 	// out of range checker
+	if(atoi(line_args.x1) < 0 || atoi(line_args.x1) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(line_args.y1) < 0 || atoi(line_args.y1) > 240) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(line_args.x2) < 0 || atoi(line_args.x2) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(line_args.y2) < 0 || atoi(line_args.y2) > 240) UART_puts("ERROR 2: pixel out of range\r");
 
-	if(atoi(line_args.x1) < 0 || atoi(line_args.x1) > 320) UART_puts("ERROR 2: pixel out of range");
-	else if(atoi(line_args.y1) < 0 || atoi(line_args.y1) > 240) UART_puts("ERROR 2: pixel out of range");
-	else if(atoi(line_args.x2) < 0 || atoi(line_args.x2) > 320) UART_puts("ERROR 2: pixel out of range");
-	else if(atoi(line_args.y2) < 0 || atoi(line_args.y2) > 240) UART_puts("ERROR 2: pixel out of range");
+	else if(atoi(ellips_args.x_center) < 0 || atoi(ellips_args.x_center) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(ellips_args.y_center) < 0 || atoi(ellips_args.y_center) > 240) UART_puts("ERROR 2: pixel out of range\r");
+	else if((atoi(ellips_args.x_center) - atoi(ellips_args.x_rad)) < 0 || (atoi(ellips_args.x_center) + atoi(ellips_args.x_rad)) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if((atoi(ellips_args.y_center) - atoi(ellips_args.y_rad)) < 0 || (atoi(ellips_args.y_center) + atoi(ellips_args.y_rad)) > 240) UART_puts("ERROR 2: pixel out of range\r");
 
-	else if(atoi(ellips_args.x_center) < 0 || atoi(ellips_args.x_center) > 320) UART_puts("ERROR 2: pixel out of range");
-	else if(atoi(ellips_args.y_center) < 0 || atoi(ellips_args.y_center) > 240) UART_puts("ERROR 2: pixel out of range");
+	else if(atoi(rectangle_args.x1) < 0 || atoi(rectangle_args.x1) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(rectangle_args.y1) < 0 || atoi(rectangle_args.y1) > 240) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(rectangle_args.x2) < 0 || atoi(rectangle_args.x2) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(rectangle_args.y2) < 0 || atoi(rectangle_args.y2) > 240) UART_puts("ERROR 2: pixel out of range\r");
 
-	else if(atoi(rectangle_args.x1) < 0 || atoi(rectangle_args.x1) > 320) UART_puts("ERROR 2: pixel out of range");
-	else if(atoi(rectangle_args.y1) < 0 || atoi(rectangle_args.y1) > 240) UART_puts("ERROR 2: pixel out of range");
-	else if(atoi(rectangle_args.x2) < 0 || atoi(rectangle_args.x2) > 320) UART_puts("ERROR 2: pixel out of range");
-	else if(atoi(rectangle_args.y2) < 0 || atoi(rectangle_args.y2) > 240) UART_puts("ERROR 2: pixel out of range");
-	else;
+	else if(atoi(triangle_args.x1) < 0 || atoi(triangle_args.x1) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(triangle_args.y1) < 0 || atoi(triangle_args.y1) > 240) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(triangle_args.x2) < 0 || atoi(triangle_args.x2) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(triangle_args.y2) < 0 || atoi(triangle_args.y2) > 240) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(triangle_args.xtop) < 0 || atoi(triangle_args.xtop) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(triangle_args.ytop) < 0 || atoi(triangle_args.ytop) > 240) UART_puts("ERROR 2: pixel out of range\r");
 
+	else if(atoi(text_args.x1) < 0 || atoi(text_args.x1) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(text_args.y2) < 0 || atoi(text_args.y2) > 240) UART_puts("ERROR 2: pixel out of range\r");
 
-
+	else if(atoi(bitmap_args.x1) < 0 || atoi(bitmap_args.x1) > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(bitmap_args.y1) < 0 || atoi(bitmap_args.y1) > 240) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(bitmap_args.x1)+40 > 320) UART_puts("ERROR 2: pixel out of range\r");
+	else if(atoi(bitmap_args.y1)+40 > 240) UART_puts("ERROR 2: pixel out of range\r");
+	else UART_puts("error handling failed\r");
 }

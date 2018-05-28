@@ -7,6 +7,7 @@
 
 #include "rectangle.h"
 
+/*
 
 void draw_rectangle (int x1, int y1, int x2, int y2, int color)
 {
@@ -16,3 +17,4 @@ void draw_rectangle (int x1, int y1, int x2, int y2, int color)
 			UB_VGA_SetPixel(j,i,color);
 	}
 }
+*/

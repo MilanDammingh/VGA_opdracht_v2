@@ -10,6 +10,7 @@
 
 // Includes
 #include "includes.h"
+#include "EE-API-library.h"
 
 char *ll_token;
 char functions[20];

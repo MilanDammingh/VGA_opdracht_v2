@@ -19,6 +19,8 @@ int main(void)
 	SystemInit(); // System speed to 168MHz
 	IO_Init();
 
+	draw_line(30,30,60,60,3,wit);
+
 	while(1)
 	{
 		input_uart();

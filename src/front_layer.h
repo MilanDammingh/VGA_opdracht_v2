@@ -9,13 +9,13 @@
 #define FRONT_LAYER_H_
 
 #include "includes.h"
+#include "EE-API-library.h"
 
 char *fl_token;
 char func_input[20];
 char parameters[100];
 
 void input_uart();
-void split_string();
 void error_handling();
 
 #endif /* FRONT_LAYER_H_ */

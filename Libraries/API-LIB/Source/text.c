@@ -8,6 +8,7 @@
 #include "text.h"
 
 
+/*
 
 void draw_text (int x, int y, char text[], int backcolor, int textcolor) { //functie voor het schrijven van tekst
 
@@ -17,3 +18,4 @@ void draw_text (int x, int y, char text[], int backcolor, int textcolor) { //fun
 		x = x + 5;
 	}
 }
+*/
