@@ -34,7 +34,7 @@ void func_chooser()
 {
 	if(!strcmp(clearscrn_args.function,"clearscherm"))
 	{
-		UART_puts("function = "); UART_puts(clearscrn_args.function); UART_puts("\r");
+//		UART_puts("function = "); UART_puts(clearscrn_args.function); UART_puts("\r");
 		clr_screen(color(clearscrn_args.color));
 
 		for(int i=0;i<sizeof(clearscrn_args.function);i++)
@@ -42,7 +42,7 @@ void func_chooser()
 	}
 	else if(!strcmp(line_args.function,"lijn"))
 	{
-		UART_puts("function = "); UART_puts(line_args.function); UART_puts("\r");
+//		UART_puts("function = "); UART_puts(line_args.function); UART_puts("\r");
 		draw_line(atoi(line_args.x1),atoi(line_args.y1),atoi(line_args.x2),atoi(line_args.y2),atoi(line_args.thickness),color(line_args.color));
 
 		for(int i=0;i<sizeof(line_args.function);i++)
@@ -51,7 +51,7 @@ void func_chooser()
 	}
 	else if(!strcmp(ellips_args.function,"ellips"))
 	{
-		UART_puts("function = "); UART_puts(ellips_args.function); UART_puts("\r");
+//		UART_puts("function = "); UART_puts(ellips_args.function); UART_puts("\r");
 		draw_ellips(atoi(ellips_args.x_center),atoi(ellips_args.y_center),atoi(ellips_args.x_rad),atoi(ellips_args.y_rad),color(ellips_args.color));
 
 		for(int i=0;i<sizeof(ellips_args.function);i++)
@@ -59,7 +59,7 @@ void func_chooser()
 	}
 	else if(!strcmp(rectangle_args.function,"rechthoek"))
 	{
-		UART_puts("function = "); UART_puts(rectangle_args.function); UART_puts("\r");
+//		UART_puts("function = "); UART_puts(rectangle_args.function); UART_puts("\r");
 		draw_rectangle(atoi(rectangle_args.x1),atoi(rectangle_args.y1),atoi(rectangle_args.x2),atoi(rectangle_args.y2),color(rectangle_args.color));
 
 		for(int i=0;i<sizeof(rectangle_args.function);i++)
@@ -67,7 +67,7 @@ void func_chooser()
 	}
 	else if(!strcmp(triangle_args.function,"driehoek"))
 	{
-		UART_puts("function = "); UART_puts(triangle_args.function); UART_puts("\r");
+//		UART_puts("function = "); UART_puts(triangle_args.function); UART_puts("\r");
 		draw_triangle(atoi(triangle_args.x1),atoi(triangle_args.y1),atoi(triangle_args.x2),atoi(triangle_args.y2),atoi(triangle_args.xtop),atoi(triangle_args.ytop),color(triangle_args.color));
 
 		for(int i=0;i<sizeof(triangle_args.function);i++)
@@ -75,7 +75,7 @@ void func_chooser()
 	}
 	else if(!strcmp(text_args.function,"tekst"))
 	{
-		UART_puts("function = "); UART_puts(text_args.function); UART_puts("\r");
+//		UART_puts("function = "); UART_puts(text_args.function); UART_puts("\r");
 		for(int i=0;i<sizeof(text_args.function);i++)
 			text_args.function[i] = 0;
 
@@ -83,7 +83,7 @@ void func_chooser()
 	}
 	else if(!strcmp(bitmap_args.function,"bitmap"))
 	{
-		UART_puts("function = "); UART_puts(bitmap_args.function); UART_puts("\r");
+//		UART_puts("function = "); UART_puts(bitmap_args.function); UART_puts("\r");
 		draw_bitmap(atoi(bitmap_args.bitmap_nr),atoi(bitmap_args.x1),atoi(bitmap_args.y1),color(clearscrn_args.color));
 
 		for(int i=0;i<sizeof(bitmap_args.function);i++)
@@ -91,17 +91,18 @@ void func_chooser()
 	}
 	else if(!strcmp(wait_args.function,"wacht"))
 	{
-		UART_puts("function = "); UART_puts(wait_args.function); UART_puts("\r");
+//		UART_puts("function = "); UART_puts(wait_args.function); UART_puts("\r");
+		wait_ms(atoi(wait_args.time_ms));
+
 		for(int i=0;i<sizeof(wait_args.function);i++)
 			wait_args.function[i] = 0;
 
-		wait_ms(atoi(wait_args.time_ms));
 
 	}
 	else
 	{
 		// Error handling
-		UART_puts("error handling");
+//		UART_puts("error handling");
 	}
 }
 
