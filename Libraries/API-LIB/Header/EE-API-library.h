@@ -26,7 +26,7 @@
 
 struct arguments {
 	char function[10];
-	char x1[5];
+	char x1[10];
 	char y1[5];
 	char x2[5];
 	char y2[5];

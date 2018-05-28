@@ -12,6 +12,7 @@ void input_uart()
 	UART_gets(parameters,TRUE);		// Get data from terminal
 	fl_token = strtok (parameters,",");	// Put first argument in fl_token
 	strcpy(functions,fl_token);			// String compare to functions
+	error_handling_1();
 
 	if(strcmp(functions, "clearscherm")==0)	// Function is clearscreen
 	{
@@ -34,6 +35,7 @@ void input_uart()
 			UART_puts("ERROR 3: to few arguments were given\r");
 		else if(fill>LEN_CLEARSCRN_ARG)
 			UART_puts("ERROR 4: to many arguments were given\r");
+		error_handling_2();
 		func_chooser();
 	}
 	else if(strcmp(functions, "lijn")==0)
@@ -72,6 +74,7 @@ void input_uart()
 			UART_puts("ERROR 3: to few arguments were given\r");
 		else if(fill>LEN_LINE_ARG)
 			UART_puts("ERROR 4: to many arguments were given\r");
+		error_handling_2();
 		func_chooser();
 	}
 	else if(strcmp(functions, "ellips")==0)
@@ -107,6 +110,7 @@ void input_uart()
 			UART_puts("ERROR 3: to few arguments were given\r");
 		else if(fill>LEN_ELLIPS_ARG)
 			UART_puts("ERROR 4: to many arguments were given\r");
+		error_handling_2();
 		func_chooser();
 	}
 	else if(strcmp(functions, "rechthoek")==0)
@@ -142,6 +146,7 @@ void input_uart()
 			UART_puts("ERROR 3: to few arguments were given\r");
 		else if(fill>LEN_RECTANGLE_ARG)
 			UART_puts("ERROR 4: to many arguments were given\r");
+		error_handling_2();
 		func_chooser();
 	}
 	else if(strcmp(functions, "driehoek")==0)
@@ -183,6 +188,7 @@ void input_uart()
 			UART_puts("ERROR 3: to few arguments were given\r");
 		else if(fill>LEN_TRIANGLE_ARG)
 			UART_puts("ERROR 4: to many arguments were given\r");
+		error_handling_2();
 		func_chooser();
 	}
 	else if(strcmp(functions, "tekst")==0)
@@ -216,6 +222,7 @@ void input_uart()
 			UART_puts("ERROR 3: to few arguments were given\r");
 		else if(fill>LEN_TEXT_ARG)
 			UART_puts("ERROR 4: to many arguments were given\r");
+		error_handling_2();
 		func_chooser();
 	}
 	else if(strcmp(functions, "bitmap")==0)
@@ -245,6 +252,7 @@ void input_uart()
 			UART_puts("ERROR 3: to few arguments were given\r");
 		else if(fill>LEN_BITMAP_ARG)
 			UART_puts("ERROR 4: to many arguments were given\r");
+		error_handling_2();
 		func_chooser();
 	}
 	else if(strcmp(functions, "wacht")==0)
@@ -268,26 +276,21 @@ void input_uart()
 			UART_puts("ERROR 3: to few arguments were given\r");
 		else if(fill>LEN_WAIT_ARG)
 			UART_puts("ERROR 4: to many arguments were given\r");
+		error_handling_2();
 		func_chooser();
 	}
-
-	error_handling();
-
 }
 
-void error_handling()
+void error_handling_1()
 {
 	// functie controle
-	if(strcmp(fl_token,"clearscherm") || strcmp(fl_token,"lijn") || strcmp(fl_token,"ellips") || strcmp(fl_token,"rechthoek") ||
-			strcmp(fl_token,"driehoek") || strcmp(fl_token,"tekst") || strcmp(fl_token,"bitmap") || strcmp(fl_token,"wacht"));
-	else
-	{
-		// ERROR handling
-		UART_puts("ERROR 1: wrong typed function\r");
-	}
+	if(	strcmp(fl_token,"clearscherm")!=0 && strcmp(fl_token,"lijn")!=0 && strcmp(fl_token,"ellips")!=0 && strcmp(fl_token,"rechthoek")!=0 &&
+		strcmp(fl_token,"driehoek")!=0 && strcmp(fl_token,"tekst")!=0 && strcmp(fl_token,"bitmap")!=0 && strcmp(fl_token,"wacht")!=0)
+			UART_puts("ERROR 1: wrong typed function\r");
+}
 
-
-
+void error_handling_2()
+{
 	// out of range checker
 	if(!strcmp(line_args.function,"lijn"))
 	{

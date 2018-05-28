@@ -76,10 +76,11 @@ void func_chooser()
 	else if(!strcmp(text_args.function,"tekst"))
 	{
 //		UART_puts("function = "); UART_puts(text_args.function); UART_puts("\r");
+		draw_text(atoi(text_args.x1),atoi(text_args.y1),text_args.text_in,color(clearscrn_args.color),color(text_args.color));
+
 		for(int i=0;i<sizeof(text_args.function);i++)
 			text_args.function[i] = 0;
 
-		draw_text(atoi(text_args.x1),atoi(text_args.y1),text_args.text_in,color(clearscrn_args.color),color(text_args.color));
 	}
 	else if(!strcmp(bitmap_args.function,"bitmap"))
 	{
