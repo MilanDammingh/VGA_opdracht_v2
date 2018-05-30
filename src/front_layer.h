@@ -1,9 +1,9 @@
-/*
- * front_layer.h
- *
- *  Created on: 28 mei 2018
- *      Author: Milan Dammingh
- */
+//--------------------------------------------------------------
+// File     : EE-API-library.c
+// Datum    : 28.05.2016
+// Version  : 1.0
+// Autor    : Milan Dammingh
+//--------------------------------------------------------------
 
 #ifndef FRONT_LAYER_H_
 #define FRONT_LAYER_H_
@@ -19,8 +19,6 @@
 #define LEN_TEXT_ARG			6
 #define LEN_BITMAP_ARG			4
 #define LEN_WAIT_ARG			2
-
-
 
 char *fl_token;
 char func_input[20];

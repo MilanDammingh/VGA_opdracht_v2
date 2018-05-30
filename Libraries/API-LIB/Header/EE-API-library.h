@@ -1,9 +1,10 @@
-/*
- * EE-API-library.h
- *
- *  Created on: 28 mei 2018
- *      Author: Milan Dammingh
- */
+//--------------------------------------------------------------
+// File     : EE-API-library.h
+// Datum    : 28.05.2016
+// Version  : 1.0
+// Autor    : Milan Dammingh
+//--------------------------------------------------------------
+
 
 #ifndef API_LIB_HEADER_EE_API_LIBRARY_H_
 #define API_LIB_HEADER_EE_API_LIBRARY_H_
@@ -51,7 +52,6 @@ struct arguments triangle_args;
 struct arguments text_args;
 struct arguments bitmap_args;
 struct arguments wait_args;
-
 
 // Prototype
 void clr_screen(uint8_t color);

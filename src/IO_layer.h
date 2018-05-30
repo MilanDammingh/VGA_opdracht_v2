@@ -1,9 +1,9 @@
-/*
- * IO_layer.h
- *
- *  Created on: 28 mei 2018
- *      Author: Milan Dammingh
- */
+//--------------------------------------------------------------
+// File     : IO_layer.h
+// Datum    : 28.05.2016
+// Version  : 1.0
+// Autor    : Milan Dammingh
+//--------------------------------------------------------------
 
 #ifndef IO_LAYER_H_
 #define IO_LAYER_H_

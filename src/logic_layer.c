@@ -1,18 +1,17 @@
-/*
- * logic_layer.c
- *
- *  Created on: 24 mei 2018
- *      Author: Milan Dammingh
- */
+//--------------------------------------------------------------
+// File     : logic_layer.c
+// Datum    : 24.05.2016
+// Version  : 1.0
+// Autor    : Samuel Benhaiem and Milan Dammingh
+//--------------------------------------------------------------
+
+
 #include "logic_layer.h"
 
 
-/*!
- *  The color function compares a part of the input string with a color and returns the hex value of the color
- */
-
-
-
+/********************************************//**
+ *	converting the color array to defined hex values.
+ ***********************************************/
 int color(char *color_input)
 {
 	if(strcmp(color_input, "zwart")==0) return zwart;
@@ -34,11 +33,11 @@ int color(char *color_input)
 	else return paars;
 };
 
-/*!
- *  The func_chooser function compares the first argument of the input arguments and calls the right function
- */
 
-
+/********************************************//**
+ *	this functions makes a decision to which function
+ *	to draw.
+ ***********************************************/
 void func_chooser()
 {
 	if(!strcmp(clearscrn_args.function,"clearscherm"))
@@ -106,14 +105,8 @@ void func_chooser()
 
 		for(int i=0;i<sizeof(wait_args.function);i++)
 			wait_args.function[i] = 0;
-
-
 	}
-	else
-	{
-		// Error handling
-//		UART_puts("error handling");
-	}
+
 }
 
 

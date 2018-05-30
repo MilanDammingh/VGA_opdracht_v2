@@ -1,9 +1,9 @@
-/*
- * IO_layer.c
- *
- *  Created on: 28 mei 2018
- *      Author: Milan Dammingh & Samuel Benhaiem
- */
+//--------------------------------------------------------------
+// File     : IO_layer.c
+// Datum    : 28.05.2016
+// Version  : 1.0
+// Autor    : Milan Dammingh
+//--------------------------------------------------------------
 
 
 
@@ -13,6 +13,9 @@
 
 #include "IO_layer.h"
 
+/********************************************//**
+ *	initializing the hardware and for functions
+ ***********************************************/
 void IO_Init()
 {
 	UB_VGA_Screen_Init(); // Init VGA-Screen

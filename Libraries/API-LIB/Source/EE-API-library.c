@@ -1,23 +1,29 @@
-/*
- * EE-API-library.c
- *
- *  Created on: 28 mei 2018
- *      Author: Milan Dammingh
- */
+//--------------------------------------------------------------
+// File     : EE-API-library.c
+// Datum    : 28.05.2016
+// Version  : 1.0
+// Autor    : Milan Dammingh
+//--------------------------------------------------------------
 
 #include "EE-API-library.h"
 
-/*
- * clearscreen
- */
+/********************************************//**
+ *	clear screen by filling it with one color
+ ***********************************************/
 void clr_screen(uint8_t color)
 {
 	UB_VGA_FillScreen(color);	// Fill screen
 }
 
-/*
- * draw_line
- */
+/********************************************//**
+ *  draw a line between 2 coordinates with the following parameters:
+ *  - x1
+ *  - y1
+ *  - x2
+ *  - y2
+ *  - thickness
+ *  - color written in dutch
+ ***********************************************/
 void draw_line(int x1, int y1, int x2, int y2, int tn, int color)
 {
 
@@ -139,9 +145,14 @@ void draw_line(int x1, int y1, int x2, int y2, int tn, int color)
 	}
 }
 
-/*
- * draw ellips
- */
+/********************************************//**
+ *  Drawing an ellips with the following parameters:
+ *  - x center
+ *  - y center
+ *  - x radius
+ *  - y radius
+ *  - color written in dutch
+ ***********************************************/
 void draw_ellips (int x_center,int y_center, int x_rad, int y_rad, int color)
 {
 	for(int y=-y_rad; y<=y_rad; y++) {
@@ -152,9 +163,15 @@ void draw_ellips (int x_center,int y_center, int x_rad, int y_rad, int color)
 	}
 }
 
-/*
- * draw rectangle
- */
+/********************************************//**
+ * drawing a rectangle by drawing horizontal lines
+ * The following parameters are required:
+ * - x1 (left top corner)
+ * - y1 (left top corner)
+ * - x2 (right bottom corner)
+ * - y2 (right bottom corner)
+ * - color written in dutch
+ ***********************************************/
 void draw_rectangle (int x1, int y1, int x2, int y2, int color)
 {
 	for(int i=y1;i<=y2;i++)
@@ -164,9 +181,16 @@ void draw_rectangle (int x1, int y1, int x2, int y2, int color)
 	}
 }
 
-/*
- * draw triangle
- */
+/********************************************//**
+ * drawing three lines between 3 coordinates the following parameters are required
+ * - x1
+ * - y1
+ * - x2
+ * - y2
+ * - x3
+ * - y3
+ * - color written in dutch
+ ***********************************************/
 void draw_triangle(int x1,int y1,int x2,int y2,int xtop,int ytop, int color)
 {
 	draw_line(x1,y1,x2,y2,1,color);
@@ -174,10 +198,16 @@ void draw_triangle(int x1,int y1,int x2,int y2,int xtop,int ytop, int color)
 	draw_line(xtop,ytop,x2,y2,1,color);
 }
 
-/*
- * draw text
- */
-void draw_text (int x, int y, char text[], int backcolor, int textcolor) { //functie voor het schrijven van tekst
+/********************************************//**
+ * drawing text by drawing letter by letter
+ * Parameters:
+ * - x1
+ * - y1
+ * - text you want to see on the screen
+ * - backcolor = color of last time clearscreen was called
+ * - textcolor
+ ***********************************************/
+void draw_text (int x, int y, char text[], int backcolor, int textcolor) {
 
 	for(int i=0;i<strlen(text);i++) //uit de "text" string individuele letters en kleuren halen
 	{
@@ -186,9 +216,9 @@ void draw_text (int x, int y, char text[], int backcolor, int textcolor) { //fun
 	}
 }
 
-/*
- * letter select
- */
+/********************************************//**
+ * select the letten you want to draw with the same colors as draw_text()
+ ***********************************************/
 void letter_select(int x, int y, char letter, int backcolor, int textcolor)
 {
 	int letter_A[10][4] = {
@@ -531,331 +561,83 @@ void letter_select(int x, int y, char letter, int backcolor, int textcolor)
 		backcolor, backcolor, backcolor, 	//....
 	};
 
-	switch (letter)
+	for (int i=0; i<10; i++)
 	{
-	case 'a':
-		for (int i=0; i<10; i++)
+		for (int j=0; j<4; j++)
 		{
-			for (int j=0; j<4; j++)
+			int x_pos = j + x;
+			int y_pos = i + y;
+			switch(letter)
 			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_A[i][j]);
+			case 'a':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_A[i][j]); break;
+			case 'b':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_B[i][j]); break;
+			case 'c':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_C[i][j]); break;
+			case 'd':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_D[i][j]); break;
+			case 'e':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_E[i][j]); break;
+			case 'f':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_F[i][j]); break;
+			case 'g':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_G[i][j]); break;
+			case 'h':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_H[i][j]); break;
+			case 'i':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_I[i][j]); break;
+			case 'j':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_J[i][j]); break;
+			case 'k':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_K[i][j]); break;
+			case 'l':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_L[i][j]); break;
+			case 'm':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_M[i][j]); break;
+			case 'n':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_N[i][j]); break;
+			case 'o':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_O[i][j]); break;
+			case 'p':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_P[i][j]); break;
+			case 'q':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_Q[i][j]); break;
+			case 'r':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_R[i][j]); break;
+			case 's':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_S[i][j]); break;
+			case 't':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_T[i][j]); break;
+			case 'u':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_U[i][j]); break;
+			case 'v':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_V[i][j]); break;
+			case 'w':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_W[i][j]); break;
+			case 'x':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_X[i][j]); break;
+			case 'y':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_Y[i][j]); break;
+			case 'z':
+				UB_VGA_SetPixel(x_pos, y_pos, letter_Z[i][j]); break;
+			case ' ':
+				UB_VGA_SetPixel(x_pos, y_pos, spatie[i][j]); break;
+			case ',':
+				UB_VGA_SetPixel(x_pos, y_pos, komma[i][j]); break;
 			}
 		}
-		break;
-	case 'b':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_B[i][j]);
-			}
-		}
-		break;
-	case 'c':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_C[i][j]);
-			}
-		}
-		break;
-	case 'd':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_D[i][j]);
-			}
-		}
-		break;
-	case 'e':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_E[i][j]);
-			}
-		}
-		break;
-	case 'f':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_F[i][j]);
-			}
-		}
-		break;
-	case 'g':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_G[i][j]);
-			}
-		}
-		break;
-	case 'h':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_H[i][j]);
-			}
-		}
-		break;
-	case 'i':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<3; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_I[i][j]);
-			}
-		}
-		break;
-	case 'j':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_J[i][j]);
-			}
-		}
-		break;
-	case 'k':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_K[i][j]);
-			}
-		}
-		break;
-	case 'l':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_L[i][j]);
-			}
-		}
-		break;
-	case 'm':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_M[i][j]);
-			}
-		}
-		break;
-	case 'n':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_N[i][j]);
-			}
-		}
-		break;
-
-
-	case 'o':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_O[i][j]);
-			}
-		}
-		break;
-	case 'p':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_P[i][j]);
-			}
-		}
-		break;
-	case 'q':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_Q[i][j]);
-			}
-		}
-		break;
-	case 'r':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_R[i][j]);
-			}
-		}
-		break;
-
-	case 's':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_S[i][j]);
-			}
-		}
-		break;
-	case 't':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<5; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_T[i][j]);
-			}
-		}
-		break;
-	case 'u':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_U[i][j]);
-			}
-		}
-		break;
-
-
-	case 'v':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_V[i][j]);
-			}
-		}
-		break;
-	case 'w':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_W[i][j]);
-			}
-		}
-		break;
-
-	case 'x':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_X[i][j]);
-			}
-		}
-		break;
-	case 'y':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<5; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_Y[i][j]);
-			}
-		}
-		break;
-
-
-	case 'z':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, letter_Z[i][j]);
-			}
-		}
-		break;
-	case ' ':
-		for (int i=0; i<10; i++)
-		{
-			for (int j=0; j<4; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, spatie[i][j]);
-			}
-		}
-		break;
-	case ',':
-		for (int i=0; i<13; i++)
-		{
-			for (int j=0; j<3; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, komma[i][j]);
-			}
-		}
-		break;
-
 	}
 }
 
-/*
- * bitmap
- */
+/********************************************//**
+ * draw the bitmap you want
+ * parameter:
+ * - selected bitmap (0-5)
+ * - x1
+ * - y1
+ * - backcolor = color of last time clearscreen was called
+ ***********************************************/
 void draw_bitmap (int bitmap_selector, int x, int y, int backcolor) {
 /*
 	int yoshi_happy [40][40] = {
@@ -1123,76 +905,34 @@ int arrow_left [40][40] = {
 			{
 				int x_pos = j + x;
 				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, yoshi_happy[i][j]);
-			}
-		}
-	}
-	else if (bitmap_selector==1)	//BOO SAD setpixel function
-	{
-		for (int i=0; i<40; i++)
-		{
-			for (int j=0; j<40; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, boo_sad[i][j]);
-			}
-		}
-	}
-	else if (bitmap_selector==2)		//ARROW UP setpixel function
-	{
-		for (int i=0; i<40; i++)
-		{
-			for (int j=0; j<40; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, arrow_up[i][j]);
-			}
-		}
-	}
-	else if (bitmap_selector==3)	//ARROW DOWN setpixel function
-	{
-		for (int i=0; i<40; i++)
-		{
-			for (int j=0; j<40; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, arrow_down[i][j]);
-			}
-		}
-	}
-	else if (bitmap_selector==4)		//ARROW RIGHT setpixel function
-	{
-		for (int i=0; i<40; i++)
-		{
-			for (int j=0; j<40; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, arrow_right[i][j]);
-			}
-		}
-	}
-	else if (bitmap_selector==5)		//ARROW LEFT setpixel function
-	{
-		for (int i=0; i<40; i++)
-		{
-			for (int j=0; j<40; j++)
-			{
-				int x_pos = j + x;
-				int y_pos = i + y;
-				UB_VGA_SetPixel(x_pos, y_pos, arrow_left[i][j]);
+				switch(bitmap_selector)
+				case 0:
+					UB_VGA_SetPixel(x_pos, y_pos, yoshi_happy[i][j]);
+					break;
+				case 1:
+					UB_VGA_SetPixel(x_pos, y_pos, boo_sad[i][j]);
+					break;
+				case 2:
+					UB_VGA_SetPixel(x_pos, y_pos, arrow_up[i][j]);
+					break;
+				case 3:
+					UB_VGA_SetPixel(x_pos, y_pos, arrow_down[i][j]);
+					break;
+				case 4:
+					UB_VGA_SetPixel(x_pos, y_pos, arrow_right[i][j]);
+					break;
+				case 5:
+					UB_VGA_SetPixel(x_pos, y_pos, arrow_left[i][j]);
+					break;
 			}
 		}
 	}
 */
 }
 
-/*
- * wacht
- */
+/********************************************//**
+ * wait for time_ms
+ ***********************************************/
 void wait_ms(int time_ms)
 {
 	DELAY_ms(time_ms);	// Delay in ms

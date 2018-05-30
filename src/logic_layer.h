@@ -1,9 +1,9 @@
-/*
- * logic_layer.h
- *
- *  Created on: 24 mei 2018
- *      Author: Milan Dammingh
- */
+//--------------------------------------------------------------
+// File     : logic_layer.h
+// Datum    : 24.05.2016
+// Version  : 1.0
+// Autor    : Samuel Benhaiem and Milan Dammingh
+//--------------------------------------------------------------
 
 #ifndef LOGIC_LAYER_H_
 #define LOGIC_LAYER_H_
@@ -14,7 +14,6 @@
 
 char *ll_token;
 char functions[20];
-//char parameters[100];
 
 int color(char *color_input);
 void func_chooser();

@@ -1,9 +1,14 @@
-/*
- * main.h
- *
- *  Created on: 3 mei 2018
- *      Author: Milan Dammingh
- */
+//--------------------------------------------------------------
+// File     : main.h
+// Datum    : 30.03.2016
+// Version  : 1.0
+// Autor    : UB
+// mods by	: Samuel Benhaiem and Milan Dammingh
+// CPU      : STM32F4
+// IDE      : CooCox CoIDE 1.7.x
+// Module   : CMSIS_BOOT, M4_CMSIS_CORE
+// Function : VGA_core DMA LIB 320x240, 8bit color
+//--------------------------------------------------------------
 
 #include "EE-API-library.h"
 

@@ -1,20 +1,17 @@
-/**
-  ******************************************************************************
-  * @file    system_stm32f4xx.c
-  * @author  Milan Dammingh & Samuel Benhaiem
-  * @version V1.1.0
-  * @date    18-January-2013
-  * @brief   CMSIS Cortex-M4 Device Peripheral Access Layer System Source File.
-  *
-  ******************************************************************************
-  */
+//--------------------------------------------------------------
+// File     : EE-API-library.c
+// Datum    : 28.05.2016
+// Version  : 1.0
+// Autor    : Milan Dammingh
+//--------------------------------------------------------------
 
 #include "front_layer.h"
 
-/*!
- *  This function is the interface of the UART.
- */
-
+/********************************************//**
+ *	Get's the data from the uart.
+ *	Checks the first string and fills the rest in a struct.
+ *	At the same time an error handling is running.
+ ***********************************************/
 void input_uart()
 {
 	int fill;
@@ -290,15 +287,12 @@ void input_uart()
 	}
 }
 
-<<<<<<< HEAD
-void error_handling_1()
-=======
-/*!
- *  This function is used for error handling. There is a handling for wrong typed functions and out of range pixels
- */
 
-void error_handling()
->>>>>>> sambranch
+/********************************************//**
+ *	Error handling for checking if the first string
+ *	is written correctly.
+ ***********************************************/
+void error_handling_1()
 {
 	// functie controle
 	if(	strcmp(fl_token,"clearscherm")!=0 && strcmp(fl_token,"lijn")!=0 && strcmp(fl_token,"ellips")!=0 && strcmp(fl_token,"rechthoek")!=0 &&
@@ -306,6 +300,10 @@ void error_handling()
 			UART_puts("ERROR 1: wrong typed function\r");
 }
 
+/********************************************//**
+ *	Error handling for checking is the pixel that
+ *	should be drawn are in the range of the VGA-screen.
+ ***********************************************/
 void error_handling_2()
 {
 	// out of range checker

@@ -1,9 +1,9 @@
 EE-API-library.c:13:6:clr_screen	16	static
-EE-API-library.c:21:6:draw_line	88	static
-EE-API-library.c:145:6:draw_ellips	32	static
-EE-API-library.c:158:6:draw_rectangle	32	static
-EE-API-library.c:170:6:draw_triangle	32	static
-EE-API-library.c:180:6:draw_text	40	static
-EE-API-library.c:192:6:letter_select	5000	static
-EE-API-library.c:859:6:draw_bitmap	24	static
-EE-API-library.c:1196:6:wait_ms	16	static
+EE-API-library.c:27:6:draw_line	88	static
+EE-API-library.c:156:6:draw_ellips	32	static
+EE-API-library.c:175:6:draw_rectangle	32	static
+EE-API-library.c:194:6:draw_triangle	32	static
+EE-API-library.c:210:6:draw_text	40	static
+EE-API-library.c:222:6:letter_select	4568	static
+EE-API-library.c:641:6:draw_bitmap	24	static
+EE-API-library.c:936:6:wait_ms	16	static
